@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Brandon Zirulnikoff - Full-Stack Developer`,
+    description: `My portfolio, showcasing and detailing my progress as a developer.`,
+    author: `bzweb`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,6 +19,14 @@ module.exports = {
       options: {
         name: `videos`,
         path: `${__dirname}/src/assets/videos`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID,
+        },
       },
     },
     `gatsby-transformer-sharp`,
