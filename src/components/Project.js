@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Project = () => {
+const Project = ({ title }) => {
   return (
     <div>
-      
+      <h1>{title}</h1>
     </div>
   )
 }
