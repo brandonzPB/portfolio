@@ -23,7 +23,7 @@ const Body = () => {
   `);
 
   const paintings = [...data.allFile.edges]; // image sources: [2, 0, 1, 3];
-
+  
   return ( 
     <BodyContainer>
       <SkillsContainer>
