@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from 'styled-components';
 
 import Project from '../components/Project';
+import ProjectFooter from '../components/ProjectFooter';
+import Footer from '../components/Footer';
 
 const Mindful = () => {
   const details = `
@@ -50,6 +51,8 @@ const Mindful = () => {
         tech={tech}
         lessons={lessons}
       />
+      <ProjectFooter keyword="mindful" />
+      <Footer />
     </div>
   )
 }

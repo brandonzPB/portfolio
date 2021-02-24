@@ -1,7 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby';
-import { Img } from 'gatsby-image';
-import styled from 'styled-components';
 
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
@@ -51,7 +48,7 @@ const Creatures = () => {
         tech={tech}
         lessons={lessons}
       />
-      <ProjectFooter />
+      <ProjectFooter keyword="creatures" />
       <Footer />
     </div>
   )

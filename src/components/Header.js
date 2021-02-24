@@ -45,18 +45,23 @@ const Header = () => {
           <Image key={banner.key} fluid={banner.fluid} />
         </ImageContainer>
 
-        <DescContainer>
-          <p>I am a passionate Stoic who loves using code to build elegant, useful, and enjoyable experiences.</p>
-          <p>Code is like an infinite pile of legos with each piece being made at the will of my imagination. (inspired by V. Anton Spraul).</p>
-          <p>
-            Although I haven't received any formal training in programming, 
-            I don't like to call myself a "self-taught" programmer
-            because it would be a disservice to the incredible online resources that are
-            available to almost anyone with a computer. I've used most of my free time
-            (I'm studying economics and data science at UCLA) to study, practice, and build as much as I possibly can with code.
-            Why? Because it's hard to not want to.
-          </p>
-        </DescContainer>
+        <DetailsContainer>         
+          <ColOne>
+            <p>I am a passionate Stoic who loves using code to build elegant, useful, and enjoyable experiences.</p>
+            <p>Code is like an infinite pile of legos with each piece being made at the will of my imagination. (inspired by V. Anton Spraul).</p>
+          </ColOne>
+
+          <ColTwo>
+            <p>
+              Although I haven't received any formal training in programming, 
+              I don't like to call myself a "self-taught" programmer
+              because it would be a disservice to the incredible online resources that are
+              available to almost anyone with a computer. I've used most of my free time
+              (I'm studying economics and data science at UCLA) to study, practice, and build as much as I possibly can with code.
+              Why? Because it's hard to not want to.
+            </p>
+          </ColTwo>
+        </DetailsContainer>
       </HeaderContent>
     </HeaderContainer>
   )
@@ -116,7 +121,24 @@ const Image = styled(Img)`
   margin: 0 auto;
 `
 
-const DescContainer = styled.div`
+const DetailsContainer = styled.div`
   margin: 2rem auto;
   display: block;
+  columns: 2;
+  width: 100%;
+  border: 2px solid red;
+`
+
+const ColOne = styled.div`
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  border: 2px solid orange;
+`
+
+const ColTwo = styled.div`
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  border: 2px solid yellow;
 `

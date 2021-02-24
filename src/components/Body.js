@@ -22,8 +22,8 @@ const Body = () => {
     }
   `);
 
-  const paintings = [...data.allFile.edges]; // image sources: [2, 0, 1, 3];
-  
+  const paintings = [...data.allFile.edges];
+
   return ( 
     <BodyContainer>
       <SkillsContainer>
@@ -58,7 +58,7 @@ const Body = () => {
         <h1>Projects I've Made</h1>
         <ProjectContainer>
           <ProjectAnchor to="/creatures">
-            <ProjectThumbnail fluid={paintings[2].node.childImageSharp.fluid} key={1} className="thumbnail"></ProjectThumbnail>
+            <ProjectThumbnail fluid={paintings[2].node.childImageSharp.fluid} key={2} className="thumbnail"></ProjectThumbnail>
           </ProjectAnchor>
 
           <ProjectTitle></ProjectTitle>
@@ -68,7 +68,7 @@ const Body = () => {
 
         <ProjectContainer>
           <ProjectAnchor to="/mindful">
-            <ProjectThumbnail fluid={paintings[0].node.childImageSharp.fluid} key={2} className="thumbnail"></ProjectThumbnail>
+            <ProjectThumbnail fluid={paintings[1].node.childImageSharp.fluid} key={1} className="thumbnail"></ProjectThumbnail>
           </ProjectAnchor>
 
           <ProjectTitle></ProjectTitle>
