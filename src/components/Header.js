@@ -28,7 +28,8 @@ const Header = () => {
 
   const banner = {
     key: 0,
-    fluid: data.allFile.edges[0].node.childImageSharp.fluid
+    fluid: data.allFile.edges[0].node.childImageSharp.fluid,
+    src: data.allFile.edges[0].node.childImageSharp.fluid.src,
   };
 
   return (
@@ -50,7 +51,7 @@ const Header = () => {
         </TextContainer>
 
         <ImageContainer>
-          <Image key={banner.key} fluid={banner.fluid} />
+          <Image key={banner.key} fluid={banner.fluid} src={banner.src} alt="Picture of me" />
         </ImageContainer>
 
         <DetailsContainer>         
