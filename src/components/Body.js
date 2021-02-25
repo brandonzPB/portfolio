@@ -4,6 +4,10 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import { DiReact, DiHtml5, DiSass, DiBootstrap, DiNodejsSmall, DiPhotoshop } from 'react-icons/di';
+import { SiRedux, SiGatsby, SiGraphql, SiMongodb, SiPython, SiJupyter, SiHeroku, SiJest } from 'react-icons/si';
+import { GoPrimitiveDot } from 'react-icons/go';
+
 const Body = () => {
   const data = useStaticQuery(graphql`
     query MyPaintings {
@@ -30,26 +34,75 @@ const Body = () => {
         <h1>My Skills</h1>
         <SkillsList>
           <ul>
-            <li>React (JavaScript and TypeScript)</li>
-            <li>React Context API and Redux</li>
-            <li>Gatsby Styled Components</li>
-            <li>GraphQL</li>
+            <li>
+              <DiReact id="react" className="icon" />
+              <span className="list-text">React</span>
+            </li>
+            <li>
+              <SiRedux id="redux" className="icon" />
+              <span className="list-text">React Context API / Redux</span>
+            </li>
+            <li>
+              <SiGatsby id="gatsby" className="icon" />
+              <span className="list-text">Gatsby Styled Components</span>
+            </li>
+            <li>
+              <SiGraphql id="graphql" className="icon" />
+              <span className="list-text">GraphQL</span>
+            </li>
           </ul>
+            
           <ul>
-          <li>Bootstrap</li>
-            <li>Sass</li>
-            <li>HTML5</li>
-            <li>NodeJS</li>
+            <li>
+              <DiBootstrap id="bootstrap" className="icon" />
+              <span className="list-text">Bootstrap</span>
+            </li>
+            <li>
+              <DiSass id="sass" className="icon" />
+              <span className="list-text">Sass</span>
+            </li>
+            <li>
+              <DiHtml5 id="html" className="icon" />
+              <span className="list-text">HTML5</span>
+            </li>
+            <li>
+              <DiNodejsSmall id="node" className="icon" />
+              <span className="list-text">NodeJS</span>
+            </li>
           </ul>
+
           <ul>
-            <li>Express</li>
-            <li>MongoDB</li>
-            <li>Heroku</li>
-            <li>Python</li>
+            <li>
+              <GoPrimitiveDot id="express" className="icon" />
+              <span className="list-text">Express</span>
+            </li>
+            <li>
+              <SiMongodb id="mongo" className="icon" />
+              <span className="list-text">MongoDB</span>
+            </li>
+            <li>
+              <SiJest id="jest" className="icon" />
+              <span className="list-text">Jest</span>
+            </li>
+            <li>
+              <SiPython id="python" className="icon" />
+              <span className="list-text">Python</span>
+            </li>
           </ul>
+
           <ul>
-            <li>Jupyter Notebooks</li>
-            <li>Adobe Photoshop</li>
+            <li>
+              <SiHeroku id="heroku" className="icon" />
+              <span className="list-text">Heroku</span>
+            </li>
+            <li>
+              <SiJupyter id="jupyter" className="icon" />
+              <span className="list-text">Jupyter Notebooks</span>
+            </li>
+            <li>
+              <DiPhotoshop id="photoshop" className="icon" />
+              <span className="list-text">Adobe Photoshop</span>
+            </li>
           </ul>
         </SkillsList>
       </SkillsContainer>
@@ -93,23 +146,100 @@ const Body = () => {
 export default Body
 
 const BodyContainer = styled.div`
-  margin: 0 auto;
+  margin: 0 7rem;
   display: block;
-  border: 2px solid black;
 `
 
 const SkillsContainer = styled.div`
-  border: 2px solid red;
-  margin: 0 5rem;
+  margin: 5rem auto;
+  width: 100%;
+
+  @media screen and (max-width: 700px) {
+    border: 2px solid red;
+    display: block;
+  }
 `
 
 const SkillsList = styled.div`
-  margin: 0 auto;
-  columns: 4;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  border: 2px solid red;
+
+  @media screen and (max-width: 700px) {
+    display: block;
+  }
+
+  ul {
+    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    border: 2px solid black;
+
+    @media screen and (max-width: 700px) {
+      height: auto;
+      padding: 0 1.5rem;
+      width: auto;
+      display: block;
+    }
+  }
 
   li {
     list-style-type: none;
+    margin: 0.5rem auto;
+    text-align: left;
+
+    @media screen and (max-width: 700px) {
+      list-style-type: disc;
+    }
   }
+
+  .list-text {}
+
+  .icon { font-size: 0.75rem; margin: 0 1rem; }
+
+  @media screen and (max-width: 700px) {
+    .icon {
+      display: none;
+    }
+  }
+
+  #react { color: #48CEF7; }
+
+  #redux { color: #7E5ABB; }
+
+  #gatsby { color: #663399; }
+
+  #graphql { color: #DE33A6; }
+
+  #bootstrap { color: #533B78; }
+
+  #sass { color: #C76494; }
+
+  #html { color: #DD4B25; }
+
+  #node { color: #93B74C; }
+
+  #express { color: #5896CE; }
+
+  #mongo { color: #52A74B; }
+
+  #jest { color: #BC1224; }
+
+  #heroku { color: #5D1BB3; }
+
+  #python { color: #F7DC78; }
+
+  #jupyter { color: #F37726; }
+
+  #photoshop { color: #001D34; }
 `
 
 const ProjectsContainer = styled.div``
