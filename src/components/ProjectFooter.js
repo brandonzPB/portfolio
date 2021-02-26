@@ -4,6 +4,9 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import 'fontsource-playfair-display/600.css';
+import 'fontsource-open-sans';
+
 const ProjectFooter = ({ keyword }) => {
   const data = useStaticQuery(graphql`
     query Paintings {
@@ -30,27 +33,35 @@ const ProjectFooter = ({ keyword }) => {
 
   if (keyword === 'mindful') {
     paintings[1].link = '/Creatures';
+    paintings[1].title = 'Creatures of Habit';
     paintings[1].fluid = paintings[2].node.childImageSharp.fluid;
 
     paintings[2].link = '/Republic';
+    paintings[2].title = 'The Republic 310';
     paintings[2].fluid = paintings[3].node.childImageSharp.fluid;
   } else if (keyword === 'creatures') {
     paintings[1].link = '/Mindful'
+    paintings[1].title = 'mindful.io';
     paintings[1].fluid = paintings[1].node.childImageSharp.fluid;
 
     paintings[2].link = '/Republic';
+    paintings[2].title = 'The Republic 310';
     paintings[2].fluid = paintings[3].node.childImageSharp.fluid;
   } else if (keyword === 'battleship') {
     paintings[1].link = '/Creatures';
+    paintings[1].title = 'Creatures of Habit';
     paintings[1].fluid = paintings[2].node.childImageSharp.fluid;
 
     paintings[2].link = '/Republic';
+    paintings[2].title = 'The Republic 310';
     paintings[2].fluid = paintings[3].node.childImageSharp.fluid;
   } else if (keyword === 'republic') {
     paintings[1].link = '/Creatures';
+    paintings[1].title = 'Creatures of Habit';
     paintings[1].fluid = paintings[2].node.childImageSharp.fluid;
 
     paintings[2].link = '/Mindful';
+    paintings[2].title = 'mindful.io';
     paintings[2].fluid = paintings[1].node.childImageSharp.fluid;
   }
 
@@ -66,8 +77,7 @@ const ProjectFooter = ({ keyword }) => {
             <ProjectThumbnail fluid={paintings[1].node.childImageSharp.fluid} key={1} className="thumbnail"></ProjectThumbnail>
           </ProjectAnchor>
 
-          <ProjectTitle></ProjectTitle>
-          <ProjectDetails></ProjectDetails>
+          <ProjectTitle>{paintings[1].title}</ProjectTitle>
           <ProjectLink to={paintings[1].link}></ProjectLink>
         </ProjectContainer>
 
@@ -76,8 +86,7 @@ const ProjectFooter = ({ keyword }) => {
             <ProjectThumbnail fluid={paintings[2].node.childImageSharp.fluid} key={2} className="thumbnail"></ProjectThumbnail>
           </ProjectAnchor>
 
-          <ProjectTitle></ProjectTitle>
-          <ProjectDetails></ProjectDetails>
+          <ProjectTitle>{paintings[2].title}</ProjectTitle>
           <ProjectLink to={paintings[2].link}></ProjectLink>
         </ProjectContainer>
       </FooterContent>
@@ -87,20 +96,39 @@ const ProjectFooter = ({ keyword }) => {
 
 export default ProjectFooter
 
-const FooterContainer = styled.div``
+const FooterContainer = styled.div`
+  display: block;
+  margin: 0 7rem;
+`
 
-const FooterHeadline = styled.div``
+const FooterHeadline = styled.div`
+  font-family: 'Playfair Display', sans-serif;
+  margin: 2rem auto;
+  display: block;
+`
 
-const FooterContent = styled.div``
+const FooterContent = styled.div`
+  margin: 0 auto;
+  display: grid;
+  border: 2px solid red;
+  grid-template-columns: 1fr 1fr;
 
-const ProjectContainer = styled.div``
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+`
+
+const ProjectContainer = styled.div`
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+`
 
 const ProjectAnchor = styled(Link)``
 
-const ProjectThumbnail = styled(Img)``
+const ProjectThumbnail = styled(Img)`
+`
 
 const ProjectTitle = styled.h3``
-
-const ProjectDetails = styled.p``
 
 const ProjectLink = styled(Link)``

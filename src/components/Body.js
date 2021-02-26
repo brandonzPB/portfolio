@@ -7,6 +7,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { DiReact, DiHtml5, DiSass, DiBootstrap, DiNodejsSmall, DiPhotoshop } from 'react-icons/di';
 import { SiRedux, SiGatsby, SiGraphql, SiMongodb, SiPython, SiJupyter, SiHeroku, SiJest } from 'react-icons/si';
 import { GoPrimitiveDot } from 'react-icons/go';
+import { GiTriforce } from 'react-icons/gi';
+
+import 'fontsource-playfair-display/600.css';
+import 'fontsource-open-sans';
 
 const Body = () => {
   const data = useStaticQuery(graphql`
@@ -122,53 +126,58 @@ const Body = () => {
         </SkillsListContainer>
       </SkillsContainer>
 
-      <ProjectList>
+      <ProjectSection>
         <h1>Projects I've Made</h1>
-        <ProjectContainer>
-          <ProjectAnchor to="/Creatures">
-            <ProjectThumbnail
-              fluid={paintings[2].node.childImageSharp.fluid} 
-              src={paintings[2].node.childImageSharp.fluid.src}
-              key={2} 
-              className="thumbnail">
-            </ProjectThumbnail>
-          </ProjectAnchor>
 
-          <ProjectTitle>Creatures of Habit</ProjectTitle>
-          <ProjectDetails>I made this project to help users quantify areas of their life that are intrinsically qualitative (e.g., mental health).</ProjectDetails>
-          <ProjectLink to="/Creatures">View Project</ProjectLink>
-        </ProjectContainer>
+        <ProjectList>
+          <ProjectContainer>
+            <ProjectAnchor to="/Creatures">
+              <ProjectThumbnail
+                fluid={paintings[2].node.childImageSharp.fluid} 
+                src={paintings[2].node.childImageSharp.fluid.src}
+                key={2} 
+                className="thumbnail">
+              </ProjectThumbnail>
+            </ProjectAnchor>
 
-        <ProjectContainer>
-          <ProjectAnchor to="/Mindful">
-            <ProjectThumbnail 
-              fluid={paintings[1].node.childImageSharp.fluid} 
-              src={paintings[1].node.childImageSharp.fluid.src}
-              key={1} 
-              className="thumbnail">
-            </ProjectThumbnail>
-          </ProjectAnchor>
+            <ProjectTitle>Creatures of Habit</ProjectTitle>
+            <ProjectDetails>
+              I made this project to help users quantify areas of their life that are intrinsically qualitative (e.g., mental health).
+            </ProjectDetails>
+            <ProjectLink to="/Creatures">View Project</ProjectLink>
+          </ProjectContainer>
 
-          <ProjectTitle>mindful.io</ProjectTitle>
-          <ProjectDetails>I made this project for the purpose of helping users to become more mindful in their daily life.</ProjectDetails>
-          <ProjectLink to="/Mindful">View Project</ProjectLink>
-        </ProjectContainer>
+          <ProjectContainer>
+            <ProjectAnchor to="/Mindful">
+              <ProjectThumbnail 
+                fluid={paintings[1].node.childImageSharp.fluid} 
+                src={paintings[1].node.childImageSharp.fluid.src}
+                key={1} 
+                className="thumbnail">
+              </ProjectThumbnail>
+            </ProjectAnchor>
 
-        <ProjectContainer>
-          <ProjectAnchor to="/Battleship">
-            <ProjectThumbnail 
-              fluid={paintings[3].node.childImageSharp.fluid} 
-              src={paintings[3].node.childImageSharp.fluid.src}
-              key={3} 
-              className="thumbnail">
-            </ProjectThumbnail>
-          </ProjectAnchor>
+            <ProjectTitle>mindful.io</ProjectTitle>
+            <ProjectDetails>I made this project for the purpose of helping users to become more mindful in their daily life.</ProjectDetails>
+            <ProjectLink to="/Mindful">View Project</ProjectLink>
+          </ProjectContainer>
 
-          <ProjectTitle>Battleship</ProjectTitle>
-          <ProjectDetails>This was the first project I made solely for the purpose of putting my skills into practice.</ProjectDetails>
-          <ProjectLink to="/Battleship">View Project</ProjectLink>
-        </ProjectContainer>
-      </ProjectList>
+          <ProjectContainer>
+            <ProjectAnchor to="/Battleship">
+              <ProjectThumbnail 
+                fluid={paintings[3].node.childImageSharp.fluid} 
+                src={paintings[3].node.childImageSharp.fluid.src}
+                key={3} 
+                className="thumbnail">
+              </ProjectThumbnail>
+            </ProjectAnchor>
+
+            <ProjectTitle>Battleship</ProjectTitle>
+            <ProjectDetails>This was the first project I made solely for the purpose of putting my skills into practice.</ProjectDetails>
+            <ProjectLink to="/Battleship">View Project</ProjectLink>
+          </ProjectContainer>
+        </ProjectList>
+      </ProjectSection>
     </BodyContainer>
   )
 }
@@ -187,6 +196,10 @@ const BodyContainer = styled.div`
 const SkillsContainer = styled.div`
   margin: 5rem auto;
   width: 100%;
+
+  h1 {
+    font-family: 'Playfair Display', sans-serif;
+  }
 
   @media screen and (max-width: 700px) {
     display: block;
@@ -221,6 +234,7 @@ const SkillsListContainer = styled.div`
     list-style-type: none;
     margin: 0.5rem auto;
     text-align: left;
+    font-family: 'Open Sans', sans-serif;
 
     .list-type { display: none; }
 
@@ -275,15 +289,14 @@ const SkillsListContainer = styled.div`
   #photoshop { color: #001D34; }
 `
 
-const ProjectList = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+const ProjectSection = styled.div`
+  display: block;
   margin: 0 auto;
-  border: 2px solid red;
   text-align: center;
 
   h1 {
     text-align: left;
+    font-family: 'Playfair Display', sans-serif;
   }
 
   @media screen and (max-width: 700px) {
@@ -291,32 +304,73 @@ const ProjectList = styled.div`
   }
 `
 
+const ProjectList = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+`
+
 const ProjectContainer = styled.div`
   display: block;
-  border: 2px solid black;
   text-align: center;
+  margin: 2rem auto;
+  height: auto;
+  width: auto;
+  font-family: 'Open Sans', sans-serif;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const ProjectAnchor = styled(Link)``
 
 const ProjectThumbnail = styled(Img)`
-  height: auto;
+  height: 75%;
   width: 75%;
   margin: 1rem auto;
+  border-radius: 5px;
+  box-shadow: 0 3px 8px black;
+
+  @media screen and (max-width: 500px) {
+    height: auto;
+    display: block;
+  }
 `
 
-const ProjectTitle = styled.h3``
+const ProjectTitle = styled.h3`
+  margin: 2rem 0 0 0;
+  font-size: 1.5rem;
+`
 
-const ProjectDetails = styled.p``
+const ProjectDetails = styled.p`
+  line-height: 1.25rem;
+  margin: 1rem auto;
+  width: 90%;
+  text-align: center;
+`
 
 const ProjectLink = styled(Link)`
   color: #0070b7;
+  transition: border-bottom 0.3s ease 0s;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
 
-  &:visited {
+  &:visited, &:link {
     color: #0070b7;
   }
 
   &:hover {
     color: #48CEF7;
+    border-bottom: 2px solid #48cef7; 
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.25rem;
   }
 `

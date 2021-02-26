@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
 import { AiFillGithub } from 'react-icons/ai';
+import { FaYoutube, FaTwitterSquare } from 'react-icons/fa';
 import { Link } from 'gatsby';
+
+import 'fontsource-playfair-display/600.css';
+import 'fontsource-open-sans';
 
 const Footer = () => {
   return (
@@ -11,7 +15,7 @@ const Footer = () => {
           Let's 
           <span id="gold-text"> Create </span>
           Something Awesome 
-          <span id="gold-text">Together</span>
+          <span id="gold-text"> Together</span>
         </h1>
       </FooterHeadline>
 
@@ -22,9 +26,14 @@ const Footer = () => {
 
       <FooterSocials>
         <a href="https://github.com/brandonzpb" target="_blank" rel="noreferrer" id="github-link">
-          <AiFillGithub id="github" />
+          <AiFillGithub id="github" className="icon" />
         </a>
-        <p>youtube/instagram/twitter</p>
+        <a href="" target="_blank" rel="noreferrer">
+          <FaYoutube id="youtube" className="icon" />
+        </a>
+        <a href="" target="_blank" rel="noreferrer">
+          <FaTwitterSquare id="twitter" className="icon" />
+        </a>
       </FooterSocials>
     </FooterContainer>
   )
@@ -33,24 +42,89 @@ const Footer = () => {
 export default Footer
 
 const FooterContainer = styled.div`
-  
+  display: block;
+  margin: 7rem 2rem;
+
+  @media screen and (max-width: 500px) {
+    margin: 2rem;
+  }
 `
 
 const FooterHeadline = styled.div`
+  margin: 1rem auto;
+  font-family: 'Playfair Display', sans-serif;
+
   #gold-text {
     color: #fecc27;
   }
 `
 
-const FooterDesc = styled.div``
+const FooterDesc = styled.div`
+  font-size: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
 
-const FooterSocials = styled.div`
-  #github-link {
+  a:link, a:visited {
+    color: #0070b7;
+    text-decoration: none;
   }
 
-  #github-link:hover {
+  a {
+    border-bottom: 2px solid #0070b7;
+    transition: border-bottom 0.3s ease 0s;
+  }
+
+  a:hover {
+    color: #48CEF7;
+    border-bottom: transparent;
+  }
+`
+
+const FooterSocials = styled.div`
+  display: block;
+  margin: 2rem auto;
+  float: right;
+
+  .icon {
+    margin: 0 1rem;
+    display: inline-block;
   }
 
   #github {
+    color: black;
+    font-size: 1.5rem;
+    transition: transform 0.5s ease 0;
+  }
+
+  #github:hover {
+    color: #333;
+    transform: scale(1.1);
+  }
+
+  #youtube {
+    color: #FF0000;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease 0;
+  }
+
+  #youtube:hover {
+    color: #FF143D;
+    transform: scale(1.1);
+  }
+
+  #twitter {
+    color: #00A2F3;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease 0;
+  }
+
+  #twitter:hover {
+    color: #48CEF7;
+    transform: scale(1.1);
+  }
+
+  @media screen and (max-width: 500px) {
+    .icon {
+      font-size: 2rem;
+    }
   }
 `

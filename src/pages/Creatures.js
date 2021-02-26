@@ -1,10 +1,29 @@
 import React from 'react'
+import { useStaticQuery, graphql, useScrollRestoration } from 'gatsby';
 
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
 import Footer from '../components/Footer';
+import { GlobalStyle } from '../components/styles/GlobalStyle';
 
 const Creatures = () => {
+  const data = useStaticQuery(graphql`
+    query MyCreatures {
+      allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
+        name: {in: ["creatures-0", "creatures-1"]}}) {
+        edges {
+          node {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }      
+  `);
+
   const details = `
     The project that started it all. 
     I wanted a way to quantify areas of my life that are inherently qualitative (e.g., mental health, philosophy, etc.). 
@@ -38,7 +57,8 @@ const Creatures = () => {
   `;
 
   return (
-    <div>
+    <>
+      <GlobalStyle />
       <Project 
         title="Creatures of Habit"
         details={details}
@@ -47,10 +67,11 @@ const Creatures = () => {
         purpose={purpose}
         tech={tech}
         lessons={lessons}
+        data={data}
       />
       <ProjectFooter keyword="creatures" />
       <Footer />
-    </div>
+    </>
   )
 }
 

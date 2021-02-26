@@ -7,7 +7,7 @@ import Creatures from './Creatures';
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Brandon Zirulnikoff" />
   </Layout>
 )
 
