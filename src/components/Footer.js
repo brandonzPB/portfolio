@@ -62,6 +62,7 @@ const FooterHeadline = styled.div`
 const FooterDesc = styled.div`
   font-size: 1.25rem;
   font-family: 'Open Sans', sans-serif;
+  line-height: 2.5rem;
 
   a:link, a:visited {
     color: #0070b7;
@@ -124,7 +125,11 @@ const FooterSocials = styled.div`
 
   @media screen and (max-width: 500px) {
     .icon {
-      font-size: 2rem;
+      font-size: 3rem;
     }
+
+    float: none;
+    display: block;
+    text-align: center;
   }
 `

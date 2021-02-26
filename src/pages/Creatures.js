@@ -56,6 +56,12 @@ const Creatures = () => {
     works for me, how to mitigate my weaknesses, and make great use of my strengths. I used this plan when creating mindful.io.
   `;
 
+  const alt1 = 'A serene painting of a light blue sky, a grassy field, and the ocean';
+  
+  const alt2 = `Screenshot of the Creatures of Habit app; 
+    a Pokemon called Porygon with a nickname of duck.js has various habits, 
+    such as studying and practing`;
+
   return (
     <>
       <GlobalStyle />
@@ -68,6 +74,8 @@ const Creatures = () => {
         tech={tech}
         lessons={lessons}
         data={data}
+        alt1={alt1}
+        alt2={alt2}
       />
       <ProjectFooter keyword="creatures" />
       <Footer />

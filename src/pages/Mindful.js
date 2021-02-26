@@ -1,10 +1,29 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
 import Footer from '../components/Footer';
+import { GlobalStyle } from '../components/styles/GlobalStyle';
 
 const Mindful = () => {
+  const data = useStaticQuery(graphql`
+    query MyMindful {
+      allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
+        name: {in: ["mindful-0", "mindful-1"]}}) {
+        edges {
+          node {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+        }
+      }
+    }  
+  `);
+
   const details = `
     I wanted the utility of this project to as simple as possible, since I wanted as many people as possible to benefit from it. 
     Mindful.io provides links to guided meditation apps and videos, information on mindfulness and meditation, including benefits, 
@@ -40,8 +59,15 @@ const Mindful = () => {
     I used these lessons and principles when designing The Republic 310, as well.
   `;
 
+  const alt1 = 'Peaceful image with black stones and bamboo in the background';
+
+  const alt2 = `Screenshot of the mindful.io app; 
+    a dashboard with a circular modal with app icons in the center. 
+    Text says, 'Hover over one of the icons!'`;
+
   return (
-    <div>
+    <>
+      <GlobalStyle />
       <Project 
         title="mindful.io"
         details={details}
@@ -50,10 +76,13 @@ const Mindful = () => {
         purpose={purpose}
         tech={tech}
         lessons={lessons}
+        data={data}
+        alt1={alt1}
+        alt2={alt2}
       />
       <ProjectFooter keyword="mindful" />
       <Footer />
-    </div>
+    </>
   )
 }
 

@@ -7,7 +7,7 @@ import 'fontsource-open-sans';
 
 import { CgPokemon } from 'react-icons/cg';
 
-const Project = ({ title, details, stack, link, purpose, tech, lessons, data }) => {
+const Project = ({ title, details, stack, link, purpose, tech, lessons, data, alt1, alt2 }) => {
   const stackComponents = stack.map((tech, index) => {
     return (
       <li key={index}>
@@ -20,7 +20,13 @@ const Project = ({ title, details, stack, link, purpose, tech, lessons, data }) 
   const thumbnail = {
     src: data.allFile.edges[0].node.childImageSharp.fluid.src,
     fluid: data.allFile.edges[0].node.childImageSharp.fluid,
-    alt: "A serene painting of a light blue sky, a grassy field, and the ocean"
+    alt: alt1
+  };
+
+  const screenshot = {
+    src: data.allFile.edges[1].node.childImageSharp.fluid.src,
+    fluid: data.allFile.edges[1].node.childImageSharp.fluid,
+    alt: alt2
   };
   
   return (
@@ -39,12 +45,22 @@ const Project = ({ title, details, stack, link, purpose, tech, lessons, data }) 
         </ListContainer>
         
         <LinkContainer>
-          <Thumbnail src={thumbnail.src} fluid={thumbnail.fluid} alt={thumbnail.alt} />
+          <a href={link} target="_blank" rel="noreferrer">
+            <Thumbnail src={thumbnail.src} fluid={thumbnail.fluid} alt={thumbnail.alt} />
+          </a>
           <a href={link} target="_blank" rel="noreferrer">
             <span id="project-link">View Live</span>
           </a>
         </LinkContainer>
       </DetailsContainer>
+
+      <ImageContainer>
+        <Screenshot
+          fluid={screenshot.fluid}
+          src={screenshot.src}
+          alt={screenshot.alt}>
+        </Screenshot>
+      </ImageContainer>
 
       <StoryContainer>
         <PurposeContainer>
@@ -158,6 +174,21 @@ const Thumbnail = styled(Img)`
   @media screen and (max-width: 500px) {
     width: 100%;
   }
+`
+
+const ImageContainer = styled.div`
+  margin: 4rem auto;
+  display: block;
+
+  @media screen and (max-width: 500px) {
+    display: none;
+  }
+`
+
+const Screenshot = styled(Img)`
+  display: block;
+  margin: 0 auto;
+  width: 75%;
 `
 
 const StoryContainer = styled.div`
