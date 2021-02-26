@@ -53,6 +53,7 @@ const FooterContainer = styled.div`
 const FooterHeadline = styled.div`
   margin: 1rem auto;
   font-family: 'Playfair Display', sans-serif;
+  color: #36434d;
 
   #gold-text {
     color: #fecc27;
@@ -63,6 +64,7 @@ const FooterDesc = styled.div`
   font-size: 1.25rem;
   font-family: 'Open Sans', sans-serif;
   line-height: 2.5rem;
+  color: #828282;
 
   a:link, a:visited {
     color: #0070b7;

@@ -199,6 +199,7 @@ const SkillsContainer = styled.div`
 
   h1 {
     font-family: 'Playfair Display', sans-serif;
+    color: #36434d;
   }
 
   @media screen and (max-width: 700px) {
@@ -235,6 +236,7 @@ const SkillsListContainer = styled.div`
     margin: 0.5rem auto;
     text-align: left;
     font-family: 'Open Sans', sans-serif;
+    color: #828282;
 
     .list-type { display: none; }
 
@@ -297,6 +299,7 @@ const ProjectSection = styled.div`
   h1 {
     text-align: left;
     font-family: 'Playfair Display', sans-serif;
+    color: #36434d;
   }
 
   @media screen and (max-width: 700px) {
@@ -317,7 +320,7 @@ const ProjectList = styled.div`
 const ProjectContainer = styled.div`
   display: block;
   text-align: center;
-  margin: 2rem auto;
+  margin: 2rem auto 4rem auto;
   height: auto;
   width: auto;
   font-family: 'Open Sans', sans-serif;
@@ -346,6 +349,7 @@ const ProjectThumbnail = styled(Img)`
 const ProjectTitle = styled.h3`
   margin: 2rem 0 0 0;
   font-size: 1.5rem;
+  color: #36434d;
 `
 
 const ProjectDetails = styled.p`
@@ -353,6 +357,7 @@ const ProjectDetails = styled.p`
   margin: 1rem auto;
   width: 90%;
   text-align: center;
+  color: #828282;
 `
 
 const ProjectLink = styled(Link)`

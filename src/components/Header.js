@@ -112,6 +112,7 @@ const TextContainer = styled.div`
   margin: 0 2rem;
   font-size: 2rem;
   font-family: 'Playfair Display', sans-serif;
+  color: #36434d;
 
   #mobile {
     display: none;
@@ -154,6 +155,7 @@ const DetailsContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+  color: #828282;
 
   @media screen and (max-width: 700px) {
     grid-template-columns: 1fr;
