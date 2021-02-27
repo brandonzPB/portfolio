@@ -33,8 +33,6 @@ const Project = ({ title, details, stack, link, purpose, tech, lessons, data, al
     fluid: data.allFile.edges[0].node.childImageSharp.fluid,
     alt: alt2
   };
-
-  console.log('data', data)
   
   return (
     <ProjectContainer>

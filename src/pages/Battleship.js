@@ -28,7 +28,7 @@ const Battleship = () => {
     putting my skills and knowledge into practice. I included it in my portfolio to show the progress I've made
     since starting in June 2020.`;
 
-  const stack = ['HTML', 'CSS', 'React', 'vanilla JavaScript'];
+  const stack = ['HTML', 'CSS', 'React', 'React Context API', 'vanilla JavaScript'];
 
   const link = 'https://brandonzpb.github.io/battleship';
 

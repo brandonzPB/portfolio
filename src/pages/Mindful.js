@@ -32,7 +32,7 @@ const Mindful = () => {
     my friends, family, and classmates (and myself). 
   `;
 
-  const stack = ['React', 'CSS', 'vanilla JavaScript'];
+  const stack = ['React', 'React Context API', 'CSS', 'vanilla JavaScript'];
 
   const link = 'https://brandonzpb.github.io/mindful';
 

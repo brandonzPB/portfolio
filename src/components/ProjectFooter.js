@@ -11,7 +11,7 @@ const ProjectFooter = ({ keyword }) => {
   const data = useStaticQuery(graphql`
     query Paintings {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
-        name: {in: ["painting-0", "painting-1", "painting-2", "painting-3"]}}) {
+        name: {in: ["painting-1", "painting-2", "painting-3"]}}) {
         edges {
           node {
             childImageSharp {
@@ -25,7 +25,7 @@ const ProjectFooter = ({ keyword }) => {
     }
   `);
 
-  const paintings = [...data.allFile.edges]; // === [frame, mindful, creatures, battleship, republic]
+  const paintings = [...data.allFile.edges]; // === [creatures, mindful, battleship, republic]
 
   /*
     BELOW: CHANGE 2 TO 3 (ON FLUID REASSIGNMENT)
