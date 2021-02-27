@@ -79,6 +79,7 @@ const Mindful = () => {
         data={data}
         alt1={alt1}
         alt2={alt2}
+        icon="mindful"
       />
       <ProjectFooter keyword="mindful" />
       <Footer />

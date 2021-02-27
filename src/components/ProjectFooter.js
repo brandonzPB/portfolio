@@ -28,60 +28,62 @@ const ProjectFooter = ({ keyword }) => {
   const paintings = [...data.allFile.edges]; // === [frame, mindful, creatures, battleship, republic]
 
   /*
-    BELOW: CHANGE 3 TO 4 (ON FLUID REASSIGNMENT)
+    BELOW: CHANGE 2 TO 3 (ON FLUID REASSIGNMENT)
   */
 
   const mindfulAlt = 'Peaceful image with black stones and bamboo in the background';
   const creaturesAlt = 'Serene painting of a light blue sky, a grassy field, and the ocean in between';
+  const battleshipAlt = 'Painting of a submarine underwater';
   const republicAlt = '';
 
+  // change battleship to republic
   if (keyword === 'mindful') {
     paintings[1].link = '/Creatures';
     paintings[1].title = 'Creatures of Habit';
-    paintings[1].fluid = paintings[2].node.childImageSharp.fluid;
-    paintings[1].src = paintings[2].node.childImageSharp.fluid.src;
+    paintings[1].fluid = paintings[0].node.childImageSharp.fluid;
+    paintings[1].src = paintings[0].node.childImageSharp.fluid.src;
     paintings[1].alt = creaturesAlt;
 
-    paintings[2].link = '/Republic';
-    paintings[2].title = 'The Republic 310';
-    paintings[2].fluid = paintings[3].node.childImageSharp.fluid;
-    paintings[2].src = paintings[3].node.childImageSharp.fluid.src;
+    paintings[2].link = '/Battleship';
+    paintings[2].title = 'Battleship';
+    paintings[2].fluid = paintings[1].node.childImageSharp.fluid;
+    paintings[2].src = paintings[1].node.childImageSharp.fluid.src;
     paintings[2].alt = republicAlt;
   } else if (keyword === 'creatures') {
     paintings[1].link = '/Mindful'
     paintings[1].title = 'mindful.io';
-    paintings[1].fluid = paintings[1].node.childImageSharp.fluid;
-    paintings[1].src = paintings[1].node.childImageSharp.fluid.src;
+    paintings[1].fluid = paintings[2].node.childImageSharp.fluid;
+    paintings[1].src = paintings[2].node.childImageSharp.fluid.src;
     paintings[1].alt = mindfulAlt;
 
-    paintings[2].link = '/Republic';
-    paintings[2].title = 'The Republic 310';
-    paintings[2].fluid = paintings[3].node.childImageSharp.fluid;
-    paintings[2].src = paintings[3].node.childImageSharp.fluid.src;
+    paintings[2].link = '/Battleship';
+    paintings[2].title = 'Battleship';
+    paintings[2].fluid = paintings[1].node.childImageSharp.fluid;
+    paintings[2].src = paintings[1].node.childImageSharp.fluid.src;
     paintings[2].alt = republicAlt;
   } else if (keyword === 'battleship') {
     paintings[1].link = '/Creatures';
     paintings[1].title = 'Creatures of Habit';
-    paintings[1].fluid = paintings[2].node.childImageSharp.fluid;
-    paintings[1].src = paintings[2].node.childImageSharp.fluid.src;
-    paintings[1].alt = creaturesAlt;
-
-    paintings[2].link = '/Republic';
-    paintings[2].title = 'The Republic 310';
-    paintings[2].fluid = paintings[3].node.childImageSharp.fluid;
-    paintings[2].src = paintings[3].node.childImageSharp.fluid.src;
-    paintings[2].alt = republicAlt;
-  } else if (keyword === 'republic') {
-    paintings[1].link = '/Creatures';
-    paintings[1].title = 'Creatures of Habit';
-    paintings[1].fluid = paintings[2].node.childImageSharp.fluid;
-    paintings[1].src = paintings[2].node.childImageSharp.fluid.src;
+    paintings[1].fluid = paintings[0].node.childImageSharp.fluid;
+    paintings[1].src = paintings[0].node.childImageSharp.fluid.src;
     paintings[1].alt = creaturesAlt;
 
     paintings[2].link = '/Mindful';
     paintings[2].title = 'mindful.io';
-    paintings[2].fluid = paintings[1].node.childImageSharp.fluid;
-    paintings[2].src = paintings[1].node.childImageSharp.fluid.src;
+    paintings[2].fluid = paintings[2].node.childImageSharp.fluid;
+    paintings[2].src = paintings[2].node.childImageSharp.fluid.src;
+    paintings[2].alt = battleshipAlt;
+  } else if (keyword === 'republic') {
+    paintings[1].link = '/Creatures';
+    paintings[1].title = 'Creatures of Habit';
+    paintings[1].fluid = paintings[0].node.childImageSharp.fluid;
+    paintings[1].src = paintings[0].node.childImageSharp.fluid.src;
+    paintings[1].alt = creaturesAlt;
+
+    paintings[2].link = '/Mindful';
+    paintings[2].title = 'mindful.io';
+    paintings[2].fluid = paintings[2].node.childImageSharp.fluid;
+    paintings[2].src = paintings[2].node.childImageSharp.fluid.src;
     paintings[2].alt = mindfulAlt;
   }
 
@@ -169,7 +171,8 @@ const ProjectContainer = styled.div`
   }
 `
 
-const ProjectAnchor = styled(Link)``
+const ProjectAnchor = styled(Link)`
+`
 
 const ProjectThumbnail = styled(Img)`
   width: 25rem;
@@ -177,6 +180,12 @@ const ProjectThumbnail = styled(Img)`
   margin: 0 auto;
   border-radius: 5px;
   box-shadow: 0 3px 8px black;
+  transition: transform 0.3s;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   @media screen and (max-width: 500px) {
     width: 100%;

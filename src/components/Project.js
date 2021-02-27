@@ -7,12 +7,16 @@ import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
 
 import { CgPokemon } from 'react-icons/cg';
+import { FaPeace } from 'react-icons/fa';
+import { GiBattleship } from 'react-icons/gi';
 
-const Project = ({ title, details, stack, link, purpose, tech, lessons, data, alt1, alt2 }) => {
+const Project = ({ title, details, stack, link, purpose, tech, lessons, data, alt1, alt2, icon }) => {
   const stackComponents = stack.map((tech, index) => {
     return (
       <li key={index}>
-        <CgPokemon className="list-o" />
+        <CgPokemon className="list-o" style={{ display: icon === 'creatures' ? 'inline-block' : 'none' }} />
+        <FaPeace className="list-o" style={{ display: icon === 'mindful' ? 'inline-block' : 'none' }} />
+        <GiBattleship className="list-o" style={{ display: icon === 'battleship' ? 'inline-block' : 'none' }} />
         {tech}
       </li>
     )
@@ -148,8 +152,8 @@ const ListContainer = styled.div`
   }
 
   .list-o {
-    font-size: 0.8rem;
-    margin-right: 1rem;
+    font-size: 1rem;
+    margin-right: 0.5rem;
     color: #fecc27;
   }
 `

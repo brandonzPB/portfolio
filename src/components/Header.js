@@ -86,11 +86,27 @@ const HeaderContent = styled.div`
 `
 
 const TextContainer = styled.div`
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      translateY(-30px);
+    }
+
+    to {
+      opacity: 1;
+      translateY(30px);
+    }
+  }
+
   text-align: left;
   margin: 0 2rem;
   font-size: 2rem;
   font-family: 'Playfair Display', sans-serif;
   color: #36434d;
+
+  h3 {
+    animation: fadein 2s;
+  }
 
   #mobile {
     display: none;

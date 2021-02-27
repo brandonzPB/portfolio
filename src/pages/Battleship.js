@@ -62,8 +62,9 @@ const Battleship = () => {
         data={data}
         alt1={alt1}
         alt2={alt2}
+        icon="battleship"
       />
-      <ProjectFooter />
+      <ProjectFooter keyword="battleship" />
       <Footer />
     </>
   )

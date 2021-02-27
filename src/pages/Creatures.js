@@ -76,6 +76,7 @@ const Creatures = () => {
         data={data}
         alt1={alt1}
         alt2={alt2}
+        icon="creatures"
       />
       <ProjectFooter keyword="creatures" />
       <Footer />

@@ -30,7 +30,7 @@ const Body = () => {
     }
   `);
 
-  const paintings = [...data.allFile.edges];
+  const paintings = [...data.allFile.edges]; // [1, 3, 2]
 
   return ( 
     <BodyContainer>
@@ -40,22 +40,22 @@ const Body = () => {
           <ul>
             <li>
               <DiReact id="react" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">React</span>
             </li>
             <li>
               <SiRedux id="redux" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">React Context API / Redux</span>
             </li>
             <li>
               <SiGatsby id="gatsby" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">Gatsby Styled Components</span>
             </li>
             <li>
               <SiGraphql id="graphql" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">GraphQL</span>
             </li>
           </ul>
@@ -63,22 +63,22 @@ const Body = () => {
           <ul>
             <li>
               <DiBootstrap id="bootstrap" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">Bootstrap</span>
             </li>
             <li>
               <DiSass id="sass" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">Sass</span>
             </li>
             <li>
               <DiHtml5 id="html" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">HTML5</span>
             </li>
             <li>
               <DiNodejsSmall id="node" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">NodeJS</span>
             </li>
           </ul>
@@ -86,22 +86,22 @@ const Body = () => {
           <ul>
             <li>
               <GoPrimitiveDot id="express" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">Express</span>
             </li>
             <li>
               <SiMongodb id="mongo" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">MongoDB</span>
             </li>
             <li>
               <SiJest id="jest" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">Jest</span>
             </li>
             <li>
               <SiPython id="python" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">Python</span>
             </li>
           </ul>
@@ -109,17 +109,17 @@ const Body = () => {
           <ul>
             <li>
               <SiHeroku id="heroku" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">Heroku</span>
             </li>
             <li>
               <SiJupyter id="jupyter" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">Jupyter Notebooks</span>
             </li>
             <li>
               <DiPhotoshop id="photoshop" className="icon" />
-              <span className="list-type">O</span>
+              <GiTriforce className="list-type" />
               <span className="list-text">Adobe Photoshop</span>
             </li>
           </ul>
@@ -133,8 +133,8 @@ const Body = () => {
           <ProjectContainer>
             <ProjectAnchor to="/Creatures">
               <ProjectThumbnail
-                fluid={paintings[2].node.childImageSharp.fluid} 
-                src={paintings[2].node.childImageSharp.fluid.src}
+                fluid={paintings[0].node.childImageSharp.fluid} 
+                src={paintings[0].node.childImageSharp.fluid.src}
                 key={2} 
                 className="thumbnail">
               </ProjectThumbnail>
@@ -150,8 +150,8 @@ const Body = () => {
           <ProjectContainer>
             <ProjectAnchor to="/Mindful">
               <ProjectThumbnail 
-                fluid={paintings[1].node.childImageSharp.fluid} 
-                src={paintings[1].node.childImageSharp.fluid.src}
+                fluid={paintings[2].node.childImageSharp.fluid} 
+                src={paintings[2].node.childImageSharp.fluid.src}
                 key={1} 
                 className="thumbnail">
               </ProjectThumbnail>
@@ -165,8 +165,8 @@ const Body = () => {
           <ProjectContainer>
             <ProjectAnchor to="/Battleship">
               <ProjectThumbnail 
-                fluid={paintings[3].node.childImageSharp.fluid} 
-                src={paintings[3].node.childImageSharp.fluid.src}
+                fluid={paintings[1].node.childImageSharp.fluid} 
+                src={paintings[1].node.childImageSharp.fluid.src}
                 key={3} 
                 className="thumbnail">
               </ProjectThumbnail>
@@ -244,8 +244,9 @@ const SkillsListContainer = styled.div`
       .list-type {
         display: inline-block;
         width: 1rem;
-        font-size: 0.5rem;
-        color: #0070b7;
+        font-size: 1rem;
+        color: #fecc27;
+        margin-right: 0.5rem;
       }
     }
   }
@@ -339,6 +340,12 @@ const ProjectThumbnail = styled(Img)`
   margin: 1rem auto;
   border-radius: 5px;
   box-shadow: 0 3px 8px black;
+  transition: transform 0.5s;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 
   @media screen and (max-width: 500px) {
     height: auto;
