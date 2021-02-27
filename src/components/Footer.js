@@ -28,11 +28,8 @@ const Footer = () => {
         <a href="https://github.com/brandonzpb" target="_blank" rel="noreferrer" id="github-link">
           <AiFillGithub id="github" className="icon" />
         </a>
-        <a href="" target="_blank" rel="noreferrer">
+        <a href="https://www.youtube.com/channel/UC8ro96mSErJclS_VRFgEsVw/featured" target="_blank" rel="noreferrer">
           <FaYoutube id="youtube" className="icon" />
-        </a>
-        <a href="" target="_blank" rel="noreferrer">
-          <FaTwitterSquare id="twitter" className="icon" />
         </a>
       </FooterSocials>
     </FooterContainer>
