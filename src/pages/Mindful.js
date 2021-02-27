@@ -15,7 +15,7 @@ const Mindful = () => {
           node {
             childImageSharp {
               fluid {
-                src
+                ...GatsbyImageSharpFluid
               }
             }
           }

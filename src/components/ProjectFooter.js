@@ -139,6 +139,7 @@ const FooterContainer = styled.div`
 
 const FooterHeadline = styled.div`
   font-family: 'Playfair Display', sans-serif;
+  color: #36434d;
   margin: 2rem auto;
   display: block;
 `
@@ -157,9 +158,9 @@ const ProjectContainer = styled.div`
   margin: 2rem auto;
   display: block;
   text-align: center;
-  width: auto;
-  height: auto;
+  width: 100%;
   font-family: 'Open Sans', sans-serif;
+  color: #828282;
 
   @media screen and (max-width: 500px) {
     width: 100%;
@@ -171,8 +172,9 @@ const ProjectContainer = styled.div`
 const ProjectAnchor = styled(Link)``
 
 const ProjectThumbnail = styled(Img)`
-  width: 30rem;
-  height: 25rem;
+  width: 25rem;
+  height: 20rem;
+  margin: 0 auto;
   border-radius: 5px;
   box-shadow: 0 3px 8px black;
 

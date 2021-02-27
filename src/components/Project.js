@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Img from 'gatsby-image';
+import Puzzle from './Puzzle';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
@@ -18,19 +19,23 @@ const Project = ({ title, details, stack, link, purpose, tech, lessons, data, al
   });
 
   const thumbnail = {
-    src: data.allFile.edges[0].node.childImageSharp.fluid.src,
-    fluid: data.allFile.edges[0].node.childImageSharp.fluid,
+    src: data.allFile.edges[1].node.childImageSharp.fluid.src,
+    fluid: data.allFile.edges[1].node.childImageSharp.fluid,
     alt: alt1
   };
 
   const screenshot = {
-    src: data.allFile.edges[1].node.childImageSharp.fluid.src,
-    fluid: data.allFile.edges[1].node.childImageSharp.fluid,
+    src: data.allFile.edges[0].node.childImageSharp.fluid.src,
+    fluid: data.allFile.edges[0].node.childImageSharp.fluid,
     alt: alt2
   };
+
+  console.log('data', data)
   
   return (
     <ProjectContainer>
+      <Puzzle />
+      
       <HeaderContainer>
         <h1>{title}</h1>
         <p>{details}</p>
@@ -100,12 +105,14 @@ const HeaderContainer = styled.div`
   h1 {
     margin-bottom: 1rem;
     font-family: 'Playfair Display', sans-serif;
+    color: #36434d;
   }
 
   p {
     font-family: 'Open Sans', sans-serif;
     width: 70%;
     line-height: 1.5rem;
+    color: #828282;
   }
 `
 
@@ -125,12 +132,14 @@ const ListContainer = styled.div`
 
   h1 {
     font-family: 'Playfair Display', sans-serif;
+    color: #36434d;
   }
 
   ul {
     margin: 2rem auto;
     display: block;
     font-family: 'Open Sans', sans-serif;
+    color: #828282;
     width: 80%;
   }
 
@@ -198,12 +207,14 @@ const StoryContainer = styled.div`
 
   h1 {
     font-family: 'Playfair Display', sans-serif;
+    color: #36434d;
     margin: 2rem auto;
     display: block;
   }
 
   span {
     font-family: 'Open Sans', sans-serif;
+    color: #828282;
     width: 60%;
     max-width: 60%;
     line-height: 1.5rem;

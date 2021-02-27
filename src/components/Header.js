@@ -3,8 +3,8 @@ import Img from 'gatsby-image';
 import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components';
-import { HiPuzzle } from 'react-icons/hi';
 import { useStaticQuery, graphql } from 'gatsby';
+import Puzzle from './Puzzle';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
@@ -35,10 +35,8 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <IconContainer>
-          <HiPuzzle className="icon" />
-        </IconContainer>
-
+        <Puzzle />
+        
         <TextContainer>
           <div id="desktop">
             <h3>Oh hello, I'm Brandon. </h3>
@@ -85,26 +83,6 @@ const HeaderContainer = styled.div`
 
 const HeaderContent = styled.div`
   
-`
-
-const IconContainer = styled.div`
-  margin: 0 auto;
-  display: block;
-  text-align: left;
-
-  .icon {
-    color: #fecc27;
-    font-size: 3rem;
-    margin: 0 auto;
-    z-index: 3;
-    background: none;
-    border: none;
-    transition: transform 0.3s;
-  }
-
-  .icon:hover {
-    transform: scale(1.1);
-  }
 `
 
 const TextContainer = styled.div`
