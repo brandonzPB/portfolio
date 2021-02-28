@@ -6,6 +6,7 @@ import { Link } from 'gatsby';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
+import 'fontsource-roboto';
 
 const Footer = () => {
   return (

@@ -7,6 +7,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Puzzle from './Puzzle';
 
 import 'fontsource-playfair-display/600.css';
+import 'fontsource-roboto';
 import 'fontsource-open-sans';
 
 const Header = () => {
@@ -79,6 +80,10 @@ const HeaderContainer = styled.div`
   display: block;
   text-align: center;
   width: 70%;
+
+  @media screen and (max-width: 500px) {
+    width: 85%;
+  }
 `
 
 const HeaderContent = styled.div`
@@ -142,6 +147,10 @@ const Image = styled(Img)`
   height: 50%;
   width: 50%;
   margin: 0 auto;
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
 `
 
 const DetailsContainer = styled.div`
@@ -160,6 +169,7 @@ const DetailsContainer = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     flex: 1;
+    text-align: left;
   }
 `
 
@@ -170,6 +180,7 @@ const ColOne = styled.div`
   padding: 0 2rem;
   line-height: 1.5rem;
   font-family: 'Open Sans', sans-serif;
+  text-align: left;
 
   @media screen and (max-width: 700px) {
     padding: 0;
@@ -184,6 +195,7 @@ const ColTwo = styled.div`
   padding: 0 2rem;
   line-height: 1.5rem;
   font-family: 'Open Sans', sans-serif;
+  text-align: left;
 
   @media screen and (max-width: 700px) {
     padding: 0;

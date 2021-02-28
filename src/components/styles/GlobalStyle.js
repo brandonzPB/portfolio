@@ -11,7 +11,7 @@ dark gray: 36434d
 
 export const GlobalStyle = createGlobalStyle`
   * {
-    background-color: #F4FFF8;
+    background-color: #FFF;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

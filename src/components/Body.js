@@ -11,6 +11,7 @@ import { GiTriforce } from 'react-icons/gi';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
+import 'fontsource-roboto';
 
 const Body = () => {
   const data = useStaticQuery(graphql`
@@ -133,9 +134,9 @@ const Body = () => {
           <ProjectContainer>
             <ProjectAnchor to="/Creatures">
               <ProjectThumbnail
-                fluid={paintings[0].node.childImageSharp.fluid} 
-                src={paintings[0].node.childImageSharp.fluid.src}
-                key={2} 
+                fluid={paintings[1].node.childImageSharp.fluid} 
+                src={paintings[1].node.childImageSharp.fluid.src}
+                key={1} 
                 className="thumbnail">
               </ProjectThumbnail>
             </ProjectAnchor>
@@ -150,9 +151,9 @@ const Body = () => {
           <ProjectContainer>
             <ProjectAnchor to="/Mindful">
               <ProjectThumbnail 
-                fluid={paintings[2].node.childImageSharp.fluid} 
-                src={paintings[2].node.childImageSharp.fluid.src}
-                key={1} 
+                fluid={paintings[0].node.childImageSharp.fluid} 
+                src={paintings[0].node.childImageSharp.fluid.src}
+                key={0} 
                 className="thumbnail">
               </ProjectThumbnail>
             </ProjectAnchor>
@@ -165,9 +166,9 @@ const Body = () => {
           <ProjectContainer>
             <ProjectAnchor to="/Battleship">
               <ProjectThumbnail 
-                fluid={paintings[1].node.childImageSharp.fluid} 
-                src={paintings[1].node.childImageSharp.fluid.src}
-                key={3} 
+                fluid={paintings[2].node.childImageSharp.fluid} 
+                src={paintings[2].node.childImageSharp.fluid.src}
+                key={2} 
                 className="thumbnail">
               </ProjectThumbnail>
             </ProjectAnchor>

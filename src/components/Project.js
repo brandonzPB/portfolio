@@ -5,6 +5,7 @@ import Puzzle from './Puzzle';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
+import 'fontsource-roboto';
 
 import { CgPokemon } from 'react-icons/cg';
 import { FaPeace } from 'react-icons/fa';
@@ -111,7 +112,7 @@ const HeaderContainer = styled.div`
   }
 
   p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     width: 70%;
     line-height: 1.5rem;
     color: #828282;
@@ -140,7 +141,7 @@ const ListContainer = styled.div`
   ul {
     margin: 2rem auto;
     display: block;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #828282;
     width: 80%;
   }

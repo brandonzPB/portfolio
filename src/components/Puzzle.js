@@ -40,7 +40,7 @@ const IconContainer = styled.div`
 
   .icon {
     color: #fecc27;
-    font-size: 3rem;
+    font-size: 2.25rem;
     margin: 0 auto;
     z-index: 3;
     background: none;
@@ -55,6 +55,9 @@ const IconContainer = styled.div`
 
   .icon:active {
     transform: scale(0.8);
+  }
+
+  @media screen and (max-width: 500px) {
   }
 `
 
