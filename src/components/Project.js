@@ -188,6 +188,7 @@ const Thumbnail = styled(Img)`
   display: block;
   margin: 0 auto 1.5rem auto;
   border-radius: 5px;
+  box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3);
 
   @media screen and (max-width: 500px) {
     width: 100%;
@@ -207,6 +208,8 @@ const Screenshot = styled(Img)`
   display: block;
   margin: 0 auto;
   width: 75%;
+  box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3);
+  border-radius: 10px;
 `
 
 const StoryContainer = styled.div`

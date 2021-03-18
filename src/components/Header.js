@@ -50,8 +50,8 @@ const Header = () => {
         </TextContainer>
 
         <ImageContainer>
-          <Image key={banner.key} fluid={banner.fluid} src={banner.src} alt="Picture of me seeing snow for the first time" />
-          <h3 id="caption">Me seeing snow for the first time after growing up in Miami</h3>
+          <Image loading="eager" key={banner.key} fluid={banner.fluid} src={banner.src} alt="Picture of me seeing snow for the first time" />
+          <h3 id="caption">Me seeing snow for the first time after growing up in Miami, FL</h3>
         </ImageContainer>
 
         <DetailsContainer>         

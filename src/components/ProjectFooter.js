@@ -180,7 +180,7 @@ const ProjectThumbnail = styled(Img)`
   height: 20rem;
   margin: 0 auto;
   border-radius: 5px;
-  box-shadow: 0 3px 8px black;
+  box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3);
   transition: transform 0.3s;
   transition-timing-function: ease-in-out;
 
