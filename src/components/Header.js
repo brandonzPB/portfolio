@@ -83,7 +83,7 @@ const HeaderContainer = styled.div`
   width: 70%;
 
   @media screen and (max-width: 500px) {
-    width: 85%;
+    width: 80%;
   }
 `
 

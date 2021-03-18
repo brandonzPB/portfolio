@@ -146,7 +146,7 @@ const ListContainer = styled.div`
     display: block;
     font-family: 'Roboto', sans-serif;
     color: #828282;
-    width: 80%;
+    width: 90%;
   }
 
   li {
@@ -176,6 +176,14 @@ const LinkContainer = styled.div`
     font-size: 1.5rem;
     padding: 0 5rem;
     text-align: center;
+  }
+
+  @media screen and (max-width: 700px) {
+    #project-link,
+    #source-code {
+      font-size: 1.3rem;
+      padding: 0 1rem;
+    }
   }
 
   a:hover {
