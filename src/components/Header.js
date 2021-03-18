@@ -50,13 +50,14 @@ const Header = () => {
         </TextContainer>
 
         <ImageContainer>
-          <Image key={banner.key} fluid={banner.fluid} src={banner.src} alt="Picture of me" />
+          <Image key={banner.key} fluid={banner.fluid} src={banner.src} alt="Picture of me seeing snow for the first time" />
+          <h3 id="caption">Me seeing snow for the first time after growing up in Miami</h3>
         </ImageContainer>
 
         <DetailsContainer>         
           <ColOne>
             <p>
-              I am a 22 year-old passionate Stoic who loves using code to build elegant, useful, and enjoyable experiences. <br/><br/>
+              I am a 22 year-old passionate Stoic who loves using code to create solutions and build elegant, useful, and enjoyable experiences. <br/><br/>
               To me, code is like an infinite pile of legos with each piece being made at the will of my imagination. (inspired by V. Anton Spraul)
             </p>
           </ColOne>
@@ -141,6 +142,12 @@ const TextContainer = styled.div`
 const ImageContainer = styled.div`
   display: block;
   margin: 2rem auto;
+
+  h3 {
+    font-size: 0.75rem;
+    color: #828282;
+    font-family: 'Open Sans', sans-serif;
+  }
 `
 
 const Image = styled(Img)`

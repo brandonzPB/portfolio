@@ -22,7 +22,7 @@ const Footer = () => {
 
       <FooterDesc>
         <p>If you just want to chat, or if you're looking for a programmer, team member, or leader, feel free to send me an email.</p>
-        <a href="mailto:brandon@brandon.dev">brandon@brandonweb.dev</a>
+        <a href="mailto:brandon@bzweb.dev">brandon@bzweb.dev</a>
       </FooterDesc>
 
       <FooterSocials>

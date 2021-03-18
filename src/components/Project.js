@@ -11,7 +11,7 @@ import { CgPokemon } from 'react-icons/cg';
 import { FaPeace } from 'react-icons/fa';
 import { GiBattleship } from 'react-icons/gi';
 
-const Project = ({ title, details, stack, link, purpose, tech, lessons, data, alt1, alt2, icon }) => {
+const Project = ({ title, details, stack, link, sourceCode, purpose, tech, lessons, data, alt1, alt2, icon }) => {
   const stackComponents = stack.map((tech, index) => {
     return (
       <li key={index}>
@@ -58,6 +58,9 @@ const Project = ({ title, details, stack, link, purpose, tech, lessons, data, al
           </a>
           <a href={link} target="_blank" rel="noreferrer">
             <span id="project-link">View Live</span>
+          </a>
+          <a href={sourceCode} target="_blank" rel="noreferrer">
+            <span id="source-code">Source Code</span>
           </a>
         </LinkContainer>
       </DetailsContainer>
@@ -168,8 +171,11 @@ const LinkContainer = styled.div`
     text-decoration: none;
   }
 
-  #project-link {
+  #project-link,
+  #source-code {
     font-size: 1.5rem;
+    padding: 0 5rem;
+    text-align: center;
   }
 
   a:hover {

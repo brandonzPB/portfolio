@@ -32,9 +32,11 @@ const Mindful = () => {
     my friends, family, and classmates (and myself). 
   `;
 
-  const stack = ['React', 'React Context API', 'CSS', 'vanilla JavaScript'];
+  const stack = ['React (JavaScript)', 'React Context API', 'CSS', 'vanilla JavaScript'];
 
   const link = 'https://brandonzpb.github.io/mindful';
+
+  const sourceCode = 'https://github.com/brandonzpb/mindful.io';
 
   const purpose = `
     I made this project for the purpose of helping others develop the healthy habit of meditating and being more mindful. It's 
@@ -73,6 +75,7 @@ const Mindful = () => {
         details={details}
         stack={stack}
         link={link}
+        sourceCode={sourceCode}
         purpose={purpose}
         tech={tech}
         lessons={lessons}

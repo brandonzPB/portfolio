@@ -47,7 +47,7 @@ const Body = () => {
             <li>
               <SiRedux id="redux" className="icon" />
               <GiTriforce className="list-type" />
-              <span className="list-text">React Context API / Redux</span>
+              <span className="list-text">React Context API</span>
             </li>
             <li>
               <SiGatsby id="gatsby" className="icon" />
@@ -112,11 +112,6 @@ const Body = () => {
               <SiHeroku id="heroku" className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Heroku</span>
-            </li>
-            <li>
-              <SiJupyter id="jupyter" className="icon" />
-              <GiTriforce className="list-type" />
-              <span className="list-text">Jupyter Notebooks</span>
             </li>
             <li>
               <DiPhotoshop id="photoshop" className="icon" />

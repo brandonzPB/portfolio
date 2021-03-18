@@ -28,9 +28,11 @@ const Battleship = () => {
     putting my skills and knowledge into practice. I included it in my portfolio to show the progress I've made
     since starting in June 2020.`;
 
-  const stack = ['HTML', 'CSS', 'React', 'React Context API', 'vanilla JavaScript'];
+  const stack = ['React (JavaScript)', 'React Context API', 'HTML', 'CSS', 'vanilla JavaScript'];
 
   const link = 'https://brandonzpb.github.io/battleship';
+
+  const sourceCode = 'https://github.com/brandonzpb/battleship';
 
   const purpose = `I made this app so that I could develop my newly-acquired skills. I realized that the best way to 
     improve as a programmer would be to create a game, and I thought creating a clone of Battleship would be a good start.`;
@@ -56,6 +58,7 @@ const Battleship = () => {
         details={details}
         stack={stack}
         link={link}
+        sourceCode={sourceCode}
         purpose={purpose}
         tech={tech}
         lessons={lessons}

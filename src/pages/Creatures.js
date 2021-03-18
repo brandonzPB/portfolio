@@ -31,9 +31,11 @@ const Creatures = () => {
     and I ended up creating a "full-stack" web application that me and my friends use today.
   `;
 
-  const stack = ['CSS', 'React', 'React Context API', 'NodeJS', 'Express', 'MongoDB', 'Heroku'];
+  const stack = ['React (JavaScript)', 'React Context API', 'CSS', 'NodeJS', 'Express', 'MongoDB', 'Heroku'];
 
   const link = 'https://brandonzpb.github.io/creatures';
+
+  const sourceCode = 'https://github.com/brandonzpb/creatures';
 
   const purpose = `
     After seeing so many "Life RPG" apps, I was inspired to make my own version that had all the features I wanted 
@@ -70,6 +72,7 @@ const Creatures = () => {
         details={details}
         stack={stack}
         link={link}
+        sourceCode={sourceCode}
         purpose={purpose}
         tech={tech}
         lessons={lessons}
