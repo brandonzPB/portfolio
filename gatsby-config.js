@@ -15,13 +15,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `videos`,
-        path: `${__dirname}/src/assets/videos`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
