@@ -120,6 +120,12 @@ const HeaderContainer = styled.div`
     line-height: 1.5rem;
     color: #828282;
   }
+
+  @media screen and (max-width: 700px) {
+    p {
+      width: 85%;
+    }
+  }
 `
 
 const DetailsContainer = styled.div`

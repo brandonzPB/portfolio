@@ -50,13 +50,13 @@ const Header = () => {
         </TextContainer>
 
         <ImageContainer>
-          <Image key={banner.key} fluid={banner.fluid} src={banner.src} alt="Picture of me seeing snow for the first time" />
+          <Image fluid={banner.fluid} alt="Picture of me (a bald man) in a suit" />
         </ImageContainer>
 
         <DetailsContainer>         
           <ColOne>
             <p>
-              I am a 22 year-old passionate Stoic who loves using code to create solutions and build elegant, useful, and enjoyable experiences. <br/><br/>
+              I am a 22 year-old passionate Stoic who loves using code to create solutions and build useful, elegant, and enjoyable experiences. <br/><br/>
               To me, code is like an infinite pile of legos with each piece being made at the will of my imagination. (inspired by V. Anton Spraul)
             </p>
           </ColOne>
