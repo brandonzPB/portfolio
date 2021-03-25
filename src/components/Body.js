@@ -42,7 +42,7 @@ const Body = () => {
             <li>
               <DiReact id="react" className="icon" />
               <GiTriforce className="list-type" />
-              <span className="list-text">React</span>
+              <span className="list-text">React (JavaScript and TypeScript)</span>
             </li>
             <li>
               <SiRedux id="redux" className="icon" />
@@ -93,7 +93,7 @@ const Body = () => {
             <li>
               <SiMongodb id="mongo" className="icon" />
               <GiTriforce className="list-type" />
-              <span className="list-text">MongoDB</span>
+              <span className="list-text">MongoDB (NoSQL)</span>
             </li>
             <li>
               <SiJest id="jest" className="icon" />
