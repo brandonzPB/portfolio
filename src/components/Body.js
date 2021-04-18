@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { DiReact, DiHtml5, DiSass, DiBootstrap, DiNodejsSmall, DiPhotoshop } from 'react-icons/di';
-import { SiRedux, SiGatsby, SiGraphql, SiMongodb, SiPython, SiJupyter, SiHeroku, SiJest } from 'react-icons/si';
+import { SiRedux, SiGatsby, SiGraphql, SiMongodb, SiPython, SiPostgresql, SiHeroku, SiJest, SiExpo } from 'react-icons/si';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { GiTriforce } from 'react-icons/gi';
 
@@ -42,7 +42,7 @@ const Body = () => {
             <li>
               <DiReact id="react" className="icon" />
               <GiTriforce className="list-type" />
-              <span className="list-text">React (JavaScript and TypeScript)</span>
+              <span className="list-text">React (TypeScript and JavaScript)</span>
             </li>
             <li>
               <SiRedux id="redux" className="icon" />
@@ -52,12 +52,35 @@ const Body = () => {
             <li>
               <SiGatsby id="gatsby" className="icon" />
               <GiTriforce className="list-type" />
-              <span className="list-text">Gatsby Styled Components</span>
+              <span className="list-text">Gatsby</span>
             </li>
             <li>
               <SiGraphql id="graphql" className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">GraphQL</span>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <GoPrimitiveDot id="express" className="icon" />
+              <GiTriforce className="list-type" />
+              <span className="list-text">Express</span>
+            </li>
+            <li>
+              <SiMongodb id="mongo" className="icon" />
+              <GiTriforce className="list-type" />
+              <span className="list-text">MongoDB (with NoSQL)</span>
+            </li>
+            <li>
+              <SiJest id="jest" className="icon" />
+              <GiTriforce className="list-type" />
+              <span className="list-text">Jest</span>
+            </li>
+            <li>
+              <SiPostgresql id="postgresql" className="icon" />
+              <GiTriforce className="list-type" />
+              <span className="list-text">PostgreSQL</span>
             </li>
           </ul>
             
@@ -86,29 +109,6 @@ const Body = () => {
 
           <ul>
             <li>
-              <GoPrimitiveDot id="express" className="icon" />
-              <GiTriforce className="list-type" />
-              <span className="list-text">Express</span>
-            </li>
-            <li>
-              <SiMongodb id="mongo" className="icon" />
-              <GiTriforce className="list-type" />
-              <span className="list-text">MongoDB (NoSQL)</span>
-            </li>
-            <li>
-              <SiJest id="jest" className="icon" />
-              <GiTriforce className="list-type" />
-              <span className="list-text">Jest</span>
-            </li>
-            <li>
-              <SiPython id="python" className="icon" />
-              <GiTriforce className="list-type" />
-              <span className="list-text">Python</span>
-            </li>
-          </ul>
-
-          <ul>
-            <li>
               <SiHeroku id="heroku" className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Heroku</span>
@@ -117,6 +117,16 @@ const Body = () => {
               <DiPhotoshop id="photoshop" className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Adobe Photoshop</span>
+            </li>
+            <li>
+              <SiPython id="python" className="icon" />
+              <GiTriforce className="list-type" />
+              <span className="list-text">Python</span>
+            </li>
+            <li>
+              <SiExpo id="expo" className="icon" />
+              <GiTriforce className="list-type" />
+              <span className="list-text">Expo (React Native)</span>
             </li>
           </ul>
         </SkillsListContainer>
