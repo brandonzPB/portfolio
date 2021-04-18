@@ -5,7 +5,7 @@ import Img from 'gatsby-image';
 import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 
-const Puzzle = () => {
+const TriskeleContainer = () => {
   const data = useStaticQuery(graphql`
     query MyTriskele {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {in: ["triskele-black"]}}) {
@@ -38,7 +38,7 @@ const Puzzle = () => {
   )
 }
 
-export default Puzzle
+export default TriskeleContainer
 
 const IconContainer = styled.div`
   @keyframes spin {

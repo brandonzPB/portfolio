@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import Puzzle from './Puzzle';
+import TriskeleContainer from './TriskeleContainer';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-roboto';
@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <Puzzle />
+        <TriskeleContainer />
         
         <TextContainer>
           <div id="desktop">

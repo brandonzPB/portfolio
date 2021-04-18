@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import Puzzle from './Puzzle';
+import TriskeleContainer from './TriskeleContainer';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
@@ -37,7 +37,7 @@ const Project = ({ title, details, stack, link, sourceCode, purpose, tech, lesso
   
   return (
     <ProjectContainer>
-      <Puzzle />
+      <TriskeleContainer />
       
       <HeaderContainer>
         <h1>{title}</h1>
