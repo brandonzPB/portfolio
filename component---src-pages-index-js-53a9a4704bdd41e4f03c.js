@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{RXBc:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),r=t.n(a),c=t("Bl7J"),i=t("vrFN");e.default=function(){return r.a.createElement(c.a,null,r.a.createElement(i.a,{title:"Brandon Zirulnikoff"}))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-53a9a4704bdd41e4f03c.js.map
