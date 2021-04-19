@@ -31,7 +31,7 @@ const Creatures = () => {
     and I ended up creating a "full-stack" web application that me and my friends use today.
   `;
 
-  const stack = ['React (JavaScript)', 'React Context API', 'CSS', 'NodeJS', 'Express', 'MongoDB', 'Heroku'];
+  const stack = ['React (JavaScript)', 'React Context API', 'CSS', 'NodeJS', 'Express', 'NoSQL', 'JSON web tokens', 'bcrypt', 'MongoDB', 'Heroku'];
 
   const link = 'https://brandonzpb.github.io/creatures';
 

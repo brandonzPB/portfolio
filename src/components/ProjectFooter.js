@@ -35,7 +35,24 @@ const ProjectFooter = ({ keyword }) => {
   const mindfulAlt = 'Peaceful image with black stones and bamboo in the background';
   const creaturesAlt = 'Serene painting of a light blue sky, a grassy field, and the ocean in between';
   const battleshipAlt = 'Painting of a submarine underwater';
-  const republicAlt = '';
+  const republicAlt = `The landing page of The Republic 310. The banner is of two female surfers walking along
+  an empty beach, holding surfboards`;
+
+  const otherOne = {
+    link: '',
+    title: '',
+    fluid = '',
+    src = '',
+    alt = '',
+  };
+
+  const otherTwo = {
+    link: '',
+    title: '',
+    fluid = '',
+    src = '',
+    alt = '',
+  };
 
   // change battleship to republic
   if (keyword === 'mindful') {
@@ -45,11 +62,11 @@ const ProjectFooter = ({ keyword }) => {
     paintings[1].src = paintings[1].node.childImageSharp.fluid.src;
     paintings[1].alt = creaturesAlt;
 
-    paintings[2].link = '/Battleship';
-    paintings[2].title = 'Battleship';
-    paintings[2].fluid = paintings[2].node.childImageSharp.fluid;
-    paintings[2].src = paintings[2].node.childImageSharp.fluid.src;
-    paintings[2].alt = republicAlt;
+    paintings[3].link = '/Republic310';
+    paintings[3].title = 'The Republic 310';
+    paintings[3].fluid = paintings[3].node.childImageSharp.fluid;
+    paintings[3].src = paintings[3].node.childImageSharp.fluid.src;
+    paintings[3].alt = republicAlt;
   } else if (keyword === 'creatures') {
     paintings[1].link = '/Mindful'
     paintings[1].title = 'mindful.io';
@@ -57,11 +74,11 @@ const ProjectFooter = ({ keyword }) => {
     paintings[1].src = paintings[0].node.childImageSharp.fluid.src;
     paintings[1].alt = mindfulAlt;
 
-    paintings[2].link = '/Battleship';
-    paintings[2].title = 'Battleship';
-    paintings[2].fluid = paintings[2].node.childImageSharp.fluid;
-    paintings[2].src = paintings[2].node.childImageSharp.fluid.src;
-    paintings[2].alt = republicAlt;
+    paintings[3].link = '/Republic310';
+    paintings[3].title = 'The Republic 310';
+    paintings[3].fluid = paintings[3].node.childImageSharp.fluid;
+    paintings[3].src = paintings[3].node.childImageSharp.fluid.src;
+    paintings[3].alt = republicAlt;
   } else if (keyword === 'battleship') {
     paintings[1].link = '/Creatures';
     paintings[1].title = 'Creatures of Habit';
