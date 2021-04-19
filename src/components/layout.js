@@ -7,24 +7,14 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { GlobalStyle } from './styles/GlobalStyle';
 
 import Header from './Header';
 import Body from './Body';
 import Footer from './Footer';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
   return (
     <>
       <GlobalStyle />

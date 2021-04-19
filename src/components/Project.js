@@ -25,14 +25,14 @@ const Project = ({ title, details, stack, link, sourceCode, purpose, tech, lesso
   });
 
   const thumbnail = {
-    src: data.allFile.edges[1].node.childImageSharp.fluid.src,
-    fluid: data.allFile.edges[1].node.childImageSharp.fluid,
+    src: data[1].src,
+    fluid: data[1].fluid,
     alt: alt1
   };
 
   const screenshot = {
-    src: data.allFile.edges[0].node.childImageSharp.fluid.src,
-    fluid: data.allFile.edges[0].node.childImageSharp.fluid,
+    src: data[0].src,
+    fluid: data[0].fluid,
     alt: alt2
   };
   

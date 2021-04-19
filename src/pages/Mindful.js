@@ -8,7 +8,7 @@ import { GlobalStyle } from '../components/styles/GlobalStyle';
 
 const Mindful = () => {
   const data = useStaticQuery(graphql`
-    query MyMindful {
+    query MyMindfulImages {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
         name: {in: ["mindful-0", "mindful-1"]}}) {
         edges {
@@ -23,6 +23,13 @@ const Mindful = () => {
       }
     }  
   `);
+
+  const images = data.allFile.edges.map(img => {
+    return {
+      fluid: img.node.childImageSharp.fluid,
+      src: img.node.childImageSharp.fluid.src,
+    }
+  });
 
   const details = `
     I wanted the utility of this project to as simple as possible, since I wanted as many people as possible to benefit from it. 
@@ -65,7 +72,24 @@ const Mindful = () => {
 
   const alt2 = `Screenshot of the mindful.io app; 
     a dashboard with a circular modal with app icons in the center. 
-    Text says, 'Hover over one of the icons!'`;
+    Text says, 'Hover over one of the icons!'
+  `;
+
+  const otherA = {
+    link: '/Republic_310',
+    title: 'The Republic 310',
+    alt: `The landing page of The Republic 310. The banner is of two female surfers walking along
+      an empty beach, holding surfboards
+    `,
+    name: 'painting-4',
+  };
+
+  const otherB = {
+    link: '/Creatures_of_Habit',
+    title: 'Creatures of Habit',
+    alt: 'Serene painting of a light blue sky, a grassy field, and the ocean in between',
+    name: 'painting-1',
+  };
 
   return (
     <>
@@ -79,12 +103,12 @@ const Mindful = () => {
         purpose={purpose}
         tech={tech}
         lessons={lessons}
-        data={data}
+        data={images}
         alt1={alt1}
         alt2={alt2}
         icon="mindful"
       />
-      <ProjectFooter keyword="mindful" />
+      <ProjectFooter otherA={otherA} otherB={otherB} />
       <Footer />
     </>
   )

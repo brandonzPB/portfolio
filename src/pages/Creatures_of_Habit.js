@@ -1,12 +1,12 @@
 import React from 'react'
-import { useStaticQuery, graphql, useScrollRestoration } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
 import Footer from '../components/Footer';
 import { GlobalStyle } from '../components/styles/GlobalStyle';
 
-const Creatures = () => {
+const Creatures_of_Habit = () => {
   const data = useStaticQuery(graphql`
     query MyCreatures {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
@@ -23,6 +23,13 @@ const Creatures = () => {
       }
     }      
   `);
+
+  const images = data.allFile.edges.map(img => {
+    return {
+      fluid: img.node.childImageSharp.fluid,
+      src: img.node.childImageSharp.fluid.src,
+    }
+  });
 
   const details = `
     The project that started it all. 
@@ -62,7 +69,24 @@ const Creatures = () => {
   
   const alt2 = `Screenshot of the Creatures of Habit app; 
     a Pokemon called Porygon with a nickname of duck.js has various habits, 
-    such as studying and practing`;
+    such as studying and practing
+  `;
+
+  const otherA = {
+    link: '/Republic_310',
+    title: 'The Republic 310',
+    alt: `The landing page of The Republic 310. The banner is of two female surfers walking along
+      an empty beach, holding surfboards
+    `,
+    name: 'painting-4',
+  };
+
+  const otherB = {
+    link: '/Mindful',
+    title: 'mindful.io',
+    alt: 'Peaceful image with black stones and bamboo in the background',
+    name: 'painting-2',
+  };
 
   return (
     <>
@@ -76,15 +100,15 @@ const Creatures = () => {
         purpose={purpose}
         tech={tech}
         lessons={lessons}
-        data={data}
+        data={images}
         alt1={alt1}
         alt2={alt2}
         icon="creatures"
       />
-      <ProjectFooter keyword="creatures" />
+      <ProjectFooter otherA={otherA} otherB={otherB} />
       <Footer />
     </>
   )
 }
 
-export default Creatures
+export default Creatures_of_Habit;

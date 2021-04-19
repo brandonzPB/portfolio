@@ -137,7 +137,7 @@ const Body = () => {
 
         <ProjectList>
           <ProjectContainer>
-            <ProjectAnchor to="/Creatures">
+            <ProjectAnchor to="/Creatures_of_Habit">
               <ProjectThumbnail
                 fluid={paintings[1].node.childImageSharp.fluid} 
                 src={paintings[1].node.childImageSharp.fluid.src}
@@ -150,7 +150,7 @@ const Body = () => {
             <ProjectDetails>
               I made this project to help users quantify areas of their life that are intrinsically qualitative (e.g., mental health).
             </ProjectDetails>
-            <ProjectLink to="/Creatures">View Project</ProjectLink>
+            <ProjectLink to="/Creatures_of_Habit">View Project</ProjectLink>
           </ProjectContainer>
 
           <ProjectContainer>

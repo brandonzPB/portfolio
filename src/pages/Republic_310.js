@@ -1,16 +1,16 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Project from './components/Project';
-import ProjectFooter from './components/ProjectFooter';
-import Footer from './components/Footer';
+import Project from '../components/Project';
+import ProjectFooter from '../components/ProjectFooter';
+import Footer from '../components/Footer';
 import { GlobalStyle } from '../components/styles/GlobalStyle';
 
-const Republic310 = () => {
-  const data = UseStaticQuery(graphql`
-    query MyRepublic {
+const Republic_310 = () => {
+  const data = useStaticQuery(graphql`
+    query MyRepublicImages {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"},
-      name: {in: ["republic-0"]}}) {
+      name: {in: ["painting-1", "painting-2"]}}) {
         edges {
           node {
             childImageSharp {
@@ -23,6 +23,13 @@ const Republic310 = () => {
       }
     }
   `);
+
+  const images = data.allFile.edges.map(img => {
+    return {
+      fluid: img.node.childImageSharp.fluid,
+      src: img.node.childImageSharp.fluid.src,
+    }
+  });
 
   const details = `
     This is website I made for a client who is 
@@ -75,6 +82,20 @@ const Republic310 = () => {
 
   const alt2 = 'blank';
 
+  const otherA = {
+    link: '/Creatures_of_Habit',
+    title: 'Creatures of Habit',
+    alt: 'Serene painting of a light blue sky, a grassy field, and the ocean in between',
+    name: 'painting-1',
+  };
+
+  const otherB = {
+    link: '/Mindful',
+    title: 'mindful.io',
+    alt: 'Peaceful image with black stones and bamboo in the background',
+    name: 'painting-2',
+  };
+
   return (
     <>
       <GlobalStyle />
@@ -87,15 +108,15 @@ const Republic310 = () => {
         purpose={purpose}
         tech={tech}
         lessons={lessons}
-        data={data}
+        data={images}
         alt1={alt1}
         alt2={alt2}
         icon="republic"
       />
-      <ProjectFooter keyword="republic" />
+      <ProjectFooter otherA={otherA} otherB={otherB} />
       <Footer />
     </>
   );
 }
 
-export default Republic310;
+export default Republic_310;

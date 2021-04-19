@@ -7,8 +7,9 @@ import ProjectFooter from '../components/ProjectFooter';
 import Footer from '../components/Footer';
 
 const Battleship = () => {
+  // gets thumbnails of Creatures and Mindful
   const data = useStaticQuery(graphql`
-    query Battleship {
+    query OtherProjectTiles {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
         name: {in: ["battleship-0", "battleship-1"]}}) {
         edges {
@@ -23,6 +24,13 @@ const Battleship = () => {
       }
     }      
   `);
+
+  const images = data.allFile.edges.map(img => {
+    return {
+      fluid: img.node.childImageSharp.fluid,
+      src: img.node.childImageSharp.fluid.src,
+    }
+  });
 
   const details = `This is the first front-end project I ever made for the sole purpose of
     putting my skills and knowledge into practice. I included it in my portfolio to show the progress I've made
@@ -50,6 +58,20 @@ const Battleship = () => {
     where cannonballs were shot. 
     Player one is named "Captain Morgan" and has yet to make a move.`;
 
+  const otherA = {
+    link: '/Creatures_of_Habit',
+    title: 'Creatures of Habit',
+    alt: 'Serene painting of a light blue sky, a grassy field, and the ocean in between',
+    name: 'painting-1',
+  };
+
+  const otherB = {
+    link: '/Mindful',
+    title: 'mindful.io',
+    alt: 'Peaceful image with black stones and bamboo in the background',
+    name: 'painting-2',
+  };
+
   return (
     <>
       <GlobalStyle />
@@ -62,12 +84,12 @@ const Battleship = () => {
         purpose={purpose}
         tech={tech}
         lessons={lessons}
-        data={data}
+        data={images}
         alt1={alt1}
         alt2={alt2}
         icon="battleship"
       />
-      <ProjectFooter keyword="battleship" />
+      <ProjectFooter otherA={otherA} otherB={otherB} />
       <Footer />
     </>
   )

@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
 import 'fontsource-roboto';
 
-const ProjectFooter = ({ keyword }) => {
+const ProjectFooter = ({ otherA, otherB }) => {
   const data = useStaticQuery(graphql`
-    query Paintings {
-      allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
-        name: {in: ["painting-1", "painting-2", "painting-3"]}}) {
+    query AllImagesQuery {
+      allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {}}) {
         edges {
           node {
+            name
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid
@@ -23,87 +23,43 @@ const ProjectFooter = ({ keyword }) => {
           }
         }
       }
-    }
+    }  
   `);
 
-  const paintings = [...data.allFile.edges]; // === [creatures, mindful, battleship, republic]
+  const images = data.allFile.edges.reduce((array, img) => {
+    if (img.node.name === otherA.name) {
 
-  /*
-    BELOW: CHANGE 2 TO 3 (ON FLUID REASSIGNMENT)
-  */
+      array.push({
+        fluid: img.node.childImageSharp.fluid,
+        src: img.node.childImageSharp.fluid.src,
+        link: otherA.link,
+        title: otherA.title,
+        alt: otherA.alt
+      });
+
+    } else if (img.node.name === otherB.name) {
+
+      array.push({
+        fluid: img.node.childImageSharp.fluid,
+        src: img.node.childImageSharp.fluid.src,
+        link: otherB.link,
+        title: otherB.title,
+        alt: otherB.alt
+      });
+
+    }
+    return array;
+  }, []);
 
   const mindfulAlt = 'Peaceful image with black stones and bamboo in the background';
+
   const creaturesAlt = 'Serene painting of a light blue sky, a grassy field, and the ocean in between';
+
   const battleshipAlt = 'Painting of a submarine underwater';
+
   const republicAlt = `The landing page of The Republic 310. The banner is of two female surfers walking along
-  an empty beach, holding surfboards`;
-
-  const otherOne = {
-    link: '',
-    title: '',
-    fluid = '',
-    src = '',
-    alt = '',
-  };
-
-  const otherTwo = {
-    link: '',
-    title: '',
-    fluid = '',
-    src = '',
-    alt = '',
-  };
-
-  // change battleship to republic
-  if (keyword === 'mindful') {
-    paintings[1].link = '/Creatures';
-    paintings[1].title = 'Creatures of Habit';
-    paintings[1].fluid = paintings[1].node.childImageSharp.fluid;
-    paintings[1].src = paintings[1].node.childImageSharp.fluid.src;
-    paintings[1].alt = creaturesAlt;
-
-    paintings[3].link = '/Republic310';
-    paintings[3].title = 'The Republic 310';
-    paintings[3].fluid = paintings[3].node.childImageSharp.fluid;
-    paintings[3].src = paintings[3].node.childImageSharp.fluid.src;
-    paintings[3].alt = republicAlt;
-  } else if (keyword === 'creatures') {
-    paintings[1].link = '/Mindful'
-    paintings[1].title = 'mindful.io';
-    paintings[1].fluid = paintings[0].node.childImageSharp.fluid;
-    paintings[1].src = paintings[0].node.childImageSharp.fluid.src;
-    paintings[1].alt = mindfulAlt;
-
-    paintings[3].link = '/Republic310';
-    paintings[3].title = 'The Republic 310';
-    paintings[3].fluid = paintings[3].node.childImageSharp.fluid;
-    paintings[3].src = paintings[3].node.childImageSharp.fluid.src;
-    paintings[3].alt = republicAlt;
-  } else if (keyword === 'battleship') {
-    paintings[1].link = '/Creatures';
-    paintings[1].title = 'Creatures of Habit';
-    paintings[1].fluid = paintings[1].node.childImageSharp.fluid;
-    paintings[1].src = paintings[1].node.childImageSharp.fluid.src;
-    paintings[1].alt = creaturesAlt;
-
-    paintings[2].link = '/Mindful';
-    paintings[2].title = 'mindful.io';
-    paintings[2].fluid = paintings[0].node.childImageSharp.fluid;
-    paintings[2].src = paintings[0].node.childImageSharp.fluid.src;
-    paintings[2].alt = battleshipAlt;
-  } else if (keyword === 'republic') {
-    paintings[1].link = '/Creatures';
-    paintings[1].title = 'Creatures of Habit';
-    paintings[1].fluid = paintings[1].node.childImageSharp.fluid;
-    paintings[1].src = paintings[1].node.childImageSharp.fluid.src;
-    paintings[1].alt = creaturesAlt;
-
-    paintings[2].link = '/Mindful';
-    paintings[2].title = 'mindful.io';
-    paintings[2].fluid = paintings[0].node.childImageSharp.fluid;
-    paintings[2].src = paintings[0].node.childImageSharp.fluid.src;
-    paintings[2].alt = mindfulAlt;
-  }
+    an empty beach, holding surfboards
+  `;
 
   return (
     <FooterContainer>
@@ -113,33 +69,33 @@ const ProjectFooter = ({ keyword }) => {
 
       <FooterContent>
         <ProjectContainer>
-          <ProjectAnchor to={paintings[1].link}>
+          <ProjectAnchor to={images[0].link}>
             <ProjectThumbnail 
-              fluid={paintings[1].fluid}
-              src={paintings[1].src} 
+              fluid={images[0].fluid}
+              src={images[0].src} 
               key={1} 
-              alt={paintings[1].alt}
+              alt={images[0].alt}
               className="thumbnail">
             </ProjectThumbnail>
           </ProjectAnchor>
 
-          <ProjectTitle>{paintings[1].title}</ProjectTitle>
-          <ProjectLink to={paintings[1].link}>View Project</ProjectLink>
+          <ProjectTitle>{images[0].title}</ProjectTitle>
+          <ProjectLink to={images[0].link}>View Project</ProjectLink>
         </ProjectContainer>
 
         <ProjectContainer>
-          <ProjectAnchor to={paintings[2].link}>
+          <ProjectAnchor to={images[1].link}>
             <ProjectThumbnail 
-              fluid={paintings[2].fluid}
-              src={paintings[2].src} 
+              fluid={images[1].fluid}
+              src={images[1].src} 
               key={2} 
-              alt={paintings[2].alt}
+              alt={images[1].alt}
               className="thumbnail">
             </ProjectThumbnail>
           </ProjectAnchor>
 
-          <ProjectTitle>{paintings[2].title}</ProjectTitle>
-          <ProjectLink to={paintings[2].link}>View Project</ProjectLink>
+          <ProjectTitle>{images[1].title}</ProjectTitle>
+          <ProjectLink to={images[1].link}>View Project</ProjectLink>
         </ProjectContainer>
       </FooterContent>
     </FooterContainer>
