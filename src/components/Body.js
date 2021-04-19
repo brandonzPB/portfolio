@@ -17,7 +17,7 @@ const Body = () => {
   const data = useStaticQuery(graphql`
     query MyPaintings {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
-        name: {in: ["painting-1", "painting-2", "painting-3"]}}) {
+        name: {in: ["painting-1", "painting-2", "painting-3", "painting-4"]}}) {
         edges {
           node {
             childImageSharp {
@@ -151,6 +151,21 @@ const Body = () => {
               I made this project to help users quantify areas of their life that are intrinsically qualitative (e.g., mental health).
             </ProjectDetails>
             <ProjectLink to="/Creatures_of_Habit">View Project</ProjectLink>
+          </ProjectContainer>
+
+          <ProjectContainer>
+            <ProjectAnchor to="/Republic_310">
+              <ProjectThumbnail 
+                fluid={paintings[3].node.childImageSharp.fluid} 
+                src={paintings[3].node.childImageSharp.fluid.src}
+                key={3} 
+                className="thumbnail">
+              </ProjectThumbnail>
+            </ProjectAnchor>
+
+            <ProjectTitle>The Republic 310</ProjectTitle>
+            <ProjectDetails>I made this project a client who is interested in starting their own business in sales.</ProjectDetails>
+            <ProjectLink to="/Republic_310">View Project</ProjectLink>
           </ProjectContainer>
 
           <ProjectContainer>

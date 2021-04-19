@@ -57,10 +57,10 @@ const Project = ({ title, details, stack, link, sourceCode, purpose, tech, lesso
           <a href={link} target="_blank" rel="noreferrer">
             <Thumbnail src={thumbnail.src} fluid={thumbnail.fluid} alt={thumbnail.alt} />
           </a>
-          <a href={link} target="_blank" rel="noreferrer">
+          <a href={link} target="_blank" rel="noreferrer" style={{ display: link === '#' ? 'none' : 'inline-block' }}>
             <span id="project-link">View Live</span>
           </a>
-          <a href={sourceCode} target="_blank" rel="noreferrer">
+          <a href={sourceCode} target="_blank" rel="noreferrer" style={{ display: link === '#' ? 'none' : 'inline-block' }}>
             <span id="source-code">Source Code</span>
           </a>
         </LinkContainer>
@@ -204,6 +204,7 @@ const Thumbnail = styled(Img)`
   margin: 0 auto 1.5rem auto;
   border-radius: 5px;
   box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3);
+  width: 70%;
 
   @media screen and (max-width: 500px) {
     width: 100%;

@@ -51,16 +51,6 @@ const ProjectFooter = ({ otherA, otherB }) => {
     return array;
   }, []);
 
-  const mindfulAlt = 'Peaceful image with black stones and bamboo in the background';
-
-  const creaturesAlt = 'Serene painting of a light blue sky, a grassy field, and the ocean in between';
-
-  const battleshipAlt = 'Painting of a submarine underwater';
-
-  const republicAlt = `The landing page of The Republic 310. The banner is of two female surfers walking along
-    an empty beach, holding surfboards
-  `;
-
   return (
     <FooterContainer>
       <FooterHeadline>

@@ -10,9 +10,10 @@ const Republic_310 = () => {
   const data = useStaticQuery(graphql`
     query MyRepublicImages {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"},
-      name: {in: ["painting-1", "painting-2"]}}) {
+      name: {in: ["republic-1", "republic-0"]}}) {
         edges {
           node {
+            name
             childImageSharp {
               fluid {
                 ...GatsbyImageSharpFluid
@@ -29,7 +30,10 @@ const Republic_310 = () => {
       fluid: img.node.childImageSharp.fluid,
       src: img.node.childImageSharp.fluid.src,
     }
-  });
+  }).sort((a, b) => {
+    if (a.name < b.name) return -1;
+    else return 1;
+  }).reverse();
 
   const details = `
     This is website I made for a client who is 
@@ -40,7 +44,7 @@ const Republic_310 = () => {
     is live, this page will be updated!)
   `;
 
-  const stack = ['React (TypeScript)', 'React Context API, CSS, NodeJS, Express, JSON web tokens, bcrypt, NoSQL, MongoDB'];
+  const stack = ['React (TypeScript)', 'React Context API', 'CSS', 'NodeJS', 'Express', 'JSON Web Tokens', 'bcrypt', 'NoSQL', 'MongoDB'];
 
   const link = '#';
 
@@ -60,16 +64,16 @@ const Republic_310 = () => {
     Initially, I felt intimidated at seeing the complexity of one's code once it's "translated" from JavaScript
     to clean, effective TypeScript. However, after working with it, seeing its advantages over regular JavaScript,
     and ultimately learning how to write cleaner code with fewer bugs--I fell in love. Although it's only been
-    a month, imagining myself coding with vanilla JavaScript just feels irresponsible and reckless!
+    a month, imagining myself coding with vanilla JavaScript just feels irresponsible and reckless.
   `;
 
   const lessons = `
-    I've acquired a tremenous amount of wisdom while working on this project. I learned about the 
-    shortcomings of NoSQL + MongoDB when creating a server/database for an e-commerce site
-    (while working on this project, I started studying/practicing PostgreSQL, MikroORM,
-    and GraphQL to use for future projects--Mongo is nice, but being able to create my OWN database and customize
-    mutations and queries seems much cooler). In the process of figuring out how to combine the syntax and safety measures of
-    TypeScript with React hooks and its Context API, I've not only learned a lot about better practices for writing code in a 
+    I've acquired a tremenous amount of wisdom while working on this project. I also
+    got to use some of the knowledge I've acquired since studying data structures and algorithms.
+    I needed a way to sort a variable array of objects by a variable key. Although a simple solution,
+    something I never would've thought of or would have been able to do prior to my studies and rigorous practice was 
+    creating a module that uses a quicksort algorithm to sort by the given parameters. 
+    Also, I've not only learned a lot about better practices for writing code in a 
     reusable fashion, but also found a wealth of resources to dive into and further my knowledge and ability to work with everything
     React has to offer. I certainly would not have grown without electing to use TypeScript over JavaScript for this project, nor would
     I have been directed down a far more grand path of wisdom, knowledge, and practice so soon in my career. The difficulties of learning
