@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { AiFillGithub } from 'react-icons/ai';
-import { FaYoutube, FaTwitterSquare } from 'react-icons/fa';
+import { FaYoutube, FaTwitterSquare, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'gatsby';
 
 import 'fontsource-playfair-display/600.css';
@@ -22,7 +22,7 @@ const Footer = () => {
 
       <FooterDesc>
         <p>If you just want to chat, or if you're looking for a programmer, team member, or leader, feel free to send me an email.</p>
-        <a href="mailto:brandon@bzweb.dev">brandon@bzweb.dev</a>
+        <a href="mailto:zirBrandonWeb@gmail.com">zirBrandonWeb@gmail.com</a>
       </FooterDesc>
 
       <FooterSocials>
@@ -31,6 +31,12 @@ const Footer = () => {
         </a>
         <a href="https://www.youtube.com/channel/UC8ro96mSErJclS_VRFgEsVw/featured" target="_blank" rel="noreferrer">
           <FaYoutube id="youtube" className="icon" />
+        </a>
+        <a href="https://twitter.com/zirWeb" target="_blank" rel="noreferrer">
+          <FaTwitterSquare id="twitter" className="icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/brandon-z" target="_blank" rel="noreferrer">
+          <FaLinkedin id="linkedin" className="icon" />
         </a>
       </FooterSocials>
     </FooterContainer>
@@ -120,6 +126,17 @@ const FooterSocials = styled.div`
 
   #twitter:hover {
     color: #48CEF7;
+    transform: scale(1.1);
+  }
+
+  #linkedin {
+    color: #0A66C2;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease 0;
+  }
+
+  #linkedin:hover {
+    color: #70B5F9;
     transform: scale(1.1);
   }
 
