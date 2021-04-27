@@ -34,7 +34,7 @@ const Battleship = () => {
 
   const details = `This is the first front-end project I ever made for the sole purpose of
     putting my skills and knowledge into practice. I included it in my portfolio to show the progress I've made
-    since starting in June 2020.`;
+    since my first month of programming.`;
 
   const stack = ['React (JavaScript)', 'React Context API', 'HTML', 'CSS', 'vanilla JavaScript'];
 
