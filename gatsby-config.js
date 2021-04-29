@@ -1,10 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Full-Stack Developer`,
+    title: `Full-Stack Developer | Brandon Zirulnikoff`,
     description: `My portfolio, showcasing and detailing my progress as a developer.`,
-    author: `bzweb`,
+    author: `Brandon Zirulnikoff <zirBrandonWeb@gmail.com>`,
   },
   plugins: [
+    `gatsby-remark-prismjs`,
+    `gatsby-remark-copy-linked-files`,
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
@@ -15,12 +18,25 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
         typekit: {
           id: process.env.TYPEKIT_ID,
         },
       },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: []
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
