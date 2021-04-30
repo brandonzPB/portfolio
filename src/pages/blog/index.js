@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
-import '../../BlogCSS/index.css';
+import '../../css/index.css';
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark;
@@ -31,7 +31,7 @@ export default function Index({ data }) {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date, frontmatter___tags] }) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
           excerpt(pruneLength: 250)
@@ -40,6 +40,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             path
+            tags
           }
         }
       }

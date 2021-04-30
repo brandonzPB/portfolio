@@ -1,12 +1,20 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
-import '../BlogCSS/blog-post.css';
+import '../css/blog-post.css';
 
 export default function Template({ data }) {
   // data is injected with GraphQL query
   const { markdownRemark: post } = data; // data.markdownRemark holds post data
+
+  const TagComponents = post.frontmatter.tags.map(tag => (
+    <li className="tag-list-item" style={{ listStyleType: 'none' }}>
+      <h1>
+        <Link to={`/learning/tags/${tag}`}>#{tag}</Link>
+      </h1>
+    </li>
+  ));
 
   return (
     <div className="blog-post-container">
@@ -14,6 +22,11 @@ export default function Template({ data }) {
 
       <div className="blog-post">
         <h1>{post.frontmatter.title}</h1>
+
+        <ul className="tag-list">
+          {TagComponents}
+        </ul>
+
         <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </div>
@@ -28,6 +41,8 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        tags
+      }
     }
   }
-`;
+`
