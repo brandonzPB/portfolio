@@ -8,10 +8,10 @@ export default function Template({ data }) {
   // data is injected with GraphQL query
   const { markdownRemark: post } = data; // data.markdownRemark holds post data
 
-  const TagComponents = post.frontmatter.tags.map(tag => (
-    <li className="tag-list-item" style={{ listStyleType: 'none' }}>
+  const TagComponents = post.frontmatter.tags.map((tag, index) => (
+    <li className="tag-list-item" style={{ listStyleType: 'none' }} key={index}>
       <h1>
-        <Link to={`/learning/tags/${tag}`}>#{tag}</Link>
+        <Link to={`/tags/${tag}`}>#{tag}</Link>
       </h1>
     </li>
   ));

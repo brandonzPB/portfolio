@@ -5,17 +5,17 @@ import { Helmet } from 'react-helmet';
 import '../../css/index.css';
 
 export default function Index({ data }) {
-  const { edges: posts } = data.allMarkdownRemark;
+  const posts = data;
 
   return (
     <div className="blog-posts">
       <Helmet title={`BZ Learning`} />
       
       {posts
-        .filter(post => post.node.frontmatter.title.length > 0)
-        .map(({ node: post }) => {
+        .filter(post => post.frontmatter.title.length > 0)
+        .map((post) => {
           return (
-            <div className="blog-post-preview" key={post.id}>
+            <div className="blog-post-preview" key={post.key}>
               <h1>
                 <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
               </h1>

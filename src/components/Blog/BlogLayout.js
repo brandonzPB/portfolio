@@ -1,12 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { GlobalStyle } from './styles/GlobalStyle';
+import { GlobalStyle } from '../styles/GlobalStyle';
+
+import BlogHeader from './BlogHeader';
+import Footer from '../Footer';
 
 const BlogLayout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
+      <BlogHeader />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }
