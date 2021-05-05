@@ -16,7 +16,7 @@ const Learning = () => {
               title
               tags
               path
-              date
+              date(formatString: "MMMM DD, YYYY")
             }
           }
         }

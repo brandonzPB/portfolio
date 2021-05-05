@@ -20,9 +20,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
-      allTags {
-        
-      }
     }
   `);
 

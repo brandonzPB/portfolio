@@ -70,7 +70,7 @@ const Body = () => {
             <li>
               <SiMongodb id="mongo" className="icon" />
               <GiTriforce className="list-type" />
-              <span className="list-text">MongoDB (with NoSQL)</span>
+              <span className="list-text">MongoDB</span>
             </li>
             <li>
               <SiJest id="jest" className="icon" />

@@ -1,5 +1,5 @@
 ---
-path: "/learning/first-post"
+path: "/learn/first-post"
 date: 2021-04-29T21:23:11.158Z
 title: "My first Blog Post"
 tags: ["programming", "javascript"]
