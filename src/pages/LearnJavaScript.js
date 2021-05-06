@@ -3,16 +3,18 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import BlogLayout from '../components/Blog/BlogLayout';
 import SEO from '../components/seo';
-import TagIndex from '../components/Blog/tagIndex';
 
-const Tags = () => {
+const LearnJavaScript = () => {
   const data = useStaticQuery(graphql`
-    query MyTags {
+    query JSPosts {
       allMarkdownRemark {
         edges {
           node {
             frontmatter {
+              title
               tags
+              path
+              date(formatString: "MMMM DD, YYYY")
             }
           }
         }
@@ -20,12 +22,17 @@ const Tags = () => {
     }
   `);
 
+  const jsPosts = data.allMarkdownRemark.edges.filter(({ node }) => {
+    return node.frontmatter.tags.indexOf('JavaScript') > -1;
+  });
+
+  console.log('jsPosts', jsPosts);
+
   return (
     <BlogLayout>
       <SEO title="BZ Learning" />
-      <TagIndex data={data} />
     </BlogLayout>
   )
 }
 
-export default Tags;
+export default LearnJavaScript;

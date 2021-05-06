@@ -11,15 +11,19 @@ export default function TagIndex({ data }) {
     return map;
   }, {});
 
-  const tagArr = [];
+  let tagArr = [];
 
   for (const tag in tagMap) {
     tagArr.push(tag);
   }
 
+  tagArr = tagArr.sort((a, b) => a - b);
+
   const TagComponents = tagArr.map((tag, index) => (
     <li key={index} className="tag-list-item">
-      <span className="tag-list-text">#{tag}</span>
+      <span className="tag-list-text">
+        <Link to={`/Learn${tag}`}>#{tag}</Link>
+      </span>
     </li>
   ));
 
