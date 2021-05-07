@@ -5,9 +5,9 @@ import BlogLayout from '../components/Blog/BlogLayout';
 import SEO from '../components/seo';
 import TaggedPostsContainer from '../components/Blog/TaggedPostsContainer';
 
-const LearnJavaScript = () => {
+const LearnFullStack = () => {
   const data = useStaticQuery(graphql`
-    query JSPosts {
+    query FullStackPosts {
       allMarkdownRemark {
         edges {
           node {
@@ -23,16 +23,16 @@ const LearnJavaScript = () => {
     }
   `);
 
-  const jsPosts = data.allMarkdownRemark.edges.filter(({ node }) => {
-    return node.frontmatter.tags.indexOf('JavaScript') > -1;
+  const fullStackPosts = data.allMarkdownRemark.edges.filter(({ node }) => {
+    return node.frontmatter.tags.indexOf('FullStack') > -1;
   });
 
   return (
     <BlogLayout>
       <SEO title="BZ Learning" />
-      <TaggedPostsContainer posts={jsPosts} />
+      <TaggedPostsContainer posts={fullStackPosts} />
     </BlogLayout>
   )
 }
 
-export default LearnJavaScript;
+export default LearnFullStack;

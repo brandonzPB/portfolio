@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import BlogLayout from '../components/Blog/BlogLayout';
 import SEO from '../components/seo';
-import TagIndex from '../components/Blog/tagIndex';
+import TagIndex from '../components/Blog/TagIndex';
 
 const Tags = () => {
   const data = useStaticQuery(graphql`

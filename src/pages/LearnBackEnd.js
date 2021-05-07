@@ -5,9 +5,9 @@ import BlogLayout from '../components/Blog/BlogLayout';
 import SEO from '../components/seo';
 import TaggedPostsContainer from '../components/Blog/TaggedPostsContainer';
 
-const LearnJavaScript = () => {
+const LearnBackEnd = () => {
   const data = useStaticQuery(graphql`
-    query JSPosts {
+    query BackEndPosts {
       allMarkdownRemark {
         edges {
           node {
@@ -23,16 +23,16 @@ const LearnJavaScript = () => {
     }
   `);
 
-  const jsPosts = data.allMarkdownRemark.edges.filter(({ node }) => {
-    return node.frontmatter.tags.indexOf('JavaScript') > -1;
+  const backendPosts = data.allMarkdownRemark.edges.filter(({ node }) => {
+    return node.frontmatter.tags.indexOf('BackEnd') > -1;
   });
 
   return (
     <BlogLayout>
       <SEO title="BZ Learning" />
-      <TaggedPostsContainer posts={jsPosts} />
+      <TaggedPostsContainer posts={backendPosts} />
     </BlogLayout>
   )
 }
 
-export default LearnJavaScript;
+export default LearnBackEnd;
