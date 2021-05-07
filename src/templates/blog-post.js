@@ -11,7 +11,7 @@ export default function Template({ data }) {
   const TagComponents = post.frontmatter.tags.map((tag, index) => (
     <li className="tag-list-item" style={{ listStyleType: 'none' }} key={index}>
       <h1>
-        <Link to={`/tags/${tag}`}>#{tag}</Link>
+        <Link to={`/Learn${tag}`}>#{tag}</Link>
       </h1>
     </li>
   ));
@@ -21,6 +21,9 @@ export default function Template({ data }) {
       <Helmet title={`BZ Learning - ${post.frontmatter.title}`} />
 
       <div className="blog-post">
+        <span>
+          <Link to="/learn">Browse Posts</Link>
+        </span>
         <h1>{post.frontmatter.title}</h1>
 
         <ul className="tag-list">

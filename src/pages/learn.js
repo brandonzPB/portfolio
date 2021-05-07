@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql, useStaticQuery } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import { v4 as uuidv4 } from 'uuid';
 
 import BlogLayout from "../components/Blog/BlogLayout"
-import Index from '../components/Blog/index';
+import BlogIndex from '../components/Blog/index';
 import SEO from "../components/seo"
 
 const Learning = () => {
@@ -34,7 +34,12 @@ const Learning = () => {
   return (
     <BlogLayout>
       <SEO title="BZ Learning" />
-      <Index data={postData} />
+
+      <span>
+        <Link to="/tags">Browse Tags</Link>
+      </span>
+      
+      <BlogIndex data={postData} />
     </BlogLayout>
   )
 }

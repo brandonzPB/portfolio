@@ -1,12 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import PostPreview from './PostPreview';
+import { v4 as uuid } from 'uuid'; 
 
 const TaggedPostsContainer = ({ posts }) => {
-  console.log('posts', posts);
-
   // make post components: thumbnails of each post with the related tag
-  const PostComponents = [];
+  const PostComponents = posts.map((post) => {
+    console.log('post', post);
+    return (
+      <PostPreview 
+        title={post.node.frontmatter.title}
+        date={post.node.frontmatter.date}
+        path={post.node.frontmatter.path}
+        tags={post.node.frontmatter.tags}
+        key={uuid()}
+      />
+    )
+  });
 
   return (
     <PostsContainer>
