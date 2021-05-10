@@ -1,8 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, graphql } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import Image from 'gatsby-image';
+import styled from 'styled-components';
 
 import '../css/blog-post.css';
+import BlogHeader from '../components/Blog/BlogHeader';
+import Footer from '../components/Footer';
+import MyIcon from '../components/Blog/MyIcon';
 
 export default function Template({ data }) {
   // data is injected with GraphQL query
@@ -19,6 +24,8 @@ export default function Template({ data }) {
   return (
     <div className="blog-post-container">
       <Helmet title={`BZ Learning - ${post.frontmatter.title}`} />
+      
+      <BlogHeader />
 
       <div className="blog-post">
         <span>
@@ -26,12 +33,21 @@ export default function Template({ data }) {
         </span>
         <h1>{post.frontmatter.title}</h1>
 
+        <span>
+          Posted by&nbsp;
+          <Link to="/learn/Brandon">Brandon</Link>
+          &nbsp; <MyIcon />
+          &nbsp;on {post.frontmatter.date}
+        </span>
+
         <ul className="tag-list">
           {TagComponents}
         </ul>
 
         <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
+
+      <Footer />
     </div>
   )
 }

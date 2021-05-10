@@ -361,7 +361,7 @@ const ProjectThumbnail = styled(Img)`
   margin: 1rem auto;
   border-radius: 5px;
   box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3);
-  transition: transform 0.5s;
+  transition: transform 0.3s;
   transition-timing-function: ease-in-out;
 
   &:hover {

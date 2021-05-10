@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import { v4 as uuidv4 } from 'uuid';
 
 import BlogLayout from "../components/Blog/BlogLayout"
-import BlogIndex from '../components/Blog/index';
+import BlogIndex from '../components/Blog/BlogIndex';
 import SEO from "../components/seo"
 
 const Learning = () => {
