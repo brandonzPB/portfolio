@@ -1,10 +1,9 @@
-import { Link } from "gatsby"
 import Img from 'gatsby-image';
-import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import TriskeleContainer from './TriskeleContainer';
+import OwlContainer from './OwlContainer';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-roboto';
@@ -37,6 +36,8 @@ const Header = () => {
     <HeaderContainer>
       <HeaderContent>
         <TriskeleContainer />
+
+        <OwlContainer />
         
         <TextContainer>
           <div id="desktop">
