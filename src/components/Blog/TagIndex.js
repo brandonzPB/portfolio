@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
+import { v4 as uuid } from 'uuidv4';
+import PostPreview from './PostPreview';
 
 export default function TagIndex({ data }) {
+  const [currentTag, setCurrentTag] = useState({ title: '' });
+
+  const [taggedPosts, setTaggedPosts] = useState([]);
+
+  useEffect(() => {
+    if (!currentTag.title.trim()) return;
+  }, [currentTag]);
+
   const tagMap = data.allMarkdownRemark.edges.reduce((map, {node}) => {
     for (const index in node.frontmatter.tags) {
       const tag = node.frontmatter.tags[index];
@@ -26,6 +36,21 @@ export default function TagIndex({ data }) {
       </span>
     </li>
   ));
+
+  const TaggedPostsComponents = taggedPosts.map(post => {
+    const contentPreview = post.node.html.slice(8, 150) + '...';
+
+    return (
+      <PostPreview 
+        title={post.node.frontmatter.title}
+        date={post.node.frontmatter.date}
+        path={post.node.frontmatter.path}
+        tags={post.node.frontmatter.tags}
+        contentPreview={contentPreview}
+        key={uuid()}
+      />
+    )
+  });
 
   return (
     <div className="blog-posts">
