@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 const PostPreview = ({ title, date, tags, path, contentPreview }) => {
+  console.log('title', title);
   return (
     <div>
       <span>

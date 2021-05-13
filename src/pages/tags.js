@@ -14,6 +14,9 @@ const Tags = () => {
             html
             frontmatter {
               tags
+              path
+              title
+              date(formatString: "MMMM DD, YYYY")
             }
           }
         }
