@@ -5,7 +5,9 @@ import { Link } from 'gatsby';
 const PostPreview = ({ title, date, tags, path, contentPreview }) => {
   return (
     <div>
-      <Link to={path}>{title}</Link>
+      <span>
+        <Link to={path}>{title}</Link>
+      </span>
       
       <span>
         Posted by&nbsp;

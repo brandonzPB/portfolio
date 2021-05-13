@@ -11,6 +11,7 @@ const Tags = () => {
       allMarkdownRemark {
         edges {
           node {
+            html
             frontmatter {
               tags
             }

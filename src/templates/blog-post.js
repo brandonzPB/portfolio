@@ -1,8 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, graphql, useStaticQuery } from 'gatsby';
-import Image from 'gatsby-image';
-import styled from 'styled-components';
+import { Link, graphql } from 'gatsby';
 
 import '../css/blog-post.css';
 import BlogHeader from '../components/Blog/BlogHeader';

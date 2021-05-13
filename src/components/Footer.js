@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 import { AiFillGithub } from 'react-icons/ai';
 import { FaYoutube, FaTwitterSquare, FaLinkedin } from 'react-icons/fa';
-import { Link } from 'gatsby';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
