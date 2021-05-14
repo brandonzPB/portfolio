@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 import '../../css/index.css';
@@ -29,21 +29,21 @@ export default function Index({ data }) {
   )
 }
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 250)
-          id
-          frontmatter {
-            title
-            date(formatString: "MMMM DD, YYYY")
-            path
-            tags
-          }
-        }
-      }
-    }
-  }
-`;
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+//       edges {
+//         node {
+//           excerpt(pruneLength: 250)
+//           id
+//           frontmatter {
+//             title
+//             date(formatString: "MMMM DD, YYYY")
+//             path
+//             tags
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;

@@ -2,11 +2,10 @@ import Img from 'gatsby-image';
 import React from "react"
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import TriskeleContainer from './TriskeleContainer';
-import OwlContainer from './OwlContainer';
+import TriforceContainer from './TriforceContainer';
+import BrainContainer from './BrainContainer';
 
 import 'fontsource-playfair-display/600.css';
-import 'fontsource-roboto';
 import 'fontsource-open-sans';
 
 const Header = () => {
@@ -16,7 +15,7 @@ const Header = () => {
         edges {
           node {
             childImageSharp {
-              fluid(maxHeight: 1000, quality: 100) {
+              fluid(maxHeight: 1000, quality: 90) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -35,9 +34,9 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <TriskeleContainer />
+        <TriforceContainer />
 
-        <OwlContainer />
+        <BrainContainer />
         
         <TextContainer>
           <div id="desktop">

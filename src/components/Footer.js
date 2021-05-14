@@ -5,7 +5,6 @@ import { FaYoutube, FaTwitterSquare, FaLinkedin } from 'react-icons/fa';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
-import 'fontsource-roboto';
 
 const Footer = () => {
   return (
@@ -28,7 +27,7 @@ const Footer = () => {
         <a href="https://github.com/brandonzpb" target="_blank" rel="noreferrer" id="github-link">
           <AiFillGithub id="github" className="icon" />
         </a>
-        <a href="https://www.youtube.com/channel/UC8ro96mSErJclS_VRFgEsVw/featured" target="_blank" rel="noreferrer">
+        <a href="https://www.youtube.com/channel/UCi4kdZG8UsH_drFUGkKVavw/featured" target="_blank" rel="noreferrer">
           <FaYoutube id="youtube" className="icon" />
         </a>
         <a href="https://twitter.com/zirWeb" target="_blank" rel="noreferrer">

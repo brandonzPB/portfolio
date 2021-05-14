@@ -26,7 +26,7 @@ const Tags = () => {
 
   return (
     <BlogLayout>
-      <SEO title="BZ Learning" />
+      <SEO title="Learn with the Stoic Programmer" />
       <TagIndex data={data} />
     </BlogLayout>
   )

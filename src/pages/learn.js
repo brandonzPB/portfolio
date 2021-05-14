@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 
 import BlogLayout from "../components/Blog/BlogLayout"
@@ -33,11 +34,11 @@ const Learning = () => {
 
   return (
     <BlogLayout>
-      <SEO title="BZ Learning" />
+      <SEO title="Learn with the Stoic Programmer" />
 
-      <span>
+      <TagHeader>
         <Link to="/tags">Browse Tags</Link>
-      </span>
+      </TagHeader>
       
       <BlogIndex data={postData} />
     </BlogLayout>
@@ -45,3 +46,7 @@ const Learning = () => {
 }
 
 export default Learning;
+
+const TagHeader = styled.span`
+  fontSize: 3rem;
+`;

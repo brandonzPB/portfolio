@@ -4,14 +4,13 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { DiReact, DiHtml5, DiSass, DiBootstrap, DiNodejsSmall, DiPhotoshop } from 'react-icons/di';
-import { SiRedux, SiGatsby, SiGraphql, SiMongodb, SiPython, SiPostgresql, SiHeroku, SiJest, SiExpo } from 'react-icons/si';
-import { GoPrimitiveDot } from 'react-icons/go';
+// import { DiReact, DiHtml5, DiSass, DiBootstrap, DiNodejsSmall, DiPhotoshop } from 'react-icons/di';
+// import { SiRedux, SiGatsby, SiGraphql, SiMongodb, SiPython, SiPostgresql, SiHeroku, SiJest, SiExpo } from 'react-icons/si';
+// import { GoPrimitiveDot } from 'react-icons/go';
 import { GiTriforce } from 'react-icons/gi';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
-import 'fontsource-roboto';
 
 const Body = () => {
   const data = useStaticQuery(graphql`
@@ -40,22 +39,22 @@ const Body = () => {
         <SkillsListContainer>
           <ul>
             <li>
-              <DiReact id="react" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">React (TypeScript and JavaScript)</span>
             </li>
             <li>
-              <SiRedux id="redux" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">React Context API</span>
             </li>
             <li>
-              <SiGatsby id="gatsby" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Gatsby</span>
             </li>
             <li>
-              <SiGraphql id="graphql" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">GraphQL</span>
             </li>
@@ -63,22 +62,22 @@ const Body = () => {
 
           <ul>
             <li>
-              <GoPrimitiveDot id="express" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Express</span>
             </li>
             <li>
-              <SiMongodb id="mongo" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">MongoDB</span>
             </li>
             <li>
-              <SiJest id="jest" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Jest</span>
             </li>
             <li>
-              <SiPostgresql id="postgresql" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">PostgreSQL</span>
             </li>
@@ -86,22 +85,22 @@ const Body = () => {
             
           <ul>
             <li>
-              <DiBootstrap id="bootstrap" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Bootstrap</span>
             </li>
             <li>
-              <DiSass id="sass" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Sass</span>
             </li>
             <li>
-              <DiHtml5 id="html" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">HTML5</span>
             </li>
             <li>
-              <DiNodejsSmall id="node" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">NodeJS</span>
             </li>
@@ -109,22 +108,22 @@ const Body = () => {
 
           <ul>
             <li>
-              <SiHeroku id="heroku" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Heroku</span>
             </li>
             <li>
-              <DiPhotoshop id="photoshop" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Adobe Photoshop</span>
             </li>
             <li>
-              <SiPython id="python" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Python</span>
             </li>
             <li>
-              <SiExpo id="expo" className="icon" />
+              <GiTriforce className="icon" />
               <GiTriforce className="list-type" />
               <span className="list-text">Expo (React Native)</span>
             </li>
@@ -274,7 +273,11 @@ const SkillsListContainer = styled.div`
 
   .list-text {}
 
-  .icon { font-size: 0.75rem; margin: 0 1rem; }
+  .icon {
+    font-size: 0.75rem;
+    margin: 0 1rem;
+    color: #fecc27;
+  }
 
   @media screen and (max-width: 500px) {
     .icon {

@@ -21,7 +21,7 @@ export default function Template({ data }) {
 
   return (
     <div className="blog-post-container">
-      <Helmet title={`BZ Learning - ${post.frontmatter.title}`} />
+      <Helmet title={`Learn with The Stoic Programmer - ${post.frontmatter.title}`} />
       
       <BlogHeader />
 
