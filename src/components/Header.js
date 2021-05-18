@@ -34,9 +34,10 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <TriforceContainer />
-
-        <BrainContainer />
+        <IconsContainer>
+          <TriforceContainer />
+          <BrainContainer />
+        </IconsContainer>
         
         <TextContainer>
           <div id="desktop">
@@ -85,6 +86,17 @@ const HeaderContainer = styled.div`
     width: 80%;
   }
 `
+
+const IconsContainer = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  height: auto;
+`;
 
 const HeaderContent = styled.div`
   

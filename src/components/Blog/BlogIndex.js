@@ -9,7 +9,7 @@ export default function Index({ data }) {
 
   return (
     <div className="blog-posts">
-      <Helmet title={`BZ Learning`} />
+      <Helmet title={`The Stoic Programmer | Brandon Zirulnikoff`} />
       
       {posts
         .filter(post => post.frontmatter.title.length > 0)

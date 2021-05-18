@@ -37,7 +37,9 @@ const Learning = () => {
       <SEO title="Learn with the Stoic Programmer" />
 
       <TagHeader>
-        <Link to="/tags">Browse Tags</Link>
+        <TagsLink to="/tags">
+          <TagsLinkText>Browse Tags</TagsLinkText>
+        </TagsLink>
       </TagHeader>
       
       <BlogIndex data={postData} />
@@ -49,4 +51,24 @@ export default Learning;
 
 const TagHeader = styled.span`
   fontSize: 3rem;
+`;
+
+const TagsLink = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 2px solid #0070b7;
+  transition: border-bottom 0.3s ease 0s;
+
+  &:hover {
+    color: #48CEF7;
+    border-bottom: transparent;
+  }
+`;
+
+const TagsLinkText = styled.h1`
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #0070b7;
 `;

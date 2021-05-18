@@ -5,6 +5,8 @@ import { Link } from 'gatsby';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GiTriforce } from 'react-icons/gi';
 
+import 'fontsource-open-sans'
+
 const TriforceContainer = () => {
   // const data = useStaticQuery(graphql`
   //   query MyTriskele {
@@ -33,6 +35,7 @@ const TriforceContainer = () => {
       <IconLink to="/">
         {/* <Triskele src={triskele.src} fluid={triskele.fluid} alt={triskele.alt} className="icon" /> */}
         <GiTriforce className="icon" />
+        <TriforceCaption>Blog</TriforceCaption>
       </IconLink>
     </IconContainer>
   )
@@ -59,16 +62,36 @@ const IconContainer = styled.div`
     }
   }
 
+  @keyframes flip {
+    25% {
+      transform: scaleX(-1);
+    }
+
+    50% {
+      transform: scaleX(0);
+    }
+
+    75% {
+      transform: scaleX(-1);
+    }
+
+    100% {
+      transform: scaleX(0);
+    }
+  }
+
   margin: 0 auto;
   display: block;
+  width: 20rem;
   text-align: left;
-  height: 3rem;
+  height: auto;
 
   .icon {
     color: #fecc27;
     font-size: 2.5rem;
     opacity: 0.3;
     margin: 0 auto;
+
     z-index: 3;
     background: none;
     border: none;
@@ -77,7 +100,7 @@ const IconContainer = styled.div`
   }
 
   .icon:hover {
-    animation: spin 0.2s ease-out;
+    animation: flip 0.2s ease-out;
   }
 
   .icon:active {
@@ -85,6 +108,11 @@ const IconContainer = styled.div`
   }
 
   @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
   }
 `
 
@@ -96,4 +124,18 @@ const IconContainer = styled.div`
 //   opacity: 0.3;
 // `
 
-const IconLink = styled(Link)``
+const IconLink = styled(Link)`
+  text-decoration: none;
+`;
+
+const TriforceCaption = styled.h1`
+  font-size: 1rem;
+  opacity: 0.5;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.25rem;
+    margin-top: 0.6rem;
+  }
+`;

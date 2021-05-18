@@ -49,8 +49,10 @@ const BlogHeader = () => {
         </HeaderTextContainer>
       </BannerContainer>
 
-      <TriforceContainer />
-      <BrainContainer />
+      <IconsContainer>
+        <TriforceContainer />
+        <BrainContainer />
+      </IconsContainer>
     </HeaderContainer>
   )
 }
@@ -70,16 +72,31 @@ const BannerContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 500px) {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
 `;
 
 const Epictetus = styled(Img)`
   width: 40%;
   height: auto;
+
+  @media screen and (max-width: 500px) {
+    display: block;
+    width: 100%;
+  }
 `;
 
 const HeaderTextContainer = styled.div`
   width: 60%;
   margin: 0 4rem;
+
+  @media screen and (max-width: 500px) {
+    margin: 0 1rem;
+  }
 `;
 
 const HeaderText = styled.h1`
@@ -87,4 +104,19 @@ const HeaderText = styled.h1`
   font-size: 3.5rem;
   color: black;
   font-family: 'Playfair Display', sans-serif;
+`;
+
+const IconsContainer = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  height: auto;
+  width: 80%;
+
+  @media screen and (max-width: 500px) {
+  }
 `;
