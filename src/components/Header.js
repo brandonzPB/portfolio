@@ -34,19 +34,19 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <IconsContainer>
+        {/* <IconsContainer>
           <TriforceContainer />
           <BrainContainer />
-        </IconsContainer>
+        </IconsContainer> */}
         
         <TextContainer>
           <div id="desktop">
             <h3>Oh hello, I'm Brandon. </h3>
-            <h3>Full-Stack <span className="gold-text">Developer</span></h3>
+            <h3>Software Developer <span className="gold-text">Developer</span></h3>
             <h3>and Life-Long Learner</h3>
           </div>
           <div id="mobile">
-            <h3>Oh hello, I'm Brandon. Full-Stack <span className="gold-text">Developer</span> and Life-Long Learner</h3>
+            <h3>Oh hello, I'm Brandon. Software Developer <span className="gold-text">Developer</span> and Life-Long Learner</h3>
           </div>
         </TextContainer>
 
@@ -99,7 +99,10 @@ const IconsContainer = styled.div`
 `;
 
 const HeaderContent = styled.div`
-  
+  @media screen and (max-width: 500px) {
+    margin: 5rem auto;
+    border: 2px solid transparent;
+  }
 `
 
 const TextContainer = styled.div`
@@ -135,7 +138,7 @@ const TextContainer = styled.div`
 
   @media screen and (max-width: 700px) {
     font-size: 1.25rem;
-    margin: 0 auto;
+    margin: 3rem auto;
     width: auto;
 
     #desktop {

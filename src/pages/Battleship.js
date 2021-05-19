@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 import { GlobalStyle } from '../components/styles/GlobalStyle';
 
+import NavBar from '../components/NavBar';
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
 import Footer from '../components/Footer';
@@ -75,6 +76,7 @@ const Battleship = () => {
   return (
     <>
       <GlobalStyle />
+      <NavBar />
       <Project 
         title="Battleship"
         details={details}

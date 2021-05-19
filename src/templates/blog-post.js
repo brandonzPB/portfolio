@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 
 import '../css/blog-post.css';
+
+import NavBar from '../components/NavBar';
 import BlogHeader from '../components/Blog/BlogHeader';
 import Footer from '../components/Footer';
 import MyIcon from '../components/Blog/MyIcon';
@@ -22,6 +24,8 @@ export default function Template({ data }) {
   return (
     <div className="blog-post-container">
       <Helmet title={`Learn with The Stoic Programmer - ${post.frontmatter.title}`} />
+
+      <NavBar />
       
       <BlogHeader />
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import NavBar from '../components/NavBar';
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
 import Footer from '../components/Footer';
@@ -103,6 +104,7 @@ const Republic_310 = () => {
   return (
     <>
       <GlobalStyle />
+      <NavBar />
       <Project 
         title="The Republic 310"
         details={details}

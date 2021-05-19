@@ -8,7 +8,7 @@ import 'fontsource-open-sans';
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer id="footer">
       <FooterHeadline>
         <h1>
           Let's 

@@ -34,7 +34,7 @@ const Body = () => {
 
   return ( 
     <BodyContainer>
-      <SkillsContainer>
+      <SkillsContainer id="skills">
         <h1>My Skills</h1>
         <SkillsListContainer>
           <ul>
@@ -131,7 +131,7 @@ const Body = () => {
         </SkillsListContainer>
       </SkillsContainer>
 
-      <ProjectSection>
+      <ProjectSection id="projects">
         <h1>Projects I've Made</h1>
 
         <ProjectList>

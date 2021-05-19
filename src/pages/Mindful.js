@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 
+import NavBar from '../components/NavBar';
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
 import Footer from '../components/Footer';
@@ -94,6 +95,7 @@ const Mindful = () => {
   return (
     <>
       <GlobalStyle />
+      <NavBar />
       <Project 
         title="mindful.io"
         details={details}
