@@ -1,30 +1,32 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
+
+import PostPreview from './PostPreview';
 
 import '../../css/index.css';
 
 export default function Index({ data }) {
   const posts = data;
 
+  const PostPreviewComponents = posts.filter(post => post.frontmatter.title.length > 0)
+    .map(post => {
+      return (
+        <PostPreview
+          key={post.key}
+          title={post.frontmatter.title}
+          date={post.frontmatter.date}
+          excerpt={post.excerpt}
+          path={post.frontmatter.path}
+          tags={post.frontmatter.tags}
+        />
+      )
+    });
+
   return (
     <div className="blog-posts">
       <Helmet title={`The Stoic Programmer | Brandon Zirulnikoff`} />
       
-      {posts
-        .filter(post => post.frontmatter.title.length > 0)
-        .map((post) => {
-          return (
-            <div className="blog-post-preview" key={post.key}>
-              <h1>
-                <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-              </h1>
-              <h2>{post.frontmatter.date}</h2>
-              <p>{post.excerpt}</p>
-            </div>
-          )
-        })
-      }
+      {PostPreviewComponents}
     </div>
   )
 }

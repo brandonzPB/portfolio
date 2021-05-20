@@ -13,6 +13,7 @@ const Learning = () => {
       allMarkdownRemark {
         edges {
           node {
+            html
             frontmatter {
               title
               tags
@@ -28,7 +29,8 @@ const Learning = () => {
   const postData = data.allMarkdownRemark.edges.map(({ node }) => {
     return {
       ...node,
-      key: uuidv4()
+      key: uuidv4(),
+      excerpt: node.html.slice(8, 150) + '...'
     }
   });
 

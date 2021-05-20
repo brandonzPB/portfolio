@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import TriforceContainer from '../TriforceContainer';
-import BrainContainer from '../BrainContainer';
-
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
 
@@ -48,11 +45,6 @@ const BlogHeader = () => {
           <HeaderText>Learn with the Stoic Programmer</HeaderText>
         </HeaderTextContainer>
       </BannerContainer>
-
-      <IconsContainer>
-        <TriforceContainer />
-        <BrainContainer />
-      </IconsContainer>
     </HeaderContainer>
   )
 }
@@ -104,19 +96,4 @@ const HeaderText = styled.h1`
   font-size: 3.5rem;
   color: black;
   font-family: 'Playfair Display', sans-serif;
-`;
-
-const IconsContainer = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  flex: 1;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem auto;
-  height: auto;
-  width: 80%;
-
-  @media screen and (max-width: 500px) {
-  }
 `;

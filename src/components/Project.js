@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import TriforceContainer from './TriforceContainer';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
@@ -38,7 +37,6 @@ const Project = ({ title, details, stack, link, sourceCode, purpose, tech, lesso
   
   return (
     <ProjectContainer>
-      <TriforceContainer />
       
       <HeaderContainer>
         <h1>{title}</h1>

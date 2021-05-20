@@ -2,32 +2,44 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-const PostPreview = ({ title, date, tags, path, contentPreview }) => {
-  console.log('title', title);
+import MyIcon from './MyIcon';
+
+const PostPreview = ({ title, date, tags, path, excerpt }) => {
+
   return (
-    <div>
-      <span>
-        <Link to={path}>{title}</Link>
-      </span>
+    <PostPreviewContainer>
+      <PostLink to={path}>{title}</PostLink>
       
-      <span>
-        Posted by&nbsp;
-        <Link to="/learn/Brandon">Brandon</Link>
+      <PostInfo>
+        Posted by Brandon&nbsp;
+        <MyIcon />
         &nbsp;on {date}
-      </span>
+      </PostInfo>
 
       <TagContainer>
-        {tags}
+        {tags.map((tag, idx) => {
+          return (
+            <Tag key={idx}>{tag}</Tag>
+          )
+        })}
       </TagContainer>
 
       <ContentPreviewContainer>
-        {contentPreview}
+        {excerpt}
       </ContentPreviewContainer>
-    </div>
+    </PostPreviewContainer>
   )
 }
 
 export default PostPreview;
+
+const PostPreviewContainer = styled.div``;
+
+const PostLink = styled(Link)``;
+
+const PostInfo = styled.span``;
+
+const Tag = styled.span``;
 
 const TagContainer = styled.div``;
 

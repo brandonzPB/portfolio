@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
@@ -24,13 +24,15 @@ const MyIcon = () => {
   const myIcon = data.allFile.edges[0].node.childImageSharp;
 
   return (
-    <>
+    <IconLink to="/Brandon">
       <MyIconImage fluid={myIcon.fluid} alt="A small picture of me wearing a suit." />
-    </>
+    </IconLink>
   )
 }
 
 export default MyIcon;
+
+const IconLink = styled(Link)``;
 
 const MyIconImage = styled(Img)`
   width: 25px;

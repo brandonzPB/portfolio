@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import 'fontsource-roboto';
 import MobileModal from './MobileModal';
@@ -22,12 +23,24 @@ const NavBar = () => {
   return (
     <NavBarContainer>
       <WebContainer>
-        <NavItem>PORTFOLIO</NavItem>
-        <NavItem>BLOG</NavItem>
-        <NavItem>ABOUT ME</NavItem>
-        <NavItem>SKILLS</NavItem>
-        <NavItem>PROJECTS</NavItem>
-        <NavItem>CONTACT</NavItem>
+        <NavItem>
+          <NavLink to="/">PORTFOLIO</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/learn">BLOG</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/Brandon">ABOUT ME</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/#skills">SKILLS</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/#projects">PROJECTS</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink to="/#footer">CONTACT</NavLink>
+        </NavItem>
       </WebContainer>
 
       <MobileContainer>
@@ -46,26 +59,58 @@ const NavBar = () => {
 export default NavBar;
 
 const NavBarContainer = styled.div`
-  float: right;
-  width: 10rem;
+  width: 8rem;
   height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  right: 0.5rem;
+
+  @media screen and (max-width: 500px) {
+    width: 10rem;
+    position: absolute;
+  }
 `;
 
 const WebContainer = styled.div`
+  border-left: 1px solid black;
+
   @media screen and (max-width: 500px) {
     display: none;
   }
 `;
 
-const NavItem = styled.h1`
-  font-size: 1rem;
+const NavItem = styled.div`
+  margin: 1rem 2rem;
+  text-decoration: none;
+  display: block;
+`;
+
+const NavLink = styled(Link)`
+  color: black;
+  opacity: 0.5;
+  transition: border-bottom 0.3s ease 0s;
+  text-decoration: none;
   font-family: 'Roboto', sans-serif;
-  margin: 0 2rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+
+  &:visited, {
+    color: #0070b7;
+  }
+
+  &:active, &:focus {
+    color: black;
+    opacity: 1;
+  }
+
+  &:hover {
+    color: #48CEF7;
+    border-bottom: 2px solid #48cef7; 
+  }
 `;
 
 const MobileContainer = styled.div`

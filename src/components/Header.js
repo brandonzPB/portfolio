@@ -2,8 +2,6 @@ import Img from 'gatsby-image';
 import React from "react"
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import TriforceContainer from './TriforceContainer';
-import BrainContainer from './BrainContainer';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
@@ -34,10 +32,6 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        {/* <IconsContainer>
-          <TriforceContainer />
-          <BrainContainer />
-        </IconsContainer> */}
         
         <TextContainer>
           <div id="desktop">
@@ -86,17 +80,6 @@ const HeaderContainer = styled.div`
     width: 80%;
   }
 `
-
-const IconsContainer = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  flex: 1;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem auto;
-  height: auto;
-`;
 
 const HeaderContent = styled.div`
   @media screen and (max-width: 500px) {
