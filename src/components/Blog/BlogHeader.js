@@ -52,12 +52,12 @@ const BlogHeader = () => {
 export default BlogHeader;
 
 const HeaderContainer = styled.div`
-  width: 100%;
+  width: 90vw;
   height: 30%;
 `;
 
 const BannerContainer = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex: 1;
   flex-wrap: nowrap;

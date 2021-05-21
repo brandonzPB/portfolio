@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { GlobalStyle } from '../styles/GlobalStyle';
+import { BlogStyle } from '../styles/BlogStyle';
 
 import NavBar from '../NavBar';
 import BlogHeader from './BlogHeader';
@@ -9,7 +9,7 @@ import Footer from '../Footer';
 const BlogLayout = ({ children }) => {
   return (
     <>
-      <GlobalStyle />
+      <BlogStyle />
       <NavBar />
       <BlogHeader />
       <main>{children}</main>
