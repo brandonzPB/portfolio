@@ -17,6 +17,8 @@ const TaggedPostsContainer = ({ posts }) => {
         tags={post.node.frontmatter.tags}
         contentPreview={contentPreview}
         key={uuid()}
+        inTags={true}
+        setTag={null}
       />
     )
   });

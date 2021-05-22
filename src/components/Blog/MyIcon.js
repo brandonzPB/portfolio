@@ -6,8 +6,13 @@ import styled from 'styled-components';
 const MyIcon = () => {
   const data = useStaticQuery(graphql`
     query MyIcon {
-      allFile(filter: {ext: {regex: "/png/"},
-      name: {in: ["me_3"]}}) {
+      allFile(filter: {
+        ext: {
+          regex: "/png/"
+        },
+      name: {
+        in: ["me_3"]
+      }}) {
         edges {
           node {
             childImageSharp {

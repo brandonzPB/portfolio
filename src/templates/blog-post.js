@@ -16,7 +16,7 @@ export default function Template({ data }) {
   const TagComponents = post.frontmatter.tags.map((tag, index) => (
     <li className="tag-list-item" style={{ listStyleType: 'none' }} key={index}>
       <h1>
-        <Link to={`/Learn${tag}`}>#{tag}</Link>
+        <Link to={`/tags`}>#{tag}</Link>
       </h1>
     </li>
   ));

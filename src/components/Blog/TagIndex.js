@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Helmet } from 'react-helmet';
 import { v4 as uuid } from 'uuid';
 import PostPreview from './PostPreview';
@@ -67,6 +67,7 @@ export default function TagIndex({ data }) {
           tags={post.node.frontmatter.tags}
           contentPreview={contentPreview}
           key={uuid()}
+          setTag={updateTagState}
         />
       )
     });
@@ -83,10 +84,15 @@ export default function TagIndex({ data }) {
   }, [currentTag]);
 
   // UPDATE TAG STATE
-  const updateTagState = (tag) => {
+  // const updateTagState = (tag) => {
+  //   setCurrentTag({ ...currentTag, title: tag });
+  //   setTaggedPosts({ ...taggedPosts, updated: false });
+  // }
+
+  const updateTagState = useCallback((tag) => {
     setCurrentTag({ ...currentTag, title: tag });
     setTaggedPosts({ ...taggedPosts, updated: false });
-  }
+  }, [setTaggedPosts, setCurrentTag]);
 
   const TagComponents = tagArr.map((tag, index) => (
     <li key={index} className="tag-list-item">

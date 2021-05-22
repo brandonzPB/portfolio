@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
 
 import PostPreview from './PostPreview';
 
@@ -26,10 +27,38 @@ export default function Index({ data }) {
     <div className="blog-posts">
       <Helmet title={`The Stoic Programmer | Brandon Zirulnikoff`} />
       
-      {PostPreviewComponents}
+      <IndexContainer>
+        <InnerContainer>
+          {PostPreviewComponents}
+        </InnerContainer>
+      </IndexContainer>
     </div>
   )
 }
+
+const IndexContainer = styled.div`
+  border-radius: 10px;
+  width: 100%;
+  height: 90vh;
+  padding: 3rem 0;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.3);
+`;
+
+const InnerContainer = styled.div`
+  border-radius: 10px;
+  width: 90%;
+  height: auto;
+  padding: 3rem 0;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 // export const pageQuery = graphql`
 //   query IndexQuery {
