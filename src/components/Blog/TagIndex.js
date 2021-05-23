@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { v4 as uuid } from 'uuid';
 import PostPreview from './PostPreview';
@@ -22,6 +23,8 @@ export default function TagIndex({ data }) {
     tagArr.push(tag);
   }
 
+  // sort tags in alphabetical order; not many tags,
+  // so optimization is not an issue here
   tagArr = tagArr.sort((a, b) => a - b);
 
   const [taggedPosts, setTaggedPosts] = useState({
@@ -32,6 +35,7 @@ export default function TagIndex({ data }) {
     components: []
   });
 
+  // UPDATES ON TAG FILTER UPDATE
   useEffect(() => {
     // no tag change ("null" case)
     if (taggedPosts.updated) return;
@@ -52,27 +56,28 @@ export default function TagIndex({ data }) {
       return node.frontmatter.tags.indexOf(currentTag.title) > -1;
     });
 
-    console.log('filteredPosts', filteredPosts);
-
     const components = filteredPosts.map(post => {
-      console.log('post', post);
       // create content preview by getting slice of post HTML
       const contentPreview = post.node.html.slice(8, 150) + '...';
+
+      // reduce PostPreview props
+      const postObj = {
+        title: post.node.frontmatter.title,
+        date: post.node.frontmatter.date,
+        path: post.node.frontmatter.path,
+        tags: post.node.frontmatter.tags,
+        excerpt: contentPreview,
+      }
   
       return (
         <PostPreview 
-          title={post.node.frontmatter.title}
-          date={post.node.frontmatter.date}
-          path={post.node.frontmatter.path}
-          tags={post.node.frontmatter.tags}
-          contentPreview={contentPreview}
+          post={postObj}
           key={uuid()}
+          inTags={true}
           setTag={updateTagState}
         />
       )
     });
-
-    console.log('components', components);
     
     // set taggedPosts to filtered array
     return setTaggedPosts({
@@ -81,19 +86,15 @@ export default function TagIndex({ data }) {
       updated: true,
       components: components.slice()
     });
-  }, [currentTag]);
+  }, [currentTag, taggedPosts, setTaggedPosts]);
 
   // UPDATE TAG STATE
-  // const updateTagState = (tag) => {
-  //   setCurrentTag({ ...currentTag, title: tag });
-  //   setTaggedPosts({ ...taggedPosts, updated: false });
-  // }
-
   const updateTagState = useCallback((tag) => {
     setCurrentTag({ ...currentTag, title: tag });
     setTaggedPosts({ ...taggedPosts, updated: false });
   }, [setTaggedPosts, setCurrentTag]);
 
+  // TAG COMPONENTS
   const TagComponents = tagArr.map((tag, index) => (
     <li key={index} className="tag-list-item">
       <span className="tag-list-text" onClick={() => updateTagState(tag)}>
@@ -103,18 +104,57 @@ export default function TagIndex({ data }) {
   ));
 
   return (
-    <div className="blog-posts">
+    <TagIndexContainer>
       <Helmet title={`BZ Learning | Tags`} />
       
-      <div id="all-tags__container">{TagComponents}</div>
+      <TagContentContainer>
+        <AllTags>{TagComponents}</AllTags>
 
-      <div id="all-tagged-posts__container">
-        <span id="no-tag-text" style={{ display: currentTag.title.trim() ? 'none' : 'block' }}>
-          Click on a tag to filter all the posts!
-        </span>
+        <AllTaggedPosts>
+          <NoTagText style={{ display: currentTag.title.trim() ? 'none' : 'block' }}>
+            Click on a tag to filter all the posts!
+          </NoTagText>
 
-        {taggedPosts.components}
-      </div>
-    </div>
+          {taggedPosts.components}
+        </AllTaggedPosts>
+      </TagContentContainer>
+    </TagIndexContainer>
   )
 }
+
+const TagIndexContainer = styled.div`
+  margin: 3rem auto;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  height: auto;
+  padding: 0.1rem 0;
+`;
+
+const TagContentContainer = styled.div`
+  margin: 2rem auto;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.7);
+`;
+
+const AllTags = styled.div`
+  max-width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+
+  .tag-list-item {
+    list-style-type: none;
+    margin: 0 auto 0 3rem;
+    width: 26%;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+`;
+
+const AllTaggedPosts = styled.div``;
+
+const NoTagText = styled.div``;

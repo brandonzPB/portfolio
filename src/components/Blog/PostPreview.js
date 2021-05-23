@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { v4 as uuid } from 'uuid';
 
 import MyIcon from './MyIcon';
 
-const PostPreview = ({ title, date, tags, path, excerpt, inTags = false, setTag }) => {
+const PostPreview = ({ post, inTags = false, setTag, }) => {
+  const myRef = useRef(false);
+
+  useEffect(() => {
+    return () => {
+      myRef.current = false;
+    }
+  }, []);
 
   return (
     <PostPreviewContainer>
-      <PostLink to={path}>{title}</PostLink>
+      <PostLink to={post.path}>{post.title}</PostLink>
       
       <PostInfo>
         Posted by Brandon&nbsp;
         <MyIcon />
-        &nbsp;on {date}
+        &nbsp;on {post.date}
       </PostInfo>
 
       <TagContainer>
@@ -21,20 +29,20 @@ const PostPreview = ({ title, date, tags, path, excerpt, inTags = false, setTag 
       </TagContainer>
       {
         inTags
-          ? tags.map((tag, idx) => {
+          ? post.tags.map((tag, idx) => {
             return (
-              <Tag key={idx} onClick={() => setTag(tag)}>{tag}{idx < tags.length - 1 ? ', ' : ''}</Tag>
+              <Tag key={idx} onClick={() => setTag(tag)}>{tag}{idx < post.tags.length - 1 ? ', ' : ''}</Tag>
             )
           })
-          : tags.map((tag, idx) => {
+          : post.tags.map((tag, idx) => {
               return (
-                <TagLink key={idx} to="/tags">{tag}{idx < tags.length - 1 ? ', ' : ''}</TagLink>
+                <TagLink key={idx} to="/tags">{tag}{idx < post.tags.length - 1 ? ', ' : ''}</TagLink>
               )
             })
       }
 
       <ContentPreviewContainer>
-        {excerpt}
+        {post.excerpt}
       </ContentPreviewContainer>
     </PostPreviewContainer>
   )

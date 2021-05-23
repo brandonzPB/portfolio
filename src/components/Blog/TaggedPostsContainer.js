@@ -9,13 +9,17 @@ const TaggedPostsContainer = ({ posts }) => {
     console.log('post', post);
     const contentPreview = post.node.html.slice(8, 150) + '...';
 
+    const postObj = {
+      title: post.node.frontmatter.title,
+      date: post.node.frontmatter.date,
+      path: post.node.frontmatter.path,
+      tags: post.node.frontmatter.tags,
+      excerpt: contentPreview,
+    }
+
     return (
       <PostPreview 
-        title={post.node.frontmatter.title}
-        date={post.node.frontmatter.date}
-        path={post.node.frontmatter.path}
-        tags={post.node.frontmatter.tags}
-        contentPreview={contentPreview}
+        post={postObj}
         key={uuid()}
         inTags={true}
         setTag={null}
