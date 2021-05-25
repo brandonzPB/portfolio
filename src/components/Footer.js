@@ -6,20 +6,24 @@ import { FaYoutube, FaTwitterSquare, FaLinkedin } from 'react-icons/fa';
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
 
-const Footer = () => {
+const Footer = ({ theme }) => {
   return (
-    <FooterContainer id="footer">
+    <FooterContainer>
       <FooterHeadline>
-        <h1>
+        <FooterHeadlineText>
           Let's 
           <span id="gold-text"> Create </span>
           Something Awesome 
           <span id="gold-text"> Together</span>
-        </h1>
+        </FooterHeadlineText>
       </FooterHeadline>
 
       <FooterDesc>
-        <p>If you just want to chat, or if you're looking for a programmer, team member, or leader, feel free to send me an email.</p>
+        <FooterDecText>
+          If you just want to chat, or if you're looking 
+          for a FooterDecTextrogrammer, team member, or leader, 
+          feel free to send me an email.
+        </FooterDecText>
         <a href="mailto:zirBrandonWeb@gmail.com">zirBrandonWeb@gmail.com</a>
       </FooterDesc>
 
@@ -60,7 +64,11 @@ const FooterHeadline = styled.div`
   #gold-text {
     color: #fecc27;
   }
-`
+`;
+
+const FooterHeadlineText = styled.h1`
+  color: white;
+`;
 
 const FooterDesc = styled.div`
   font-size: 1.25rem;
@@ -69,20 +77,24 @@ const FooterDesc = styled.div`
   color: #828282;
 
   a:link, a:visited {
-    color: #0070b7;
+    color: #C5E2EE;
     text-decoration: none;
   }
 
   a {
-    border-bottom: 2px solid #0070b7;
+    border-bottom: 2px solid #C5E2EE;
     transition: border-bottom 0.3s ease 0s;
   }
 
   a:hover {
-    color: #48CEF7;
+    color: #0A66C2;
     border-bottom: transparent;
   }
-`
+`;
+
+const FooterDecText = styled.p`
+  color: white; 
+`;
 
 const FooterSocials = styled.div`
   display: block;

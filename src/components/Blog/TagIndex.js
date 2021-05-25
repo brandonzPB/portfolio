@@ -58,7 +58,7 @@ export default function TagIndex({ data }) {
 
     const components = filteredPosts.map(post => {
       // create content preview by getting slice of post HTML
-      const contentPreview = post.node.html.slice(8, 150) + '...';
+      const contentPreview = post.node.html.slice(3, 150) + '...';
 
       // reduce PostPreview props
       const postObj = {

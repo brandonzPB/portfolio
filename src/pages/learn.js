@@ -30,17 +30,13 @@ const Learning = () => {
     return {
       ...node,
       key: uuidv4(),
-      excerpt: node.html.slice(8, 150) + '...'
+      excerpt: node.html.slice(3, 150) + '...'
     }
   });
 
   return (
     <BlogLayout>
       <SEO title="Learn with the Stoic Programmer" />
-
-      <TagHeader>
-        <TagsLink to="/tags">Browse Tags</TagsLink>
-      </TagHeader>
       
       <BlogIndex data={postData} />
     </BlogLayout>
@@ -48,24 +44,3 @@ const Learning = () => {
 }
 
 export default Learning;
-
-const TagHeader = styled.span`
-  display: block;
-  fontSize: 1.5rem;
-  margin: 2rem auto;
-  text-align: center;
-`;
-
-const TagsLink = styled(Link)`
-  text-decoration: none;
-  cursor: pointer;
-  border-bottom: 2px solid #0070b7;
-  transition: border-bottom 0.3s ease 0s;
-  color: #0070b7;
-  text-align: center;
-
-  &:hover {
-    color: #48CEF7;
-    border-bottom: transparent;
-  }
-`;

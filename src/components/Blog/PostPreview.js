@@ -25,21 +25,20 @@ const PostPreview = ({ post, inTags = false, setTag, }) => {
       </PostInfo>
 
       <TagContainer>
-        {}
-      </TagContainer>
-      {
-        inTags
-          ? post.tags.map((tag, idx) => {
-            return (
-              <Tag key={idx} onClick={() => setTag(tag)}>{tag}{idx < post.tags.length - 1 ? ', ' : ''}</Tag>
-            )
-          })
-          : post.tags.map((tag, idx) => {
+        {
+          inTags
+            ? post.tags.map((tag, idx) => {
               return (
-                <TagLink key={idx} to="/tags">{tag}{idx < post.tags.length - 1 ? ', ' : ''}</TagLink>
+                <Tag key={idx} onClick={() => setTag(tag)}>{tag}</Tag>
               )
             })
-      }
+            : post.tags.map((tag, idx) => {
+                return (
+                  <TagLink key={idx} to="/tags">{tag}</TagLink>
+                )
+              })
+        }
+      </TagContainer>
 
       <ContentPreviewContainer>
         {post.excerpt}
@@ -53,21 +52,57 @@ export default PostPreview;
 const PostPreviewContainer = styled.div`
   display: block;
   margin: 0 auto;
-  border: 2px solid black;
-  width: 80%;
+  width: 60%;
   text-align: left;
+  margin: 2rem auto;
+  height: auto;
 `;
 
-const PostLink = styled(Link)``;
+const PostLink = styled(Link)`
+  text-decoration: none;
+  font-size: 2.25rem;
+  border-bottom: 2px solid black;
+  margin: 1rem auto;
+  font-family: 'Roboto', sans-serif;
+  transition: border-bottom 0.2s ease;
+
+  &:hover {
+    border-bottom: none;
+    color: #bbb;
+  }
+`;
 
 const PostInfo = styled.span`
   display: block;
+  margin: 0.5rem auto;
+`;
+
+const TagContainer = styled.div`
+  display: block;
+  margin: 1rem auto;
 `;
 
 const Tag = styled.span``;
 
-const TagLink = styled(Link)``;
+const TagLink = styled(Link)`
+  text-decoration: none;
+  color: #0070b7;
+  border: 1px solid #0070b7;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  margin: 0 0.25rem;
 
-const TagContainer = styled.div``;
+  &:active, &:link {
+    color: #0070b7;
+  }
 
-const ContentPreviewContainer = styled.div``;
+  &:hover {
+    color: #5ED3F3;
+    border-color: #5ED3F3;
+  }
+`;
+
+const ContentPreviewContainer = styled.div`
+  display: block;
+`;

@@ -21,10 +21,15 @@ const BlogLayout = ({ children }) => {
       backgroundColor: 'transparent',
     }}>
       <BlogStyle />
+
       <NavBar />
       <BlogHeader />
+
       <main>{children}</main>
-      <Footer />
+
+      <BlogFooterContainer>
+        <Footer theme="dark" />
+      </BlogFooterContainer>
     </BlogContainer>
   )
 }
@@ -47,6 +52,13 @@ const BlogContainer = styled.div`
     #CECDD5
   ); */}
   width: 100%;
+`;
+
+const BlogFooterContainer = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgba(120, 120, 120, 0.6);
+  padding: 0.5rem 0;
 `;
 
 export default BlogLayout;

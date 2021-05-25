@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
       <Header />
       <main>{children}</main>
       <Body />
-      <Footer />
+      <Footer theme="light" />
     </>
   )
 }

@@ -42,4 +42,8 @@ const IconLink = styled(Link)``;
 const MyIconImage = styled(Img)`
   width: 25px;
   display: inline-block;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;

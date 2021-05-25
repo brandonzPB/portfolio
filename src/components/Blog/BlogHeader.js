@@ -64,6 +64,7 @@ const BannerContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.7);
 
   @media screen and (max-width: 500px) {
     display: block;
