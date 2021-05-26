@@ -67,7 +67,7 @@ const NavBarContainer = styled.div`
   align-items: center;
   justify-content: center;
   position: fixed;
-  right: 0.5rem;
+  left: 0.5rem;
 
   @media screen and (max-width: 500px) {
     width: 10rem;
@@ -76,7 +76,7 @@ const NavBarContainer = styled.div`
 `;
 
 const WebContainer = styled.div`
-  border-left: 1px solid black;
+  border-right: 1px solid black;
 
   @media screen and (max-width: 500px) {
     display: none;

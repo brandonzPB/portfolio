@@ -39,11 +39,11 @@ const BlogHeader = () => {
   return (
     <HeaderContainer>
       <BannerContainer>
-        <Epictetus fluid={stoic.fluid} src={stoic.src} alt={stoic.alt} key={0} />
-
         <HeaderTextContainer>
           <HeaderText>Learn with the Stoic Programmer</HeaderText>
         </HeaderTextContainer>
+
+        <Epictetus fluid={stoic.fluid} src={stoic.src} alt={stoic.alt} key={0} />
       </BannerContainer>
     </HeaderContainer>
   )
@@ -54,6 +54,7 @@ export default BlogHeader;
 const HeaderContainer = styled.div`
   width: 90vw;
   height: 30%;
+  margin-left: 7.5rem;
 `;
 
 const BannerContainer = styled.div`
@@ -85,7 +86,7 @@ const Epictetus = styled(Img)`
 
 const HeaderTextContainer = styled.div`
   width: 60%;
-  margin: 0 4rem;
+  margin: 0 4rem 0 8rem;
 
   @media screen and (max-width: 500px) {
     margin: 0 1rem;

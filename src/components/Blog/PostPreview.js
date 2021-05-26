@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { HiPuzzle } from 'react-icons/hi';
 import { v4 as uuid } from 'uuid';
 
 import MyIcon from './MyIcon';
@@ -32,11 +33,18 @@ const PostPreview = ({ post, inTags = false, setTag, }) => {
                 <Tag key={idx} onClick={() => setTag(tag)}>{tag}</Tag>
               )
             })
-            : post.tags.map((tag, idx) => {
-                return (
-                  <TagLink key={idx} to="/tags">{tag}</TagLink>
-                )
-              })
+            : <PuzzlePieces>
+              {
+                post.tags.map((tag, idx) => {
+                  return (
+                    <TagLinkContainer>
+                      <HiPuzzle id="puzzle" />
+                      <TagLink key={idx} to="/tags">{tag}</TagLink>
+                    </TagLinkContainer>
+                  )
+                })
+              }
+            </PuzzlePieces>
         }
       </TagContainer>
 
@@ -89,12 +97,34 @@ const TagContainer = styled.div`
 
 const Tag = styled.span``;
 
+const PuzzlePieces = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+`;
+
+const TagLinkContainer = styled.div`
+  border: 1px solid #0070b7;
+  border-radius: 5px;
+  padding: 0.25rem 0;
+  text-align: center;
+  width: 7rem;
+
+  &:hover {
+    color: #5ED3F3;
+    border-color: #5ED3F3;
+  }
+
+  #puzzle {
+    font-size: 0.75rem;
+  }
+`;
+
 const TagLink = styled(Link)`
   text-decoration: none;
   color: #0070b7;
-  border: 1px solid #0070b7;
-  border-radius: 5px;
-  padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
   margin: 0 0.25rem;
 
@@ -104,7 +134,6 @@ const TagLink = styled(Link)`
 
   &:hover {
     color: #5ED3F3;
-    border-color: #5ED3F3;
   }
 `;
 
