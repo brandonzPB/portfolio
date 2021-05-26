@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import { v4 as uuid } from 'uuid';
+import { HiPuzzle } from 'react-icons/hi';
+
 import PostPreview from './PostPreview';
 
 export default function TagIndex({ data }) {
@@ -97,8 +99,12 @@ export default function TagIndex({ data }) {
   // TAG COMPONENTS
   const TagComponents = tagArr.map((tag, index) => (
     <li key={index} className="tag-list-item">
-      <span className="tag-list-text" onClick={() => updateTagState(tag)}>
-        #{tag}
+      <HiPuzzle id="puzzle" />
+      <span 
+        className="tag-list-text" 
+        onClick={() => updateTagState(tag)}
+      >
+        {tag}
       </span>
     </li>
   ));
@@ -108,13 +114,13 @@ export default function TagIndex({ data }) {
       <Helmet title={`BZ Learning | Tags`} />
       
       <TagContentContainer>
+        <NoTagText style={{ display: currentTag.title.trim() ? 'none' : 'block' }}>
+          Click on a tag to filter all the posts!
+        </NoTagText>
+
         <AllTags>{TagComponents}</AllTags>
 
         <AllTaggedPosts>
-          <NoTagText style={{ display: currentTag.title.trim() ? 'none' : 'block' }}>
-            Click on a tag to filter all the posts!
-          </NoTagText>
-
           {taggedPosts.components}
         </AllTaggedPosts>
       </TagContentContainer>
@@ -123,20 +129,53 @@ export default function TagIndex({ data }) {
 }
 
 const TagIndexContainer = styled.div`
-  margin: 3rem auto;
+  margin: 0 auto;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   height: auto;
-  padding: 0.1rem 0;
+  padding: 2rem 0;
 `;
 
 const TagContentContainer = styled.div`
-  margin: 2rem auto;
+  margin: 2rem auto 4rem auto;
   width: 80%;
   background-color: rgba(255, 255, 255, 0.7);
+  padding-bottom: 2.5rem;
+`;
+
+const NoTagText = styled.span`
+  margin: 2rem auto 0 auto;
+  text-align: center;
+  font-size: 1.25rem;
 `;
 
 const AllTags = styled.div`
+  @keyframes jiggle {
+    0% {
+      transform: rotate(10deg);
+    }
+
+    20% {
+      transform: rotate(-10deg);
+    }
+
+    40% {
+      transform: rotate(10deg);
+    }
+
+    60% {
+      transform: rotate(-10deg);
+    }
+
+    80% {
+      transform: rotate(10deg);
+    }
+
+    100% {
+      transform: rotate(-10deg);
+    }
+  }
+
   max-width: 70%;
   display: flex;
   flex-direction: row;
@@ -152,9 +191,22 @@ const AllTags = styled.div`
     width: 26%;
     font-weight: 600;
     font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  #puzzle {
+    color: #fecc27;
+    animation: jiggle 0.5s ease-out 0s alternate once;
+    background: none;
+    margin-right: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  #puzzle:hover {
+    animation: jiggle 0.2s;
   }
 `;
 
-const AllTaggedPosts = styled.div``;
-
-const NoTagText = styled.div``;
+const AllTaggedPosts = styled.div`
+  margin: 2rem auto;
+`;

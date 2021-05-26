@@ -10,7 +10,7 @@ const Footer = ({ theme }) => {
   return (
     <FooterContainer>
       <FooterHeadline>
-        <FooterHeadlineText>
+        <FooterHeadlineText style={{ color: theme === 'light' ? 'black' : 'white' }}>
           Let's 
           <span id="gold-text"> Create </span>
           Something Awesome 
@@ -19,12 +19,24 @@ const Footer = ({ theme }) => {
       </FooterHeadline>
 
       <FooterDesc>
-        <FooterDecText>
+        <FooterDecText style={{ color: theme === 'light' ? '#828282' : 'white' }}>
           If you just want to chat, or if you're looking 
-          for a FooterDecTextrogrammer, team member, or leader, 
+          for a programmer, team member, or leader, 
           feel free to send me an email.
         </FooterDecText>
-        <a href="mailto:zirBrandonWeb@gmail.com">zirBrandonWeb@gmail.com</a>
+        <a 
+          href="mailto:zirBrandonWeb@gmail.com"
+          style={{
+            color: theme === 'light'
+              ? '#2F93D4'
+              : '#C5E2EE',
+            borderBottom: theme === 'light'
+              ? '2px solid #2F93D4'
+              : '2px solid #C5E2EE;'
+          }}
+        >
+          zirBrandonWeb@gmail.com
+        </a>
       </FooterDesc>
 
       <FooterSocials>

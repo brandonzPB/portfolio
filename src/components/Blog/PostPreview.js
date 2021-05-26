@@ -61,14 +61,19 @@ const PostPreviewContainer = styled.div`
 const PostLink = styled(Link)`
   text-decoration: none;
   font-size: 2.25rem;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #0070B7;
+  color: #0070B7;
   margin: 1rem auto;
   font-family: 'Roboto', sans-serif;
   transition: border-bottom 0.2s ease;
 
+  &:link, &:visited {
+    color: #0070B7;
+  }
+
   &:hover {
     border-bottom: none;
-    color: #bbb;
+    color: #95BCDE;
   }
 `;
 

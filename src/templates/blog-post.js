@@ -1,11 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import '../css/blog-post.css';
 
-import NavBar from '../components/NavBar';
-import BlogHeader from '../components/Blog/BlogHeader';
+import BlogLayout from '../components/Blog/BlogLayout';
 import Footer from '../components/Footer';
 import MyIcon from '../components/Blog/MyIcon';
 
@@ -14,45 +14,65 @@ export default function Template({ data }) {
   const { markdownRemark: post } = data; // data.markdownRemark holds post data
 
   const TagComponents = post.frontmatter.tags.map((tag, index) => (
-    <li className="tag-list-item" style={{ listStyleType: 'none' }} key={index}>
-      <h1>
-        <Link to={`/tags`}>#{tag}</Link>
-      </h1>
-    </li>
+    <TagListItem key={index}>
+      <Tag>
+        <TagLink to={`/tags`}>#{tag}</TagLink>
+      </Tag>
+    </TagListItem>
   ));
 
   return (
-    <div className="blog-post-container">
-      <Helmet title={`Learn with The Stoic Programmer - ${post.frontmatter.title}`} />
+    <BlogLayout>
+      <BlogPostContainer>
+        <Helmet title={`Learn with The Stoic Programmer - ${post.frontmatter.title}`} />
 
-      <NavBar />
-      
-      <BlogHeader />
+        <PostContent>
+          <BrowseTexts>
+            <BrowseLink to="/learn">Browse Posts</BrowseLink>
+          </BrowseTexts>
 
-      <div className="blog-post">
-        <span>
-          <Link to="/learn">Browse Posts</Link>
-        </span>
-        <h1>{post.frontmatter.title}</h1>
+          <PostTitle>{post.frontmatter.title}</PostTitle>
 
-        <span>
-          Posted by&nbsp;
-          <Link to="/learn/Brandon">Brandon</Link>
-          &nbsp; <MyIcon />
-          &nbsp;on {post.frontmatter.date}
-        </span>
+          <PostInfo>
+            Posted by Brandon&nbsp;
+            &nbsp; <MyIcon />
+            &nbsp;on {post.frontmatter.date}
+          </PostInfo>
 
-        <ul className="tag-list">
-          {TagComponents}
-        </ul>
+          <TagList>
+            {TagComponents}
+          </TagList>
 
-        <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+          <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+        </PostContent>
 
-      <Footer />
-    </div>
+        <Footer />
+      </BlogPostContainer>
+    </BlogLayout>
   )
 }
+
+const BlogPostContainer = styled.div``;
+
+const PostContent = styled.div``;
+
+const PostContent = styled.p``;
+
+const BrowseLink = styled(Link)``;
+
+const PostContent = styled.h1``;
+
+const PostInfo = styled.p``;
+
+const TagList = styled.ul``;
+
+const TagListItem = styled.li`
+  list-style-type: none;
+`;
+
+const Tag = styled.h1``;
+
+const TagLink = styled(Link)``;
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
