@@ -11,7 +11,14 @@ import 'fontsource-roboto';
 const ProjectFooter = ({ otherA, otherB }) => {
   const data = useStaticQuery(graphql`
     query AllImagesQuery {
-      allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {}}) {
+      allFile(filter: {
+        ext: {
+          regex: "/(jpg)|(png)|(jpeg)/"
+        },
+        name: {
+          in: ["painting-1", "painting-2", "painting-3", "republic310-1"]
+        }
+      }) {
         edges {
           node {
             name

@@ -11,7 +11,7 @@ const Republic_310 = () => {
   const data = useStaticQuery(graphql`
     query MyRepublicImages {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"},
-      name: {in: ["republic310-0", "republic-0"]}}) {
+      name: {in: ["republic-0", "republic310-0"]}}) {
         edges {
           node {
             name
@@ -32,7 +32,7 @@ const Republic_310 = () => {
       src: img.node.childImageSharp.fluid.src,
     }
   }).sort((a, b) => {
-    if (a.name < b.name) return -1;
+    if (a.name > b.name) return -1;
     else return 1;
   }).reverse();
 

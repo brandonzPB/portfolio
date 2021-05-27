@@ -82,7 +82,7 @@ const Mindful = () => {
     alt: `The landing page of The Republic 310. The banner is of two female surfers walking along
       an empty beach, holding surfboards
     `,
-    name: 'painting-4',
+    name: 'republic310-1',
   };
 
   const otherB = {

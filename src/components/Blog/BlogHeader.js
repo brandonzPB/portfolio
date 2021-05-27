@@ -38,11 +38,11 @@ const BlogHeader = () => {
   // };
 
   return (
-    <HeaderContainer  style={{ 
+    <HeaderContainer style={{ 
       backgroundImage: `url(${epictetus})`,
-      backgroundSize: '100%',
+      backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
-      backgroundPosition: 'center',
+      backgroundPosition: 'right center',
       backgroundRepeat: 'no-repeat',
       backgroundColor: 'transparent',
     }}>
@@ -60,9 +60,9 @@ const BlogHeader = () => {
 export default BlogHeader;
 
 const HeaderContainer = styled.div`
-  width: 90vw;
-  height: 30%;
-  margin-left: 7.5rem;
+  width: 80vw;
+  height: 35rem;
+  margin-left: 8.5rem;
 `;
 
 const BannerContainer = styled.div`
@@ -73,7 +73,8 @@ const BannerContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.2);
+  height: 100%;
 
   @media screen and (max-width: 500px) {
     display: block;
@@ -94,7 +95,7 @@ const Epictetus = styled(Img)`
 
 const HeaderTextContainer = styled.div`
   width: 60%;
-  margin: 0 4rem 0 8rem;
+  margin: 0 4rem 0 2rem;
 
   @media screen and (max-width: 500px) {
     margin: 0 1rem;
