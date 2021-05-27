@@ -14,7 +14,7 @@ const BlogHeader = () => {
           regex: "/(jpeg)|(jpg)|(png)/"
         }, 
         name: {
-          in: "epictetus_programming"
+          in: "epictetus"
         }}) {
           edges {
             node {

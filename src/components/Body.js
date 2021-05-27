@@ -16,7 +16,7 @@ const Body = () => {
   const data = useStaticQuery(graphql`
     query MyPaintings {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
-        name: {in: ["painting-1", "painting-2", "painting-3", "painting-4"]}}) {
+        name: {in: ["painting-1", "painting-2", "painting-3", "republic310-1"]}}) {
         edges {
           node {
             childImageSharp {

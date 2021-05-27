@@ -11,7 +11,7 @@ const Republic_310 = () => {
   const data = useStaticQuery(graphql`
     query MyRepublicImages {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"},
-      name: {in: ["republic-1", "republic-0"]}}) {
+      name: {in: ["republic310-0", "republic-0"]}}) {
         edges {
           node {
             name
@@ -62,7 +62,8 @@ const Republic_310 = () => {
     Initially, I felt intimidated at seeing the complexity of one's code once it's "translated" from JavaScript
     to clean, effective TypeScript. However, after working with it, seeing its advantages over regular JavaScript,
     and ultimately learning how to write cleaner code with fewer bugs--I fell in love. Although it's only been
-    a month, imagining myself coding with vanilla JavaScript just feels irresponsible and reckless.
+    a month, imagining myself coding with vanilla JavaScript just feels irresponsible and reckless. (I also got 
+      to improve my Photoshop skills with the graphic designing I did for the logos and some labels!)
   `;
 
   const lessons = `

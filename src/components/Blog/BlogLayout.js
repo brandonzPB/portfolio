@@ -8,7 +8,7 @@ import NavBar from '../NavBar';
 import BlogHeader from './BlogHeader';
 import Footer from '../Footer';
 
-import puzzle from '../../assets/images/puzzle.jpg';
+import puzzle from '../../assets/images/puzzle-1.jpeg';
 
 const BlogLayout = ({ children }) => {
   return (
@@ -57,7 +57,7 @@ const BlogContainer = styled.div`
 const BlogFooterContainer = styled.div`
   margin: 0 auto;
   width: 100%;
-  background-color: rgba(120, 120, 120, 0.6);
+  background-color: rgba(252, 252, 252, 0.6);
   padding: 0.5rem 0;
 `;
 
