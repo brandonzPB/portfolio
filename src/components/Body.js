@@ -163,7 +163,7 @@ const Body = () => {
             </ProjectAnchor>
 
             <ProjectTitle>The Republic 310</ProjectTitle>
-            <ProjectDetails>I made this project a client who is interested in starting their own business in sales.</ProjectDetails>
+            <ProjectDetails>I made this project for an e-commerce startup who wanted their own full-stack website.</ProjectDetails>
             <ProjectLink to="/Republic_310">View Project</ProjectLink>
           </ProjectContainer>
 
@@ -215,7 +215,7 @@ const BodyContainer = styled.div`
 
 const SkillsContainer = styled.div`
   margin: 5rem auto;
-  width: 100%;
+  width: 85%;
 
   h1 {
     font-family: 'Playfair Display', sans-serif;
@@ -320,6 +320,7 @@ const ProjectSection = styled.div`
   display: block;
   margin: 0 auto;
   text-align: center;
+  width: 85%;
 
   h1 {
     text-align: left;

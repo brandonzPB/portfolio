@@ -92,7 +92,7 @@ const Battleship = () => {
         icon="battleship"
       />
       <ProjectFooter otherA={otherA} otherB={otherB} />
-      <Footer />
+      <Footer theme={'light'} />
     </>
   )
 }

@@ -111,7 +111,7 @@ const Mindful = () => {
         icon="mindful"
       />
       <ProjectFooter otherA={otherA} otherB={otherB} />
-      <Footer />
+      <Footer theme={'light'} />
     </>
   )
 }

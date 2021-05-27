@@ -37,9 +37,8 @@ const Republic_310 = () => {
   }).reverse();
 
   const details = `
-    This is website I made for a client who is 
-    interested in starting their own business in
-    sales. A live version is yet unavailable because
+    This is website I made for a startup company.
+    A live version is yet unavailable because
     we are still waiting for original stock photos, in
     addition to other areas being finalized. (Once the website
     is live, this page will be updated!)
@@ -52,11 +51,9 @@ const Republic_310 = () => {
   const sourceCode = '#';
 
   const purpose = `
-    A client came to me in need of a website for their startup business
-    and I was more than happy to accept the opportunity to work with them.
-    Not only would I use this opportunity to challenge myself and grow as a programmer,
-    but I'd be able to help a business that I know will one day better the lives of 
-    millions.
+    The startup company I was working with wanted their own full-stack website, 
+    so I used my knowledge to make one for them. I completed this project almost
+    entirely on my own (there was some UX/UI input from a more-experienced developer).
   `;
 
   const tech = `
@@ -73,7 +70,8 @@ const Republic_310 = () => {
     got to use some of the knowledge I've acquired since studying data structures and algorithms.
     I needed a way to sort a variable array of objects by a variable key. Although a simple solution,
     something I never would've thought of or would have been able to do prior to my studies and rigorous practice was 
-    creating a module that uses a quicksort algorithm to sort by the given parameters. 
+    creating a module that uses a quicksort algorithm to sort by the given parameters, along with TypeScript to
+    check for the data types of the different input arrays. 
     Also, I've not only learned a lot about better practices for writing code in a 
     reusable fashion, but also found a wealth of resources to dive into and further my knowledge and ability to work with everything
     React has to offer. I certainly would not have grown without electing to use TypeScript over JavaScript for this project, nor would
@@ -120,7 +118,7 @@ const Republic_310 = () => {
         icon="republic"
       />
       <ProjectFooter otherA={otherA} otherB={otherB} />
-      <Footer />
+      <Footer theme={'light'} />
     </>
   );
 }

@@ -108,7 +108,7 @@ const Creatures_of_Habit = () => {
         icon="creatures"
       />
       <ProjectFooter otherA={otherA} otherB={otherB} />
-      <Footer />
+      <Footer theme={'light'} />
     </>
   )
 }

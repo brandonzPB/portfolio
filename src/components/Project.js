@@ -106,6 +106,7 @@ const ProjectContainer = styled.div`
 const HeaderContainer = styled.div`
   margin: 2rem auto;
   display: block;
+  width: 85%;
 
   h1 {
     margin-bottom: 1rem;

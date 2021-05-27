@@ -97,6 +97,7 @@ export default ProjectFooter
 const FooterContainer = styled.div`
   display: block;
   margin: 0 7rem;
+  width: 85%;
 
   @media screen and (max-width: 500px) {
     margin: 0 1rem;
@@ -108,6 +109,7 @@ const FooterHeadline = styled.div`
   color: #36434d;
   margin: 2rem auto;
   display: block;
+  width: 90%;
 `
 
 const FooterContent = styled.div`
