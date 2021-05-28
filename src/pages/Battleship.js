@@ -37,7 +37,7 @@ const Battleship = () => {
     putting my skills and knowledge into practice. I included it in my portfolio to show the progress I've made
     since my first month of programming.`;
 
-  const stack = ['React (JavaScript)', 'React Context API', 'HTML', 'CSS', 'vanilla JavaScript'];
+  const stack = ['React (JavaScript)', 'React Context API', 'HTML5', 'CSS', 'vanilla JavaScript'];
 
   const link = 'https://brandonzpb.github.io/battleship';
 
@@ -63,14 +63,14 @@ const Battleship = () => {
     link: '/Creatures_of_Habit',
     title: 'Creatures of Habit',
     alt: 'Serene painting of a light blue sky, a grassy field, and the ocean in between',
-    name: 'painting-1',
+    name: 'painting-creatures',
   };
 
   const otherB = {
     link: '/Mindful',
     title: 'mindful.io',
     alt: 'Peaceful image with black stones and bamboo in the background',
-    name: 'painting-2',
+    name: 'painting-mindful',
   };
 
   return (

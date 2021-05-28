@@ -28,18 +28,25 @@ const PostPreview = ({ post, inTags = false, setTag, }) => {
       <TagContainer>
         {
           inTags
-            ? post.tags.map((tag, idx) => {
-              return (
-                <Tag key={idx} onClick={() => setTag(tag)}>{tag}</Tag>
-              )
-            })
+            ? <PuzzlePieces>
+              {
+                post.tags.map((tag, idx) => {
+                  return (
+                    <TagLinkContainer key={idx}>
+                      <HiPuzzle id="puzzle" />
+                      <ActiveTag onClick={() => setTag(tag)}>{tag}</ActiveTag>
+                    </TagLinkContainer>
+                  )
+                })
+              }
+            </PuzzlePieces>
             : <PuzzlePieces>
               {
                 post.tags.map((tag, idx) => {
                   return (
-                    <TagLinkContainer>
+                    <TagLinkContainer key={idx}>
                       <HiPuzzle id="puzzle" />
-                      <TagLink key={idx} to="/tags">{tag}</TagLink>
+                      <TagLink to="/tags">{tag}</TagLink>
                     </TagLinkContainer>
                   )
                 })
@@ -95,8 +102,6 @@ const TagContainer = styled.div`
   margin: 1rem auto;
 `;
 
-const Tag = styled.span``;
-
 const PuzzlePieces = styled.div`
   display: flex;
   flex-direction: row;
@@ -119,6 +124,22 @@ const TagLinkContainer = styled.div`
 
   #puzzle {
     font-size: 0.75rem;
+    color: #0070b7;
+  }
+
+  #puzzle:hover {
+    color: #5ed3f3;
+  }
+`;
+
+const ActiveTag = styled.span`
+  text-decoration: none;
+  color: #0070b7;
+  font-size: 0.75rem;
+  margin: 0 0.25rem;
+
+  &:hover {
+    color: #5ED3F3;
   }
 `;
 

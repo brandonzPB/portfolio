@@ -106,5 +106,6 @@ const HeaderText = styled.h1`
   margin: 0 auto;
   font-size: 3.5rem;
   color: white;
+  text-align: center;
   font-family: 'Playfair Display', sans-serif;
 `;

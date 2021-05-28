@@ -66,9 +66,9 @@ const TagHeader = styled.span`
 const TagsLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
-  border-bottom: 2px solid #0070b7;
+  border-bottom: 2px solid black;
   transition: border-bottom 0.3s ease 0s;
-  color: #0070b7;
+  color: black;
   text-align: center;
   font-size: 1.75rem;
 

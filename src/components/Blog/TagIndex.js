@@ -192,6 +192,11 @@ const AllTags = styled.div`
     font-weight: 600;
     font-size: 1.5rem;
     cursor: pointer;
+    color: black;
+  }
+
+  .tag-list-item:hover {
+    color: #828282;
   }
 
   #puzzle {

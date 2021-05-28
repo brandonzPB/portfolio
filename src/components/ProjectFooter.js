@@ -16,7 +16,7 @@ const ProjectFooter = ({ otherA, otherB }) => {
           regex: "/(jpg)|(png)|(jpeg)/"
         },
         name: {
-          in: ["painting-1", "painting-2", "painting-3", "republic310-1"]
+          in: ["painting-creatures", "painting-mindful", "painting-battleship", "republic310-1"]
         }
       }) {
         edges {
@@ -34,6 +34,7 @@ const ProjectFooter = ({ otherA, otherB }) => {
   `);
 
   const images = data.allFile.edges.reduce((array, img) => {
+    console.log('img', img);
     if (img.node.name === otherA.name) {
 
       array.push({

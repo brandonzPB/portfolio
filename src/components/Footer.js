@@ -8,7 +8,7 @@ import 'fontsource-open-sans';
 
 const Footer = ({ theme }) => {
   return (
-    <FooterContainer>
+    <FooterContainer id="footer">
       <FooterHeadline>
         <FooterHeadlineText style={{ color: theme === 'light' ? 'black' : 'white' }}>
           Let's 
@@ -46,7 +46,7 @@ const Footer = ({ theme }) => {
         <a href="https://www.youtube.com/channel/UCi4kdZG8UsH_drFUGkKVavw/featured" target="_blank" rel="noreferrer">
           <FaYoutube id="youtube" className="icon" />
         </a>
-        <a href="https://twitter.com/zirWeb" target="_blank" rel="noreferrer">
+        <a href="https://twitter.com/codesInStoic" target="_blank" rel="noreferrer">
           <FaTwitterSquare id="twitter" className="icon" />
         </a>
         <a href="https://www.linkedin.com/in/brandon-z" target="_blank" rel="noreferrer">
@@ -71,7 +71,6 @@ const FooterContainer = styled.div`
 const FooterHeadline = styled.div`
   margin: 1rem auto;
   font-family: 'Playfair Display', sans-serif;
-  color: #36434d;
 
   #gold-text {
     color: #fecc27;
@@ -79,7 +78,6 @@ const FooterHeadline = styled.div`
 `;
 
 const FooterHeadlineText = styled.h1`
-  color: white;
 `;
 
 const FooterDesc = styled.div`
@@ -105,7 +103,6 @@ const FooterDesc = styled.div`
 `;
 
 const FooterDecText = styled.p`
-  color: white; 
 `;
 
 const FooterSocials = styled.div`

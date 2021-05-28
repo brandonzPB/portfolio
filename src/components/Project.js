@@ -96,7 +96,8 @@ export default Project
 
 const ProjectContainer = styled.div`
   display: block;
-  margin: 2rem 4rem;
+  margin: 2rem auto;
+  width: 80%;
 
   @media screen and (max-width: 500px) {
     margin: 2rem;
@@ -207,6 +208,7 @@ const Thumbnail = styled(Img)`
 
   @media screen and (max-width: 500px) {
     width: 100%;
+    margin-bottom: 2.5rem;
   }
 `
 

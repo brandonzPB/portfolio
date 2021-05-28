@@ -89,7 +89,7 @@ const Mindful = () => {
     link: '/Creatures_of_Habit',
     title: 'Creatures of Habit',
     alt: 'Serene painting of a light blue sky, a grassy field, and the ocean in between',
-    name: 'painting-1',
+    name: 'painting-creatures',
   };
 
   return (

@@ -44,7 +44,7 @@ const Republic_310 = () => {
     is live, this page will be updated!)
   `;
 
-  const stack = ['React (TypeScript)', 'React Context API', 'CSS', 'NodeJS', 'Express', 'JSON Web Tokens', 'bcrypt', 'NoSQL', 'MongoDB'];
+  const stack = ['React (TypeScript)', 'React Context API', 'CSS', 'NodeJS', 'Express', 'JSONWebTokens', 'bcrypt', 'NoSQL', 'MongoDB'];
 
   const link = '#';
 
@@ -90,14 +90,14 @@ const Republic_310 = () => {
     link: '/Creatures_of_Habit',
     title: 'Creatures of Habit',
     alt: 'Serene painting of a light blue sky, a grassy field, and the ocean in between',
-    name: 'painting-1',
+    name: 'painting-creatures',
   };
 
   const otherB = {
     link: '/Mindful',
     title: 'mindful.io',
     alt: 'Peaceful image with black stones and bamboo in the background',
-    name: 'painting-2',
+    name: 'painting-mindful',
   };
 
   return (

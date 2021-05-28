@@ -50,7 +50,7 @@ const ModalContainer = styled.div`
   top: 3rem;
   right: 0;
   margin: 0 auto;
-  z-index: 99;
+  z-index: 10;
   height: 90vh;
   width: 90vw;
   background-color: white;

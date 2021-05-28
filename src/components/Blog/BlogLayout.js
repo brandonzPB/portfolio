@@ -28,7 +28,7 @@ const BlogLayout = ({ children }) => {
       <main>{children}</main>
 
       <BlogFooterContainer>
-        <Footer theme="dark" />
+        <Footer theme={'dark'} />
       </BlogFooterContainer>
     </BlogContainer>
   )
@@ -57,7 +57,7 @@ const BlogContainer = styled.div`
 const BlogFooterContainer = styled.div`
   margin: 0 auto;
   width: 100%;
-  background-color: rgba(252, 252, 252, 0.6);
+  background-color: rgba(100, 100, 100, 0.6);
   padding: 0.5rem 0;
 `;
 

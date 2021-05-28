@@ -115,8 +115,9 @@ const NavLink = styled(Link)`
 
 const MobileContainer = styled.div`
   float: right;
-  position: absolute;
+  position: fixed;
   right: 2rem;
+  top: 6rem;
 
   #icon {
     font-size: 2rem;
