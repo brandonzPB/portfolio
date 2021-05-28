@@ -52,7 +52,7 @@ const IndexContainer = styled.div`
   margin: 0 auto;
   background: linear-gradient(0.25turn,
     transparent,
-    rgba(255, 255, 255, 0.7)
+    rgba(255, 255, 255, 1)
   );
 `;
 

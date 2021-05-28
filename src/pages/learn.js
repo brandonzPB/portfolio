@@ -27,10 +27,14 @@ const Learning = () => {
   `);
 
   const postData = data.allMarkdownRemark.edges.map(({ node }) => {
+    const contentPreview = node.html.slice(3, 150) + '...';
+    const reg = new RegExp('<br>', 'g');
+    const excerpt = contentPreview.replace(reg, ' ');
+
     return {
       ...node,
       key: uuidv4(),
-      excerpt: node.html.slice(3, 150) + '...'
+      excerpt: excerpt,
     }
   });
 

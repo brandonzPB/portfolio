@@ -30,9 +30,6 @@ const NavBar = () => {
           <NavLink to="/learn">BLOG</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/Brandon">ABOUT ME</NavLink>
-        </NavItem>
-        <NavItem>
           <NavLink to="/#skills">SKILLS</NavLink>
         </NavItem>
         <NavItem>

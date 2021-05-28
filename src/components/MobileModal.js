@@ -18,9 +18,6 @@ const MobileModal = ({ close, ...props }) => {
         <Link to="/learn">BLOG</Link>
       </ModalItem>
       <ModalItem>
-        <Link to="/Brandon">ABOUT ME</Link>
-      </ModalItem>
-      <ModalItem>
         <a href="/#skills">SKILLS</a>
       </ModalItem>
       <ModalItem>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { v4 as uuid } from 'uuid';
 import { HiPuzzle } from 'react-icons/hi';
@@ -61,6 +62,8 @@ export default function TagIndex({ data }) {
     const components = filteredPosts.map(post => {
       // create content preview by getting slice of post HTML
       const contentPreview = post.node.html.slice(3, 150) + '...';
+      const reg = new RegExp('<br>', 'g');
+      const excerpt = contentPreview.replace(reg, ' ');
 
       // reduce PostPreview props
       const postObj = {
@@ -68,7 +71,7 @@ export default function TagIndex({ data }) {
         date: post.node.frontmatter.date,
         path: post.node.frontmatter.path,
         tags: post.node.frontmatter.tags,
-        excerpt: contentPreview,
+        excerpt: excerpt,
       }
   
       return (
@@ -111,9 +114,14 @@ export default function TagIndex({ data }) {
 
   return (
     <TagIndexContainer>
-      <Helmet title={`BZ Learning | Tags`} />
+      <Helmet title={`The Stoic Programmer | Tags`} />
+
+      <PostHeader>
+        <PostsLink to="/learn">Browse Posts</PostsLink>
+      </PostHeader>
       
       <TagContentContainer>
+
         <NoTagText style={{ display: currentTag.title.trim() ? 'none' : 'block' }}>
           Click on a tag to filter all the posts!
         </NoTagText>
@@ -131,7 +139,7 @@ export default function TagIndex({ data }) {
 const TagIndexContainer = styled.div`
   margin: 0 auto;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.5);
   height: auto;
   padding: 2rem 0;
 `;
@@ -141,6 +149,28 @@ const TagContentContainer = styled.div`
   width: 80%;
   background-color: rgba(255, 255, 255, 0.7);
   padding-bottom: 2.5rem;
+`;
+
+const PostHeader = styled.div`
+  display: block;
+  fontSize: 1.5rem;
+  margin: 2rem auto;
+  text-align: center;
+`;
+
+const PostsLink = styled(Link)`
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 2px solid black;
+  transition: border-bottom 0.3s ease 0s;
+  color: black;
+  text-align: center;
+  font-size: 1.75rem;
+
+  &:hover {
+    color: #48CEF7;
+    border-bottom: transparent;
+  }
 `;
 
 const NoTagText = styled.span`

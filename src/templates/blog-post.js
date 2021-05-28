@@ -60,7 +60,7 @@ const BlogPostContainer = styled.div`
   margin: 0 auto;
   background: linear-gradient(0.25turn,
     transparent,
-    rgba(255, 255, 255, 0.7)
+    rgba(255, 255, 255, 1)
   );
 `;
 
@@ -92,7 +92,7 @@ const PostContent = styled.div`
   height: auto;
   padding: 3rem 0;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   flex-wrap: wrap;
   flex: 1;
