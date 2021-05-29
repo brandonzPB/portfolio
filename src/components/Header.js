@@ -1,12 +1,12 @@
 import Img from 'gatsby-image';
-import React from "react"
+import React, { useState, useEffect, useRef } from "react"
 import styled from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
 
-const Header = () => {
+const Header = ({ modalState }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {in: "me"}}) {
@@ -22,6 +22,26 @@ const Header = () => {
       }
     }  
   `);
+
+  const [display, setDisplay] = useState({ status: true });
+
+  const headerRef = useRef(true);
+
+  useEffect(() => {
+    return () => {
+      headerRef.current = false;
+    }
+  }, [headerRef]);
+
+  useEffect(() => {
+    if (headerRef.current) {
+      if (modalState.display) {
+        setDisplay({ status: false });
+      } else if (!modalState.display) {
+        setDisplay({ status: true });
+      }
+    }
+  }, [modalState, setDisplay, headerRef]);
 
   const banner = {
     key: 0,
@@ -45,7 +65,7 @@ const Header = () => {
           </div>
         </TextContainer>
 
-        <ImageContainer>
+        <ImageContainer style={{ display: display.status ? 'block': 'none' }}>
           <Image fluid={banner.fluid} alt="Picture of me (a bald man) in a suit" />
         </ImageContainer>
 

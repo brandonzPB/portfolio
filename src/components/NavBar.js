@@ -5,22 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import 'fontsource-roboto';
 import MobileModal from './MobileModal';
 
-const NavBar = () => {
-  const [modalState, setModalState] = useState({ display: false });
-
-  // SHOW MODAL MENU
-  const showMenu = () => {
-    if (modalState.display) return;
-    setModalState({ display: true });
-  }
-
-  // HIDE MODAL MENU
-  const hideMenu = () => {
-    if (!modalState.display) return;
-
-    setModalState({ display: false });
-  }
-
+const NavBar = ({ hideMenu, modalState, showMenu }) => {
   return (
     <NavBarContainer>
       <WebContainer>

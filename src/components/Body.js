@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components';
 
 import SkillsList from './SkillsList';
@@ -7,7 +7,27 @@ import ProjectList from './ProjectList';
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
 
-const Body = () => {
+const Body = ({ modalState }) => {
+  const [display, setDisplay] = useState({ status: true });
+
+  const bodyRef = useRef(true);
+
+  useEffect(() => {
+    return () => {
+      bodyRef.current = false;
+    }
+  }, [bodyRef]);
+
+  useEffect(() => {
+    if (bodyRef.current) {
+      if (modalState.display) {
+        setDisplay({ status: false });
+      } else if (!modalState.display) {
+        setDisplay({ status: true });
+      }
+    }
+  }, [modalState, setDisplay, bodyRef]);
+
   return ( 
     <BodyContainer>
       <SkillsContainer id="skills">
@@ -16,7 +36,7 @@ const Body = () => {
       </SkillsContainer>
 
       <ProjectSection id="projects">
-        <ProjectList />
+        <ProjectList display={display} />
       </ProjectSection>
     </BodyContainer>
   )

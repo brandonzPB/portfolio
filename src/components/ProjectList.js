@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
-const ProjectList = () => {
+const ProjectList = ({ display }) => {
   const data = useStaticQuery(graphql`
     query MyPaintings {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
@@ -33,7 +33,7 @@ const ProjectList = () => {
       <h1>Projects I've Made</h1>
 
       <ProjectsList>
-        <ProjectContainer>
+        <ProjectContainer style={{ display: display.status ? 'block' : 'none' }}>
           <ProjectAnchor to="/Creatures_of_Habit">
             <ProjectThumbnail
               fluid={paintings[1].node.childImageSharp.fluid} 
@@ -50,7 +50,7 @@ const ProjectList = () => {
           <ProjectLink to="/Creatures_of_Habit">View Project</ProjectLink>
         </ProjectContainer>
 
-        <ProjectContainer>
+        <ProjectContainer style={{ display: display.status ? 'block' : 'none' }}>
           <ProjectAnchor to="/Republic_310">
             <ProjectThumbnail 
               fluid={paintings[3].node.childImageSharp.fluid} 
@@ -65,7 +65,7 @@ const ProjectList = () => {
           <ProjectLink to="/Republic_310">View Project</ProjectLink>
         </ProjectContainer>
 
-        <ProjectContainer>
+        <ProjectContainer style={{ display: display.status ? 'block' : 'none' }}>
           <ProjectAnchor to="/Mindful">
             <ProjectThumbnail 
               fluid={paintings[2].node.childImageSharp.fluid} 
@@ -80,7 +80,7 @@ const ProjectList = () => {
           <ProjectLink to="/Mindful">View Project</ProjectLink>
         </ProjectContainer>
 
-        <ProjectContainer>
+        <ProjectContainer style={{ display: display.status ? 'block' : 'none' }}>
           <ProjectAnchor to="/Battleship">
             <ProjectThumbnail 
               fluid={paintings[0].node.childImageSharp.fluid} 
