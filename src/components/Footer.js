@@ -40,16 +40,34 @@ const Footer = ({ theme }) => {
       </FooterDesc>
 
       <FooterSocials>
-        <a href="https://github.com/brandonzpb" target="_blank" rel="noreferrer" id="github-link">
+        <a 
+          href="https://github.com/brandonzpb" 
+          target="_blank" 
+          rel="noreferrer" 
+          id="github-link"
+        >
           <AiFillGithub id="github" className="icon" />
         </a>
-        <a href="https://www.youtube.com/channel/UCi4kdZG8UsH_drFUGkKVavw/featured" target="_blank" rel="noreferrer">
+        <a 
+          style={{ display: 'none' }} 
+          href="https://www.youtube.com/channel/UCi4kdZG8UsH_drFUGkKVavw/featured" 
+          target="_blank" 
+          rel="noreferrer"
+        >
           <FaYoutube id="youtube" className="icon" />
         </a>
-        <a href="https://twitter.com/codesInStoic" target="_blank" rel="noreferrer">
+        <a 
+          href="https://twitter.com/codesInStoic" 
+          target="_blank" 
+          rel="noreferrer"
+        >
           <FaTwitterSquare id="twitter" className="icon" />
         </a>
-        <a href="https://www.linkedin.com/in/brandon-z" target="_blank" rel="noreferrer">
+        <a 
+          href="https://www.linkedin.com/in/brandon-z" 
+          target="_blank" 
+          rel="noreferrer"
+        >
           <FaLinkedin id="linkedin" className="icon" />
         </a>
       </FooterSocials>
