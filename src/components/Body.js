@@ -7,7 +7,7 @@ import ProjectList from './ProjectList';
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
 
-const Body = ({ modalDisplay }) => {
+const Body = ({ modalState }) => {
   const [display, setDisplay] = useState({ status: true });
 
   const bodyRef = useRef(true);
@@ -20,13 +20,13 @@ const Body = ({ modalDisplay }) => {
 
   useEffect(() => {
     if (bodyRef.current) {
-      if (modalDisplay) {
+      if (modalState.display) {
         setDisplay({ status: false });
-      } else if (!modalDisplay) {
+      } else if (!modalState.display) {
         setDisplay({ status: true });
       }
     }
-  }, [modalDisplay, setDisplay, bodyRef]);
+  }, [modalState, setDisplay, bodyRef]);
 
   return ( 
     <BodyContainer>

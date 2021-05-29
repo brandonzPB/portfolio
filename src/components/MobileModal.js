@@ -4,39 +4,10 @@ import { Link, } from 'gatsby';
 import { ImCross } from 'react-icons/im';
 import 'fontsource-roboto';
 
-const MobileModal = ({ close, ...props }) => {
-  // const data = useStaticQuery(graphql`
-  //   query White {
-  //     allFile(filter: {
-  //       ext: {
-  //         regex: "/(jpg)|(png)|(jpeg)/"
-  //       },
-  //       name: {
-  //         in: "white"
-  //       }
-  //     }) {
-  //       edges {
-  //         node {
-  //           childImageSharp {
-  //             fluid {
-  //               ...GatsbyImageSharpFluid
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
-
-  // const white = {
-  //   fluid: data.allFile.edges[0].node.childImageSharp.fluid,
-  //   src: data.allFile.edges[0].node.childImageSharp.fluid.src,
-  //   alt: 'A white background'
-  // };
-
+const MobileModal = ({ hideModal, ...props }) => {
   return (
     <ModalContainer>
-      <CloseButton onClick={close}>
+      <CloseButton onClick={hideModal}>
         <ImCross id="icon" />
       </CloseButton>
 
