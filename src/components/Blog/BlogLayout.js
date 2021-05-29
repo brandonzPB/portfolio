@@ -1,25 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from 'styled-components';
-import Img from 'gatsby-image';
 import { BlogStyle } from '../styles/BlogStyle';
 
 import NavBar from '../NavBar';
 import BlogHeader from './BlogHeader';
 import Footer from '../Footer';
 
-import puzzle from '../../assets/images/puzzle-1.jpeg';
-
 const BlogLayout = ({ children }) => {
   return (
-    <BlogContainer style={{ 
-      backgroundImage: `url(${puzzle})`,
-      backgroundSize: '60%',
-      backgroundAttachment: 'fixed',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      backgroundColor: 'transparent',
-    }}>
+    <BlogContainer>
       <BlogStyle />
 
       <NavBar />

@@ -54,6 +54,10 @@ const IndexContainer = styled.div`
     transparent,
     rgba(255, 255, 255, 1)
   );
+
+  @media screen and (max-width: 500px) {
+    padding: 0;
+  }
 `;
 
 const TagHeader = styled.span`
@@ -61,6 +65,10 @@ const TagHeader = styled.span`
   fontSize: 1.5rem;
   margin: 2rem auto;
   text-align: center;
+
+  @media screen and (max-width: 500px) {
+    margin: 0 auto;
+  }
 `;
 
 const TagsLink = styled(Link)`
@@ -73,7 +81,7 @@ const TagsLink = styled(Link)`
   font-size: 1.75rem;
 
   &:hover {
-    color: #48CEF7;
+    color: #828282;
     border-bottom: transparent;
   }
 `;

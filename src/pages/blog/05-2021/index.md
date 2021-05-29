@@ -1,7 +1,7 @@
 ---
 path: "/learn/welcome"
 date: 2021-05-27T21:23:11.158Z
-title: "Welcome to my Blog"
+title: "Welcome to My Blog"
 tags: ["Philosophy"]
 ---
 

@@ -32,7 +32,7 @@ const Footer = ({ theme }) => {
               : '#C5E2EE',
             borderBottom: theme === 'light'
               ? '2px solid #2F93D4'
-              : '2px solid #C5E2EE;'
+              : '2px solid #C5E2EE'
           }}
         >
           zirBrandonWeb@gmail.com

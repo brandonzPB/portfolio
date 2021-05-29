@@ -123,7 +123,7 @@ export default function TagIndex({ data }) {
       <TagContentContainer>
 
         <NoTagText style={{ display: currentTag.title.trim() ? 'none' : 'block' }}>
-          Click on a tag to filter all the posts!
+          Click on a Tag to Filter the Posts!
         </NoTagText>
 
         <AllTags>{TagComponents}</AllTags>

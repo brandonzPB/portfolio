@@ -32,15 +32,16 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        
         <TextContainer>
           <div id="desktop">
-            <h3>Oh hello, I'm Brandon. </h3>
-            <h3>Software Developer <span className="gold-text">Developer</span></h3>
+            <h3>Oh hello, I'm Brandon.</h3>
+            <h3>Software <span className="gold-text">Developer</span></h3>
             <h3>and Life-Long Learner</h3>
           </div>
           <div id="mobile">
-            <h3>Oh hello, I'm Brandon. Software Developer <span className="gold-text">Developer</span> and Life-Long Learner</h3>
+            <h3>Oh hello, I'm Brandon.</h3>
+            <h3>Software <span className="gold-text">Developer</span></h3>
+            <h3>and Life-Long Learner</h3>
           </div>
         </TextContainer>
 
@@ -75,6 +76,7 @@ const HeaderContainer = styled.div`
   display: block;
   text-align: center;
   width: 70%;
+  z-index: 2;
 
   @media screen and (max-width: 500px) {
     width: 80%;

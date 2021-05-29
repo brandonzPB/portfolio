@@ -71,6 +71,11 @@ const PostPreviewContainer = styled.div`
   text-align: left;
   margin: 2rem auto;
   height: auto;
+  
+  @media screen and (max-width: 500px) {
+    margin: 1rem auto;
+    width: 80%;
+  }
 `;
 
 const PostLink = styled(Link)`

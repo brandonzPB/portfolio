@@ -8,51 +8,65 @@ import 'fontsource-open-sans';
 import epictetus from '../../assets/images/epictetus.jpg';
 
 const BlogHeader = () => {
-  // const data = useStaticQuery(graphql`
-  //   query MyStoic {
-  //     allFile(filter: {
-  //       ext: {
-  //         regex: "/(jpeg)|(jpg)|(png)/"
-  //       }, 
-  //       name: {
-  //         in: "epictetus"
-  //       }}) {
-  //         edges {
-  //           node {
-  //             childImageSharp {
-  //               fluid(maxHeight: 1000, quality: 90) {
-  //                 ...GatsbyImageSharpFluid
-  //               }
-  //             }
-  //           }
-  //         }
-  //     }
-  //   }
-  // `);
+  const data = useStaticQuery(graphql`
+    query MyStoic {
+      allFile(filter: {
+        ext: {
+          regex: "/(jpeg)|(jpg)|(png)/"
+        }, 
+        name: {
+          in: "epictetus"
+        }}) {
+          edges {
+            node {
+              childImageSharp {
+                fluid(maxHeight: 1000, quality: 90) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+      }
+    }
+  `);
 
-  // const stoic = {
-  //   key: 0,
-  //   fluid: data.allFile.edges[0].node.childImageSharp.fluid,
-  //   src: data.allFile.edges[0].node.childImageSharp.fluid.src,
-  //   alt: "Epictetus writing code"
-  // };
+  const stoic = {
+    key: 0,
+    fluid: data.allFile.edges[0].node.childImageSharp.fluid,
+    src: data.allFile.edges[0].node.childImageSharp.fluid.src,
+    alt: "Epictetus writing code"
+  };
 
   return (
-    <HeaderContainer style={{ 
-      backgroundImage: `url(${epictetus})`,
-      backgroundSize: 'cover',
-      backgroundAttachment: 'fixed',
-      backgroundPosition: 'right center',
-      backgroundRepeat: 'no-repeat',
-      backgroundColor: 'transparent',
-    }}>
-      <BannerContainer>
+    <HeaderContainer>
+      <WebContainer style={{ 
+        backgroundImage: `url(${epictetus})`,
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'right center',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: 'transparent',
+      }}>
         <HeaderTextContainer>
-          <HeaderText>Learn with the Stoic Programmer</HeaderText>
+          <HeaderText>
+            Learn with the Stoic&nbsp; 
+            <span className="gold-text">
+              Programmer
+            </span>
+          </HeaderText>
         </HeaderTextContainer>
+      </WebContainer>
 
-        {/* <Epictetus fluid={stoic.fluid} src={stoic.src} alt={stoic.alt} key={0} /> */}
-      </BannerContainer>
+      <MobileContainer>
+        <Epictetus fluid={stoic.fluid} src={stoic.src} alt={stoic.alt} key={0} />
+
+        <MobileText>
+          Learn with the Stoic&nbsp;
+          <span className="gold-text">
+            Programmer
+          </span>
+        </MobileText>
+      </MobileContainer>
     </HeaderContainer>
   )
 }
@@ -63,9 +77,14 @@ const HeaderContainer = styled.div`
   width: 80vw;
   height: 35rem;
   margin-left: 8.5rem;
+
+  @media screen and (max-width: 500px) {
+    margin: 0 auto;
+    width: 100%;
+  }
 `;
 
-const BannerContainer = styled.div`
+const WebContainer = styled.div`
   width: 100%;
   display: flex;
   flex: 1;
@@ -77,19 +96,7 @@ const BannerContainer = styled.div`
   height: 100%;
 
   @media screen and (max-width: 500px) {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-  }
-`;
-
-const Epictetus = styled(Img)`
-  width: 40%;
-  height: auto;
-
-  @media screen and (max-width: 500px) {
-    display: block;
-    width: 100%;
+    display: none;
   }
 `;
 
@@ -108,4 +115,42 @@ const HeaderText = styled.h1`
   color: white;
   text-align: center;
   font-family: 'Playfair Display', sans-serif;
+
+  .gold-text {
+    color: #fecc27;
+  }
+`;
+
+const MobileContainer = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+
+  @media only screen and (min-width: 700px) {
+    display: none;
+  }
+`;
+
+const Epictetus = styled(Img)`
+  display: none;
+
+  @media screen and (max-width: 500px) {
+    display: block;
+    width: 100%;
+  }
+`;
+
+const MobileText = styled.h1`
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  width: 80%;
+
+  .gold-text {
+    color: #fecc27;
+    display: block;
+  }
 `;

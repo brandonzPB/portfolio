@@ -1,10 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import Img from 'gatsby-image';
 import { ImCross } from 'react-icons/im';
 import 'fontsource-roboto';
+import white from '../assets/images/white.jpg';
 
 const MobileModal = ({ close, ...props }) => {
+  // const data = useStaticQuery(graphql`
+  //   query White {
+  //     allFile(filter: {
+  //       ext: {
+  //         regex: "/(jpg)|(png)|(jpeg)/"
+  //       },
+  //       name: {
+  //         in: "white"
+  //       }
+  //     }) {
+  //       edges {
+  //         node {
+  //           childImageSharp {
+  //             fluid {
+  //               ...GatsbyImageSharpFluid
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
+
+  // const white = {
+  //   fluid: data.allFile.edges[0].node.childImageSharp.fluid,
+  //   src: data.allFile.edges[0].node.childImageSharp.fluid.src,
+  //   alt: 'A white background'
+  // };
+
   return (
     <ModalContainer>
       <CloseButton onClick={close}>
@@ -54,6 +86,11 @@ const ModalContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3);
   animation: slidein 0.2s ease;
+`;
+
+const ModalBackground = styled.div`
+  width: 100%;
+  height: 100%;
 `;
 
 const CloseButton = styled.div`

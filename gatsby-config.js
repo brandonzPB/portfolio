@@ -5,6 +5,7 @@ module.exports = {
     author: `Brandon Zirulnikoff <zirBrandonWeb@gmail.com>`,
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-remark-prismjs`,
     `gatsby-remark-copy-linked-files`,
     `gatsby-plugin-catch-links`,
