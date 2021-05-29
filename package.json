@@ -1,9 +1,9 @@
 {
-  "name": "Brandon Zirulnikoff Portfolio and Blog",
+  "name": "portfolio_blog",
   "private": true,
-  "description": "My portfolio page | Home of BZ Learning",
+  "description": "My portfolio and my blog",
   "version": "0.1.0",
-  "author": "Brandon Zirulnikoff <zirBrandonWeb@gmail.com>",
+  "author": "Brandon Zirulnikoff | The Stoic Programmer <zirBrandonWeb@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "fontsource-open-sans": "^4.0.0",
