@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import SEO from '../components/seo';
 import NavBar from '../components/NavBar';
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
@@ -103,6 +104,7 @@ const Republic_310 = () => {
   return (
     <>
       <GlobalStyle />
+      <SEO title="The Republic 310 | Brandon Zirulnikoff" />
       <NavBar />
       <Project 
         title="The Republic 310"

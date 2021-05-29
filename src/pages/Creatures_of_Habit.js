@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 
+import SEO from '../components/seo';
 import NavBar from '../components/NavBar';
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
@@ -92,6 +93,7 @@ const Creatures_of_Habit = () => {
   return (
     <>
       <GlobalStyle />
+      <SEO title="Creatures of Habit (Pokemon version) | Brandon Zirulnikoff" />
       <NavBar />
       <Project 
         title="Creatures of Habit"

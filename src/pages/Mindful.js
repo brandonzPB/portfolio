@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 
+import SEO from '../components/seo';
 import NavBar from '../components/NavBar';
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
@@ -14,10 +15,7 @@ const Mindful = () => {
         name: {in: ["mindful-0", "mindful-1"]}}) {
         edges {
           node {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+            childImageSharp {Zirulnikoff
             }
           }
         }
@@ -95,6 +93,7 @@ const Mindful = () => {
   return (
     <>
       <GlobalStyle />
+      <SEO title="mindful.io Meditation Web App | Brandon Zirulnikoff" />
       <NavBar />
       <Project 
         title="mindful.io"

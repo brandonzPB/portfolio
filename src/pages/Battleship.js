@@ -2,6 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 import { GlobalStyle } from '../components/styles/GlobalStyle';
 
+import SEO from '../components/seo';
 import NavBar from '../components/NavBar';
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
@@ -76,6 +77,7 @@ const Battleship = () => {
   return (
     <>
       <GlobalStyle />
+      <SEO title="Battleship | Brandon Zirulnikoff" />
       <NavBar />
       <Project 
         title="Battleship"
