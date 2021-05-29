@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import 'fontsource-roboto';
 import MobileModal from './MobileModal';
 
-const NavBar = ({ hideMenu, modalState, showMenu }) => {
+const NavBar = ({ hideModal, modalDisplay, showModal }) => {
   return (
     <NavBarContainer>
       <WebContainer>
@@ -27,15 +27,15 @@ const NavBar = ({ hideMenu, modalState, showMenu }) => {
       </WebContainer>
 
       <MobileContainer>
-        <GiHamburgerMenu id="icon" onClick={showMenu} />
+        <GiHamburgerMenu id="icon" onClick={showModal} />
         
         <ModalContainer 
           style={{ 
-            display: modalState.display ? 'block' : 'none' 
+            display: modalDisplay ? 'block' : 'none' 
           }}
         >
           <MobileModal 
-            close={hideMenu}
+            close={hideModal}
           />
         </ModalContainer>
       </MobileContainer>

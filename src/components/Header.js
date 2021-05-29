@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';
 
-const Header = ({ modalState }) => {
+const Header = ({ modalDisplay }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {in: "me"}}) {
@@ -35,13 +35,13 @@ const Header = ({ modalState }) => {
 
   useEffect(() => {
     if (headerRef.current) {
-      if (modalState.display) {
+      if (modalDisplay) {
         setDisplay({ status: false });
-      } else if (!modalState.display) {
+      } else if (!modalDisplay) {
         setDisplay({ status: true });
       }
     }
-  }, [modalState, setDisplay, headerRef]);
+  }, [modalDisplay, setDisplay, headerRef]);
 
   const banner = {
     key: 0,
