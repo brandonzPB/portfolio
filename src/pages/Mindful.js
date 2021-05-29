@@ -15,7 +15,10 @@ const Mindful = () => {
         name: {in: ["mindful-0", "mindful-1"]}}) {
         edges {
           node {
-            childImageSharp {Zirulnikoff
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
