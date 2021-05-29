@@ -44,6 +44,10 @@ const SkillsContainer = styled.div`
 
   @media screen and (max-width: 700px) {
     display: block;
+
+    h1 {
+      text-align: center;
+    }
   }
 `
 
@@ -61,5 +65,9 @@ const ProjectSection = styled.div`
 
   @media screen and (max-width: 700px) {
     grid-template-columns: 1fr;
+
+    h1 {
+      text-align: center;
+    }
   }
 `

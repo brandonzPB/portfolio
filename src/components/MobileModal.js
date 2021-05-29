@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
-import Img from 'gatsby-image';
+import { Link, } from 'gatsby';
 import { ImCross } from 'react-icons/im';
 import 'fontsource-roboto';
-import white from '../assets/images/white.jpg';
 
 const MobileModal = ({ close, ...props }) => {
   // const data = useStaticQuery(graphql`
@@ -79,7 +76,7 @@ const ModalContainer = styled.div`
   top: 3rem;
   right: 0;
   margin: 0 auto;
-  z-index: 10;
+  z-index: 4;
   height: 90vh;
   width: 90vw;
   background-color: white;

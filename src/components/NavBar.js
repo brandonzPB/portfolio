@@ -17,6 +17,7 @@ const NavBar = () => {
   // HIDE MODAL MENU
   const hideMenu = () => {
     if (!modalState.display) return;
+
     setModalState({ display: false });
   }
 
@@ -43,7 +44,11 @@ const NavBar = () => {
       <MobileContainer>
         <GiHamburgerMenu id="icon" onClick={showMenu} />
         
-        <ModalContainer style={{ display: modalState.display ? 'block' : 'none' }}>
+        <ModalContainer 
+          style={{ 
+            display: modalState.display ? 'block' : 'none' 
+          }}
+        >
           <MobileModal 
             close={hideMenu}
           />
@@ -130,6 +135,20 @@ const MobileContainer = styled.div`
 `;
 
 const ModalContainer = styled.div`
+  @keyframes slideout {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(120rem);
+    }
+  }
+
+  .hide-modal {
+    animation: slideout 0.2s ease;
+  }
+
   @media screen and (min-width: 900px) {
     display: none;
   }
