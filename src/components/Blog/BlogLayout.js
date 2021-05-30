@@ -1,32 +1,46 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
+
 import { BlogStyle } from '../styles/BlogStyle';
 
-import NavBar from '../NavBar';
 import BlogHeader from './BlogHeader';
 import Footer from '../Footer';
 
-const BlogLayout = ({ children }) => {
+const BlogLayout = ({ children, modalState }) => {
   return (
-    <BlogContainer>
+    <>
       <BlogStyle />
 
-      <NavBar />
       <BlogHeader />
 
-      <main>{children}</main>
+      <main>
+        {
+          children.map(child => {
+            return React.cloneElement(
+              child,
+              {
+                key: uuidv4(),
+                modalState
+              }
+            )
+          })
+        }
+      </main>
 
       <BlogFooterContainer>
         <Footer theme={'dark'} />
       </BlogFooterContainer>
-    </BlogContainer>
+    </>
   )
 }
 
 BlogLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
+export default BlogLayout;
 
 const BlogContainer = styled.div`
   ${'' /* background: linear-gradient(0.25turn,
@@ -51,4 +65,3 @@ const BlogFooterContainer = styled.div`
   padding: 0.5rem 0;
 `;
 
-export default BlogLayout;

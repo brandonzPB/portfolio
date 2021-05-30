@@ -7,7 +7,7 @@ import PostPreview from './PostPreview';
 
 import '../../css/index.css';
 
-export default function Index({ data }) {
+export default function Index({ data, modalState }) {
   const posts = data;
 
   const PostPreviewComponents = posts.filter(post => post.frontmatter.title.length > 0)
@@ -23,6 +23,7 @@ export default function Index({ data }) {
         <PostPreview
           key={post.key}
           post={postObj}
+          modalState={modalState}
         />
       )
     });

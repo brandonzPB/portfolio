@@ -7,7 +7,7 @@ import { HiPuzzle } from 'react-icons/hi';
 
 import PostPreview from './PostPreview';
 
-export default function TagIndex({ data }) {
+export default function TagIndex({ data, modalState }) {
   const [currentTag, setCurrentTag] = useState({ title: '' });
 
   // reduce data to map of tags
@@ -80,6 +80,7 @@ export default function TagIndex({ data }) {
           key={uuid()}
           inTags={true}
           setTag={updateTagState}
+          modalState={modalState}
         />
       )
     });
@@ -121,7 +122,6 @@ export default function TagIndex({ data }) {
       </PostHeader>
       
       <TagContentContainer>
-
         <NoTagText style={{ display: currentTag.title.trim() ? 'none' : 'block' }}>
           Click on a Tag to Filter the Posts!
         </NoTagText>

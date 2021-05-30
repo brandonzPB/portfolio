@@ -6,11 +6,11 @@ import { HiPuzzle } from 'react-icons/hi';
 
 import '../css/blog-post.css';
 
+import NavLayout from '../components/NavLayout';
 import BlogLayout from '../components/Blog/BlogLayout';
-import Footer from '../components/Footer';
 import MyIcon from '../components/Blog/MyIcon';
 
-export default function Template({ data }) {
+export default function Template({ data, modalState }) {
   // data is injected with GraphQL query
   const { markdownRemark: post } = data; // data.markdownRemark holds post data
 
@@ -22,33 +22,35 @@ export default function Template({ data }) {
   ));
 
   return (
-    <BlogLayout>
-      <Helmet title={`Learn with The Stoic Programmer - ${post.frontmatter.title}`} />
+    <NavLayout>
+      <BlogLayout>
+        <Helmet title={`Learn with The Stoic Programmer - ${post.frontmatter.title}`} />
 
-      <BlogPostContainer>
-        <BrowseText>
-          <BrowseLink to="/learn">Browse Posts</BrowseLink>
-        </BrowseText>
+        <BlogPostContainer>
+          <BrowseText>
+            <BrowseLink to="/learn">Browse Posts</BrowseLink>
+          </BrowseText>
 
-        <PostContent>
-          <PostTitle>{post.frontmatter.title}</PostTitle>
+          <PostContent>
+            <PostTitle>{post.frontmatter.title}</PostTitle>
 
-          <PostInfo>
-            Posted by Brandon&nbsp;
-            <MyIcon />
-            &nbsp;on {post.frontmatter.date}
-          </PostInfo>
+            <PostInfo>
+              Posted by Brandon&nbsp;
+              <MyIcon modalState={modalState} />
+              &nbsp;on {post.frontmatter.date}
+            </PostInfo>
 
-          <TagList>
-            {TagComponents}
-          </TagList>
+            <TagList>
+              {TagComponents}
+            </TagList>
 
-          <InnerHtmlContainer>
-            <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-          </InnerHtmlContainer>
-        </PostContent>
-      </BlogPostContainer>
-    </BlogLayout>
+            <InnerHtmlContainer>
+              <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
+            </InnerHtmlContainer>
+          </PostContent>
+        </BlogPostContainer>
+      </BlogLayout>
+    </NavLayout>
   )
 }
 
@@ -107,7 +109,7 @@ const PostTitle = styled.h1`
   margin: 0 auto 2.5rem auto;
 `;
 
-const PostInfo = styled.p`
+const PostInfo = styled.div`
   margin: 0 auto 1rem auto;
   width: 60%;
   text-align: center;

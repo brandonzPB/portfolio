@@ -1,27 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { HiPuzzle } from 'react-icons/hi';
-import { v4 as uuid } from 'uuid';
 
 import MyIcon from './MyIcon';
 
-const PostPreview = ({ post, inTags = false, setTag, }) => {
-  const myRef = useRef(false);
-
-  useEffect(() => {
-    return () => {
-      myRef.current = false;
-    }
-  }, []);
-
+const PostPreview = ({ post, inTags = false, setTag, modalState, }) => {
   return (
     <PostPreviewContainer>
       <PostLink to={post.path}>{post.title}</PostLink>
       
       <PostInfo>
         Posted by Brandon&nbsp;
-        <MyIcon />
+        <MyIcon modalState={modalState} />
         &nbsp;on {post.date}
       </PostInfo>
 
@@ -97,7 +88,7 @@ const PostLink = styled(Link)`
   }
 `;
 
-const PostInfo = styled.span`
+const PostInfo = styled.div`
   display: block;
   margin: 0.5rem auto;
 `;

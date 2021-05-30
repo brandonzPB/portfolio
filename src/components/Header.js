@@ -131,6 +131,7 @@ const TextContainer = styled.div`
 
   h3 {
     animation: fadein 2s;
+    margin: 0 auto;
   }
 
   #mobile {

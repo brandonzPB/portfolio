@@ -1,9 +1,9 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from 'gatsby';
-import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
 import { v4 as uuidv4 } from 'uuid';
 
-import BlogLayout from "../components/Blog/BlogLayout"
+import NavLayout from '../components/NavLayout';
+import BlogLayout from "../components/Blog/BlogLayout";
 import BlogIndex from '../components/Blog/BlogIndex';
 import SEO from "../components/seo"
 
@@ -39,11 +39,13 @@ const Learning = () => {
   });
 
   return (
-    <BlogLayout>
-      <SEO title="Learn about the Best Full-stack Tech with the Stoic Programmer" />
-      
-      <BlogIndex data={postData} />
-    </BlogLayout>
+    <NavLayout>
+      <BlogLayout>
+        <SEO title="Learn about the Best Full-stack Tech with the Stoic Programmer | BZWEB" />
+        
+        <BlogIndex data={postData} />
+      </BlogLayout>
+    </NavLayout>
   )
 }
 

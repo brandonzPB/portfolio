@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import NavLayout from '../components/NavLayout';
 import BlogLayout from '../components/Blog/BlogLayout';
 import SEO from '../components/seo';
 import TagIndex from '../components/Blog/TagIndex';
@@ -25,10 +26,12 @@ const Tags = () => {
   `);
 
   return (
-    <BlogLayout>
-      <SEO title="Browse topics | the Stoic Programmer" />
-      <TagIndex data={data} />
-    </BlogLayout>
+    <NavLayout>
+      <BlogLayout>
+        <SEO title="Browse topics | the Stoic Programmer" />
+        <TagIndex data={data} />
+      </BlogLayout>
+    </NavLayout>
   )
 }
 

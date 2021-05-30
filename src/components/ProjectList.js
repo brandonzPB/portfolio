@@ -4,26 +4,6 @@ import Img from 'gatsby-image';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
 const ProjectList = ({ modalState }) => {
-  const [display, setDisplay] = useState({ status: true });
-
-  const projectRef = useRef(true);
-
-  useEffect(() => {
-    return () => {
-      projectRef.current = false;
-    }
-  }, []);
-
-  useEffect(() => {
-    if (projectRef.current) {
-      if (modalState.display) {
-        setDisplay({ status: false });
-      } else if (!modalState.dipslay) {
-        setDisplay({ status: true });
-      }
-    }
-  }, [modalState, setDisplay, projectRef]);
-
   const data = useStaticQuery(graphql`
     query MyPaintings {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
@@ -47,6 +27,26 @@ const ProjectList = ({ modalState }) => {
       if (a.node.name < b.node.name) return -1;
       if (a.node.name > b.node.name) return 1;
     });
+
+  const [display, setDisplay] = useState({ status: true });
+
+  const projectRef = useRef(true);
+
+  useEffect(() => {
+    return () => {
+      projectRef.current = false;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (projectRef.current) {
+      if (modalState.display) {
+        setDisplay({ status: false });
+      } else if (!modalState.dipslay) {
+        setDisplay({ status: true });
+      }
+    }
+  }, [modalState, setDisplay, projectRef]);
 
   return (
     <ProjectListContainer>.

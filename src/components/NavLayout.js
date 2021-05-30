@@ -4,8 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 import NavBar from './NavBar';
 
 const NavLayout = ({ children }) => {
-  console.log('children', children);
-
   const childrenArr = children.props
     ? children.props.children
     : children;

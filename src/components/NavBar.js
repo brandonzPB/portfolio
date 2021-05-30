@@ -6,6 +6,8 @@ import 'fontsource-roboto';
 import MobileModal from './MobileModal';
 
 const NavBar = ({ hideModal, modalState, showModal }) => {
+  console.log('modalState', modalState);
+  
   return (
     <NavBarContainer>
       <WebContainer>
