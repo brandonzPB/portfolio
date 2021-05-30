@@ -13,8 +13,6 @@ const BlogLayout = ({ children, modalState }) => {
     <>
       <BlogStyle />
 
-      <BlogHeader />
-
       <main>
         {
           children.map(child => {
@@ -28,10 +26,6 @@ const BlogLayout = ({ children, modalState }) => {
           })
         }
       </main>
-
-      <BlogFooterContainer>
-        <Footer theme={'dark'} />
-      </BlogFooterContainer>
     </>
   )
 }

@@ -52,8 +52,8 @@ const ProjectList = ({ modalState }) => {
     <ProjectListContainer>.
       <h1>Projects I've Made</h1>
 
-      <ProjectsList>
-        <ProjectContainer style={{ display: display.status ? 'block' : 'none' }}>
+      <ProjectsList style={{ display: display.status ? 'block' : 'none' }} ref={projectRef}>
+        <ProjectContainer >
           <ProjectAnchor to="/Creatures_of_Habit">
             <ProjectThumbnail
               fluid={paintings[1].node.childImageSharp.fluid} 
@@ -70,7 +70,7 @@ const ProjectList = ({ modalState }) => {
           <ProjectLink to="/Creatures_of_Habit">View Project</ProjectLink>
         </ProjectContainer>
 
-        <ProjectContainer style={{ display: display.status ? 'block' : 'none' }}>
+        <ProjectContainer>
           <ProjectAnchor to="/Republic_310">
             <ProjectThumbnail 
               fluid={paintings[3].node.childImageSharp.fluid} 
@@ -85,7 +85,7 @@ const ProjectList = ({ modalState }) => {
           <ProjectLink to="/Republic_310">View Project</ProjectLink>
         </ProjectContainer>
 
-        <ProjectContainer style={{ display: display.status ? 'block' : 'none' }}>
+        <ProjectContainer>
           <ProjectAnchor to="/Mindful">
             <ProjectThumbnail 
               fluid={paintings[2].node.childImageSharp.fluid} 
@@ -100,7 +100,7 @@ const ProjectList = ({ modalState }) => {
           <ProjectLink to="/Mindful">View Project</ProjectLink>
         </ProjectContainer>
 
-        <ProjectContainer style={{ display: display.status ? 'block' : 'none' }}>
+        <ProjectContainer>
           <ProjectAnchor to="/Battleship">
             <ProjectThumbnail 
               fluid={paintings[0].node.childImageSharp.fluid} 

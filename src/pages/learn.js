@@ -39,7 +39,7 @@ const Learning = () => {
   });
 
   return (
-    <NavLayout>
+    <NavLayout layout={'blog'}>
       <BlogLayout>
         <SEO title="Learn about the Best Full-stack Tech with the Stoic Programmer | BZWEB" />
         

@@ -7,7 +7,7 @@ import Header from '../components/Header';
 import Body from '../components/Body';
 
 const IndexPage = () => (  
-  <NavLayout>
+  <NavLayout layout={'portfolio'}>
     <Layout>
       <SEO title="Brandon Zirulnikoff | Software Developer" />
       <Header />

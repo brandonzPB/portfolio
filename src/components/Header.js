@@ -65,7 +65,7 @@ const Header = ({ modalState }) => {
           </div>
         </TextContainer>
 
-        <ImageContainer style={{ display: display.status ? 'block': 'none' }}>
+        <ImageContainer style={{ display: display.status ? 'block': 'none' }} ref={headerRef}>
           <Image fluid={banner.fluid} alt="Picture of me (a bald man) in a suit" />
         </ImageContainer>
 

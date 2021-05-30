@@ -26,7 +26,7 @@ const Tags = () => {
   `);
 
   return (
-    <NavLayout>
+    <NavLayout layout={'blog'}>
       <BlogLayout>
         <SEO title="Browse topics | the Stoic Programmer" />
         <TagIndex data={data} />

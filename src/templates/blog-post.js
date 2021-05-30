@@ -22,7 +22,7 @@ export default function Template({ data, modalState }) {
   ));
 
   return (
-    <NavLayout>
+    <NavLayout layout={'blog'}>
       <BlogLayout>
         <Helmet title={`Learn with The Stoic Programmer - ${post.frontmatter.title}`} />
 

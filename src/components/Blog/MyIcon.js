@@ -49,18 +49,22 @@ const MyIcon = ({ modalState }) => {
   const myIcon = data.allFile.edges[0].node.childImageSharp;
 
   return (
-    <IconLink 
-      to="/Brandon" 
+    <IconContainer 
       style={{
         display: display.status ? 'inline' : 'none'
       }}
+      ref={iconRef}
     >
+      <IconLink to="/Brandon" >
       <MyIconImage fluid={myIcon.fluid} alt="A small picture of me wearing a suit." />
     </IconLink>
+    </IconContainer>
   )
 }
 
 export default MyIcon;
+
+const IconContainer = styled.div``;
 
 const IconLink = styled(Link)``;
 
