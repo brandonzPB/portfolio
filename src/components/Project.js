@@ -10,37 +10,39 @@ import { CgPokemon } from 'react-icons/cg';
 import { FaPeace } from 'react-icons/fa';
 import { GiBattleship, GiPalmTree } from 'react-icons/gi';
 
-const Project = ({ title, details, stack, link, sourceCode, purpose, tech, lessons, data, alt1, alt2, icon }) => {
-  const stackComponents = stack.map((tech, index) => {
+const Project = ({ projectProps, modalState }) => {
+  const { tech } = projectProps;
+  
+  const stackComponents = projectProps.stack.map((tech, index) => {
     return (
       <li key={index}>
-        <CgPokemon className="list-o" style={{ display: icon === 'creatures' ? 'inline-block' : 'none' }} />
-        <FaPeace className="list-o" style={{ display: icon === 'mindful' ? 'inline-block' : 'none' }} />
-        <GiBattleship className="list-o" style={{ display: icon === 'battleship' ? 'inline-block' : 'none' }} />
-        <GiPalmTree className="list-o" style={{ display: icon === 'republic' ? 'inline-block' : 'none'} } />
+        <CgPokemon className="list-o" style={{ display: projectProps.icon === 'creatures' ? 'inline-block' : 'none' }} />
+        <FaPeace className="list-o" style={{ display: projectProps.icon === 'mindful' ? 'inline-block' : 'none' }} />
+        <GiBattleship className="list-o" style={{ display: projectProps.icon === 'battleship' ? 'inline-block' : 'none' }} />
+        <GiPalmTree className="list-o" style={{ display: projectProps.icon === 'republic' ? 'inline-block' : 'none'} } />
         {tech}
       </li>
     )
   });
 
   const thumbnail = {
-    src: data[1].src,
-    fluid: data[1].fluid,
-    alt: alt1
+    src: projectProps.data[1].src,
+    fluid: projectProps.data[1].fluid,
+    alt: projectProps.alt1
   };
 
   const screenshot = {
-    src: data[0].src,
-    fluid: data[0].fluid,
-    alt: alt2
+    src: projectProps.data[0].src,
+    fluid: projectProps.data[0].fluid,
+    alt: projectProps.alt2
   };
   
   return (
     <ProjectContainer>
       
       <HeaderContainer>
-        <h1>{title}</h1>
-        <p>{details}</p>
+        <h1>{projectProps.title}</h1>
+        <p>{projectProps.details}</p>
       </HeaderContainer>
 
       <DetailsContainer>
@@ -51,14 +53,38 @@ const Project = ({ title, details, stack, link, sourceCode, purpose, tech, lesso
           </ul>
         </ListContainer>
         
-        <LinkContainer>
-          <a href={link} target="_blank" rel="noreferrer">
-            <Thumbnail src={thumbnail.src} fluid={thumbnail.fluid} alt={thumbnail.alt} />
+        <LinkContainer style={{ display: modalState.display ? 'none' : 'block' }}>
+          <a 
+            href={projectProps.link} 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            <Thumbnail 
+              src={thumbnail.src} 
+              fluid={thumbnail.fluid} 
+              alt={thumbnail.alt} 
+            />
           </a>
-          <a href={link} target="_blank" rel="noreferrer" style={{ display: link === '#' ? 'none' : 'inline-block' }}>
+
+          <a 
+            href={projectProps.link} 
+            target="_blank" 
+            rel="noreferrer" 
+            style={{ 
+              display: projectProps.link === '#' ? 'none' : 'inline-block' 
+            }}
+          >
             <span id="project-link">View Live</span>
           </a>
-          <a href={sourceCode} target="_blank" rel="noreferrer" style={{ display: link === '#' ? 'none' : 'inline-block' }}>
+
+          <a 
+            href={projectProps.sourceCode} 
+            target="_blank" 
+            rel="noreferrer" 
+            style={{ 
+              display: projectProps.link === '#' ? 'none' : 'inline-block' 
+            }}
+          >
             <span id="source-code">Source Code</span>
           </a>
         </LinkContainer>
@@ -68,14 +94,18 @@ const Project = ({ title, details, stack, link, sourceCode, purpose, tech, lesso
         <Screenshot
           fluid={screenshot.fluid}
           src={screenshot.src}
-          alt={screenshot.alt}>
+          alt={screenshot.alt}
+          style={{
+            display: modalState.display ? 'none' : 'block'
+          }}
+        >
         </Screenshot>
       </ImageContainer>
 
       <StoryContainer>
         <PurposeContainer>
           <h1>Project Inspiration and Purpose</h1>
-          <span id="purpose">{purpose}</span>
+          <span id="purpose">{projectProps.purpose}</span>
         </PurposeContainer>
 
         <TechContainer>
@@ -85,7 +115,7 @@ const Project = ({ title, details, stack, link, sourceCode, purpose, tech, lesso
 
         <LessonsContainer>
           <h1>Challenges and Lessons</h1>
-          <span id="lessons">{lessons}</span>
+          <span id="lessons">{projectProps.lessons}</span>
         </LessonsContainer>
       </StoryContainer>
     </ProjectContainer>

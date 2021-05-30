@@ -1,12 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 
+import NavLayout from '../components/NavLayout';
+import ProjectLayout from '../components/ProjectLayout';
 import SEO from '../components/seo';
-import NavBar from '../components/NavBar';
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
-import Footer from '../components/Footer';
-import { GlobalStyle } from '../components/styles/GlobalStyle';
 
 const Creatures_of_Habit = () => {
   const data = useStaticQuery(graphql`
@@ -90,28 +89,29 @@ const Creatures_of_Habit = () => {
     name: 'painting-mindful',
   };
 
+  const projectProps = {
+    title: 'Creatures of Habit',
+    details,
+    stack,
+    link,
+    sourceCode,
+    purpose,
+    tech,
+    lessons,
+    data: images,
+    alt1,
+    alt2,
+    icon: 'creatures'
+  };
+
   return (
-    <>
-      <GlobalStyle />
-      <SEO title="Creatures of Habit (Pokemon version) | Brandon Zirulnikoff" />
-      <NavBar />
-      <Project 
-        title="Creatures of Habit"
-        details={details}
-        stack={stack}
-        link={link}
-        sourceCode={sourceCode}
-        purpose={purpose}
-        tech={tech}
-        lessons={lessons}
-        data={images}
-        alt1={alt1}
-        alt2={alt2}
-        icon="creatures"
-      />
-      <ProjectFooter otherA={otherA} otherB={otherB} />
-      <Footer theme={'light'} />
-    </>
+    <NavLayout>
+      <ProjectLayout>
+        <SEO title="Creatures of Habit (Pokémon version) | BZWEB" />
+        <Project  projectProps={projectProps} />
+        <ProjectFooter otherA={otherA} otherB={otherB} />
+      </ProjectLayout>
+    </NavLayout>
   )
 }
 

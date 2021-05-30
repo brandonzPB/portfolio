@@ -18,10 +18,7 @@ const MobileModal = ({ hideModal, ...props }) => {
         <Link to="/learn">BLOG</Link>
       </ModalItem>
       <ModalItem>
-        <a href="/#skills">SKILLS</a>
-      </ModalItem>
-      <ModalItem>
-        <a href="/#projects">PROJECTS</a>
+        <a href="/#skills">SKILLS & PROJECTS</a>
       </ModalItem>
       <ModalItem>
         <a href="/#footer">CONTACT</a>

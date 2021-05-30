@@ -4,6 +4,12 @@ import { v4 as uuidv4 } from 'uuid';
 import NavBar from './NavBar';
 
 const NavLayout = ({ children }) => {
+  console.log('children', children);
+
+  const childrenArr = children.props
+    ? children.props.children
+    : children;
+
   const [modalState, setModalState] = useState({ display: false });
 
   // SHOW MODAL MENU
@@ -30,7 +36,7 @@ const NavLayout = ({ children }) => {
 
       <main>
         {
-          children.props.children.map(child => {
+          childrenArr.map(child => {
             return React.cloneElement(
               child,
               {

@@ -1,12 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
-import { GlobalStyle } from '../components/styles/GlobalStyle';
 
+import NavLayout from '../components/NavLayout';
+import ProjectLayout from '../components/ProjectLayout';
 import SEO from '../components/seo';
-import NavBar from '../components/NavBar';
 import Project from '../components/Project';
 import ProjectFooter from '../components/ProjectFooter';
-import Footer from '../components/Footer';
 
 const Battleship = () => {
   // gets thumbnails of Creatures and Mindful
@@ -74,28 +73,29 @@ const Battleship = () => {
     name: 'painting-mindful',
   };
 
+  const projectProps = {
+    title: 'Battleship',
+    details,
+    stack,
+    link,
+    sourceCode,
+    purpose,
+    tech,
+    lessons,
+    data: images,
+    alt1,
+    alt2,
+    icon: 'battleship'
+  };
+
   return (
-    <>
-      <GlobalStyle />
-      <SEO title="Battleship | Brandon Zirulnikoff" />
-      <NavBar />
-      <Project 
-        title="Battleship"
-        details={details}
-        stack={stack}
-        link={link}
-        sourceCode={sourceCode}
-        purpose={purpose}
-        tech={tech}
-        lessons={lessons}
-        data={images}
-        alt1={alt1}
-        alt2={alt2}
-        icon="battleship"
-      />
-      <ProjectFooter otherA={otherA} otherB={otherB} />
-      <Footer theme={'light'} />
-    </>
+    <NavLayout>
+      <ProjectLayout>
+        <SEO title="Battleship | BZWEB" />
+        <Project  projectProps={projectProps} />
+        <ProjectFooter otherA={otherA} otherB={otherB} />
+      </ProjectLayout>
+    </NavLayout>
   )
 }
 

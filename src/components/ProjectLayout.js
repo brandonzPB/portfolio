@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react';
 import PropTypes from "prop-types"
 import { v4 as uuidv4 } from 'uuid';
 
 import { GlobalStyle } from './styles/GlobalStyle';
 import Footer from './Footer';
 
-const Layout = ({ children, modalState }) => {
+const ProjectLayout = ({ children, modalState }) => {
   return (
     <>
       <GlobalStyle />
@@ -24,13 +24,13 @@ const Layout = ({ children, modalState }) => {
         }
       </main>
 
-      <Footer theme="light" />
+      <Footer theme={'light'} />
     </>
   )
 }
 
-Layout.propTypes = {
+ProjectLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout;
+export default ProjectLayout;

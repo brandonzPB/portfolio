@@ -36,7 +36,7 @@ const Body = ({ modalState }) => {
       </SkillsContainer>
 
       <ProjectSection id="projects">
-        <ProjectList display={display} />
+        <ProjectList modalState={modalState} />
       </ProjectSection>
     </BodyContainer>
   )
