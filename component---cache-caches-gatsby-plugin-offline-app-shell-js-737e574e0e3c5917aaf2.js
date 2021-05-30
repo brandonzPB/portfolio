@@ -1,2 +1,0 @@
-(self.webpackChunkBrandon_Zirulnikoff_Portfolio_and_Blog=self.webpackChunkBrandon_Zirulnikoff_Portfolio_and_Blog||[]).push([[306],{1930:function(n,e,t){"use strict";var o=t(5318);e.__esModule=!0,e.default=void 0;var u=o(t(5354)),r=o(t(7294)),l=function(n){function e(){return n.apply(this,arguments)||this}return(0,u.default)(e,n),e.prototype.render=function(){return r.default.createElement(r.default.Fragment,null)},e}(r.default.Component);e.default=l}}]);
-//# sourceMappingURL=component---cache-caches-gatsby-plugin-offline-app-shell-js-737e574e0e3c5917aaf2.js.map
