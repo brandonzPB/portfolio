@@ -1,7 +1,8 @@
 import React from "react"
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import 'fontsource-open-sans';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -47,6 +48,10 @@ const NotFoundPage = () => {
           <p>Fortunately for you, there is no consequence for trying to find a page in my website that does not exist.</p>
           <p>Cheers to your curiosity, fellow creature!</p>
         </PContainer>
+
+        <ReturnLink to="/">
+          <ReturnText>Return Home</ReturnText>
+        </ReturnLink>
         
         <ThinkerImage fluid={thinker.fluid} alt={thinker.alt} />
       </Container>
@@ -59,6 +64,7 @@ export default NotFoundPage;
 const Container = styled.div`
   margin: 2rem auto;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 
   h1 {
     margin: 2rem auto;
@@ -66,6 +72,15 @@ const Container = styled.div`
 `;
 
 const PContainer = styled.div`
+  margin: 1rem auto;
+`;
+
+const ReturnLink = styled(Link)`
+  cursor: pointer;
+`;
+
+const ReturnText = styled.span`
+  font-size: 1.5rem;
   margin: 1rem auto;
 `;
 
