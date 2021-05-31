@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 
-const MyIcon = ({ modalState }) => {
+const MyIcon = ({ modalState = null }) => {
   const data = useStaticQuery(graphql`
     query MyIcon {
       allFile(filter: {
@@ -37,7 +37,7 @@ const MyIcon = ({ modalState }) => {
   }, []);
 
   useEffect(() => {
-    if (iconRef.current) {
+    if (modalState !== null && iconRef.current) {
       if (modalState.display) {
         setDisplay({ status: false });
       } else if (!modalState.display) {
