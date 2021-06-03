@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components';
 
 import SkillsList from './SkillsList';
-import ProjectList from './ProjectList';
+import ProjectList from './Project/ProjectList';
 
 import 'fontsource-playfair-display/600.css';
 import 'fontsource-open-sans';

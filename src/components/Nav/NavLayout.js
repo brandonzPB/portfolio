@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 
 import NavBar from './NavBar';
-import BlogHeader from './Blog/BlogHeader';
-import Footer from './Footer';
+import BlogHeader from '../Blog/BlogHeader';
+import Footer from '../Footer';
 
 const NavLayout = ({ children, layout }) => {
   const childrenArr = children.props

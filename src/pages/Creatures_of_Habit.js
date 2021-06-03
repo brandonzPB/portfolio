@@ -1,11 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby';
 
-import NavLayout from '../components/NavLayout';
-import ProjectLayout from '../components/ProjectLayout';
+import NavLayout from '../components/Nav/NavLayout';
+import ProjectLayout from '../components/Project/ProjectLayout';
 import SEO from '../components/seo';
-import Project from '../components/Project';
-import ProjectFooter from '../components/ProjectFooter';
+import Project from '../components/Project/Project';
+import ProjectFooter from '../components/Project/ProjectFooter';
 
 const Creatures_of_Habit = () => {
   const data = useStaticQuery(graphql`

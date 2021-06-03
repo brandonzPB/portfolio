@@ -1,16 +1,13 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Link, graphql } from 'gatsby';
-import styled from 'styled-components';
-import { HiPuzzle } from 'react-icons/hi';
+import { graphql } from 'gatsby';
 
 import '../css/blog-post.css';
 
-import NavLayout from '../components/NavLayout';
+import NavLayout from '../components/Nav/NavLayout';
 import BlogLayout from '../components/Blog/BlogLayout';
 import BlogPost from '../components/Blog/BlogPost';
 import SEO from '../components/seo';
-import MyIcon from '../components/Blog/MyIcon';
 
 export default function Template({ data }) {
   // data is injected with GraphQL query

@@ -1,6 +1,6 @@
 import React from "react"
 
-import NavLayout from '../components/NavLayout';
+import NavLayout from '../components/Nav/NavLayout';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Header from '../components/Header';

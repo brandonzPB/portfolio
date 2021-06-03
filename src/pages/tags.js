@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import NavLayout from '../components/NavLayout';
+import NavLayout from '../components/Nav/NavLayout';
 import BlogLayout from '../components/Blog/BlogLayout';
 import SEO from '../components/seo';
 import TagIndex from '../components/Blog/TagIndex';
