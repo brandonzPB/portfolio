@@ -8,7 +8,7 @@ const ProjectList = ({ modalState }) => {
   const data = useStaticQuery(graphql`
     query MyPaintings {
       allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, 
-        name: {in: ["painting-creatures", "painting-mindful", "painting-battleship", "republic310-1"]}}) {
+        name: {in: ["painting-creatures", "painting-mindful", "painting-battleship", "republic310-2"]}}) {
         edges {
           node {
             name
