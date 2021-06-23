@@ -114,12 +114,12 @@ const TextContainer = styled.div`
   @keyframes fadein {
     from {
       opacity: 0;
-      translateY(-30px);
+      transform: translateY(-30px);
     }
 
     to {
       opacity: 1;
-      translateY(30px);
+      transform: translateY(30px);
     }
   }
 
