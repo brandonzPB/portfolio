@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import  { GiTriforce } from 'react-icons/gi';
+import { GiTriforce } from 'react-icons/gi';
 
 const SkillsList = () => {
   return (
@@ -20,12 +20,58 @@ const SkillsList = () => {
         <li>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
-          <span className="list-text">Gatsby</span>
+          <span className="list-text">Sass</span>
         </li>
         <li>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
+          <span className="list-text">Gatsby Styled Components</span>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
           <span className="list-text">HTML5</span>
+        </li>
+        <li>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
+          <span className="list-text">SEO</span>
+        </li>
+        <li>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
+          <span className="list-text">UX/UI Design</span>
+        </li>
+        <li>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
+          <span className="list-text">Jest Unit Testing</span>
+        </li>
+      </ul>
+        
+      <ul>
+        <li>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
+          <span className="list-text">GraphQL and Type-GraphQL</span>
+        </li>
+        <li>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
+          <span className="list-text">SQL and MySQL</span>
+        </li>
+        <li>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
+          <span className="list-text">PostgreSQL</span>
+        </li>
+        <li>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
+          <span className="list-text">NoSQL</span>
         </li>
       </ul>
 
@@ -38,63 +84,40 @@ const SkillsList = () => {
         <li>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
-          <span className="list-text">MongoDB and NoSQL</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">Jest (React Snapshots, database injections)</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">SQL</span>
-        </li>
-      </ul>
-        
-      <ul>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">GraphQL</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">Sass</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
           <span className="list-text">TypeORM</span>
         </li>
         <li>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
-          <span className="list-text">SEO</span>
-        </li>
-      </ul>
-
-      <ul>
-        <li style={{ display: 'none' }}>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">PostgreSQL</span>
+          <span className="list-text">MongoDB</span>
         </li>
         <li>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
           <span className="list-text">Adobe Photoshop</span>
         </li>
+      </ul>
+
+      <ul>
         <li>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
           <span className="list-text">Python</span>
         </li>
+        <li>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
+          <span className="list-text">React Native</span>
+        </li>
         <li style={{ display: 'none' }}>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
-          <span className="list-text"></span>
+          <span className="list-text">MongoDB</span>
+        </li>
+        <li style={{ display: 'none' }}>
+          <GiTriforce className="icon" />
+          <GiTriforce className="list-type" />
+          <span className="list-text">Adobe Photoshop</span>
         </li>
       </ul>
     </SkillsListContainer>

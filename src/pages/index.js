@@ -9,7 +9,7 @@ import Body from '../components/Body';
 const IndexPage = () => (  
   <NavLayout layout={'portfolio'}>
     <Layout>
-      <SEO title="Brandon Zirulnikoff | Software Developer" />
+      <SEO title="Software Engineer" />
       <Header />
       <Body />
     </Layout>

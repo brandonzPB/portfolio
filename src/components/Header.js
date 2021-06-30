@@ -55,12 +55,12 @@ const Header = ({ modalState }) => {
         <TextContainer>
           <div id="desktop">
             <h3>Oh hello, I'm Brandon.</h3>
-            <h3>Software <span className="gold-text">Developer</span></h3>
+            <h3>Software <span className="gold-text">Engineer</span></h3>
             <h3>and Life-Long Learner</h3>
           </div>
           <div id="mobile">
             <h3>Oh hello, I'm Brandon.</h3>
-            <h3>Software <span className="gold-text">Developer</span></h3>
+            <h3>Software <span className="gold-text">Engineer</span></h3>
             <h3>and Life-Long Learner</h3>
           </div>
         </TextContainer>
@@ -79,7 +79,7 @@ const Header = ({ modalState }) => {
 
           <ColTwo>
             <p>
-              Aside from studying economics and data science at UCLA, 
+              I've just graduated from UCLA, and while studying economics and data science at university  
               I've used most of my free time to study, practice, and build as much as I possibly can with code.
             </p>
           </ColTwo>
@@ -119,7 +119,7 @@ const TextContainer = styled.div`
 
     to {
       opacity: 1;
-      transform: translateY(30px);
+      transform: translateY(0);
     }
   }
 
