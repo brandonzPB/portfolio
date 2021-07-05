@@ -1,15 +1,17 @@
-import Img from 'gatsby-image';
+import Img from "gatsby-image"
 import React, { useState, useEffect, useRef } from "react"
-import styled from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
+import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 
-import 'fontsource-playfair-display/600.css';
-import 'fontsource-open-sans';
+import "fontsource-playfair-display/600.css"
+import "fontsource-open-sans"
 
 const Header = ({ modalState }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
-      allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {in: "me"}}) {
+      allFile(
+        filter: { ext: { regex: "/(jpg)|(png)|(jpeg)/" }, name: { in: "me" } }
+      ) {
         edges {
           node {
             childImageSharp {
@@ -20,34 +22,34 @@ const Header = ({ modalState }) => {
           }
         }
       }
-    }  
-  `);
+    }
+  `)
 
-  const [display, setDisplay] = useState({ status: true });
+  const [display, setDisplay] = useState({ status: true })
 
-  const headerRef = useRef(true);
+  const headerRef = useRef(true)
 
   useEffect(() => {
     return () => {
-      headerRef.current = false;
+      headerRef.current = false
     }
-  }, [headerRef]);
+  }, [headerRef])
 
   useEffect(() => {
     if (headerRef.current) {
       if (modalState.display) {
-        setDisplay({ status: false });
+        setDisplay({ status: false })
       } else if (!modalState.display) {
-        setDisplay({ status: true });
+        setDisplay({ status: true })
       }
     }
-  }, [modalState, setDisplay, headerRef]);
+  }, [modalState, setDisplay, headerRef])
 
   const banner = {
     key: 0,
     fluid: data.allFile.edges[0].node.childImageSharp.fluid,
     src: data.allFile.edges[0].node.childImageSharp.fluid.src,
-  };
+  }
 
   return (
     <HeaderContainer>
@@ -55,32 +57,48 @@ const Header = ({ modalState }) => {
         <TextContainer>
           <div id="desktop">
             <h3>Oh hello, I'm Brandon.</h3>
-            <h3>Software <span className="gold-text">Engineer</span></h3>
+            <h3>
+              Software <span className="gold-text">Engineer</span>
+            </h3>
             <h3>and Life-Long Learner</h3>
           </div>
           <div id="mobile">
             <h3>Oh hello, I'm Brandon.</h3>
-            <h3>Software <span className="gold-text">Engineer</span></h3>
+            <h3>
+              Software <span className="gold-text">Engineer</span>
+            </h3>
             <h3>and Life-Long Learner</h3>
           </div>
         </TextContainer>
 
-        <ImageContainer style={{ display: display.status ? 'block': 'none' }} ref={headerRef}>
-          <Image fluid={banner.fluid} alt="Picture of me (a bald man) in a suit" />
+        <ImageContainer
+          style={{ display: display.status ? "block" : "none" }}
+          ref={headerRef}
+        >
+          <Image
+            fluid={banner.fluid}
+            alt="Picture of me (a bald man) in a suit"
+          />
         </ImageContainer>
 
-        <DetailsContainer>         
+        <DetailsContainer>
           <ColOne>
             <p>
-              I am a 22 year-old passionate Stoic who loves using code to create solutions and build useful, elegant, and enjoyable experiences. <br/><br/>
-              To me, code is like an infinite pile of legos with each piece being made at the will of my imagination. (inspired by V. Anton Spraul)
+              I am a 22 year-old passionate creative who loves using code to
+              create solutions and build useful, elegant, and enjoyable
+              experiences. <br />
+              <br />
+              To me, code is like an infinite pile of legos with each piece
+              being made at the will of my imagination. (inspired by V. Anton
+              Spraul)
             </p>
           </ColOne>
 
           <ColTwo>
             <p>
-              I've just graduated from UCLA, and while studying economics and data science at university  
-              I've used most of my free time to study, practice, and build as much as I possibly can with code.
+              I've just graduated from UCLA and while studying economics and
+              data science at university, I've used most of my free time to
+              study, practice, and build as much as I possibly can with code.
             </p>
           </ColTwo>
         </DetailsContainer>
@@ -89,7 +107,7 @@ const Header = ({ modalState }) => {
   )
 }
 
-export default Header;
+export default Header
 
 const HeaderContainer = styled.div`
   margin: 3rem auto 0 auto;
@@ -126,7 +144,7 @@ const TextContainer = styled.div`
   text-align: left;
   margin: 0 2rem;
   font-size: 2rem;
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
   color: #36434d;
 
   h3 {
@@ -166,7 +184,7 @@ const ImageContainer = styled.div`
   h3 {
     font-size: 0.75rem;
     color: #828282;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
   }
 `
 
@@ -206,7 +224,7 @@ const ColOne = styled.div`
   height: 100%;
   padding: 0 2rem;
   line-height: 1.5rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: left;
 
   @media screen and (max-width: 700px) {
@@ -221,7 +239,7 @@ const ColTwo = styled.div`
   height: 100%;
   padding: 0 2rem;
   line-height: 1.5rem;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   text-align: left;
 
   @media screen and (max-width: 700px) {
