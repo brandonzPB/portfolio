@@ -69,7 +69,7 @@ const ProjectList = ({ modalState }) => {
       >
         <ProjectPreview
           details={`
-            I made this project to help users quantify 
+            I made this web app to help users quantify 
             areas of their life that are intrinsically 
             qualitative (e.g., mental health).
           `}
@@ -107,8 +107,8 @@ const ProjectList = ({ modalState }) => {
             src: paintings[3].node.childImageSharp.fluid.src,
             alt: "The logo of the company The Republic 310",
           }}
-          link={"/Republic_310"}
-          title={"The Republic 310"}
+          link={"/Republic_310_Shopify"}
+          title={"The Republic 310 (Shopify version)"}
         />
 
         <ProjectPreview
