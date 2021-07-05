@@ -16,6 +16,7 @@ const ProjectList = ({ modalState }) => {
               "painting-mindful"
               "painting-battleship"
               "republic310-2"
+              "republic310-0"
             ]
           }
         }
@@ -33,6 +34,8 @@ const ProjectList = ({ modalState }) => {
       }
     }
   `)
+
+  console.log("data", data)
 
   const paintings = [...data.allFile.edges].sort((a, b) => {
     if (a.node.name < b.node.name) return -1
@@ -91,7 +94,7 @@ const ProjectList = ({ modalState }) => {
           img={{
             fluid: paintings[3].node.childImageSharp.fluid,
             src: paintings[3].node.childImageSharp.fluid.src,
-            alt: "The logo of the company The Republic 310",
+            alt: "The logo of The Republic 310",
           }}
           link={"/Republic_310"}
           title={"The Republic 310"}
@@ -103,9 +106,9 @@ const ProjectList = ({ modalState }) => {
             The Republic 310 (this is their current site).
           `}
           img={{
-            fluid: paintings[3].node.childImageSharp.fluid,
-            src: paintings[3].node.childImageSharp.fluid.src,
-            alt: "The logo of the company The Republic 310",
+            fluid: paintings[4].node.childImageSharp.fluid,
+            src: paintings[4].node.childImageSharp.fluid.src,
+            alt: "An alternate logo of The Republic 310",
           }}
           link={"/Republic_310_Shopify"}
           title={"The Republic 310 (Shopify version)"}
