@@ -44,62 +44,38 @@ const Republic_310 = () => {
     .reverse()
 
   const details = `
-    This is website I made for a startup company.
-    A live version is yet unavailable because
-    we are still waiting for original stock photos, in
-    addition to other areas being finalized. (Once the website
-    is live, this page will be updated!)
+    This is Shopify site I made for a startup company I worked
+    with for a few months.
   `
 
-  const stack = [
-    "React (TypeScript)",
-    "React Context API",
-    "CSS",
-    "NodeJS",
-    "Express",
-    "JSONWebTokens",
-    "bcrypt",
-    "NoSQL",
-    "MongoDB",
-  ]
+  const stack = ["Shopify Liquid"]
 
-  const link = "#"
+  const link = "https://republic310.com"
 
   const sourceCode = "#"
 
   const purpose = `
-    The startup company I was working with wanted their own full-stack website, 
-    so I used my knowledge to make one for them. I completed this project almost
-    entirely on my own (there was some UX/UI input from a more-experienced developer).
+    A startup company came to me in need of a website and graphic design. Due to their small budget, 
+    they could not afford a whole team of individuals with different skills; fortunately, I was able to
+    offer my solutions and help them meet their needs. And thus, the most cost-effective solution was 
+    to launch their business with Shopify and continue with it until they were able to switch to the 
+    full-stack template I made (link below). Not only was I able to produce the websites for them, but I 
+    also completed the graphic design work by creating the logo and labels with Adobe Photoshop.
   `
 
   const tech = `
-    I used React to make this project, as well as the same backend combo of Express, MongoDB, and NoSQL.
-    However, I wanted to challenge myself to use something that was completely new to me: TypeScript. 
-    Initially, I felt intimidated at seeing the complexity of one's code once it's "translated" from JavaScript
-    to clean, effective TypeScript. However, after working with it, seeing its advantages over regular JavaScript,
-    and ultimately learning how to write cleaner code with fewer bugs--I fell in love. Although it's only been
-    a month, imagining myself coding with vanilla JavaScript just feels irresponsible and reckless. (I also got 
-      to improve my Photoshop skills with the graphic designing I did for the logos and some labels!)
+    This project is quite simple as I only used Shopify Liquid to build and design a custom theme. 
   `
 
   const lessons = `
-    I've acquired a tremenous amount of wisdom while working on this project. I also
-    got to use some of the knowledge I've acquired since studying data structures and algorithms.
-    I needed a way to sort a variable array of objects by a variable key. Although a simple solution,
-    something I never would've thought of or would have been able to do prior to my studies and rigorous practice was 
-    creating a module that uses a quicksort algorithm to sort by the given parameters, along with TypeScript to
-    check for the data types of the different input arrays. 
-    Also, I've not only learned a lot about better practices for writing code in a 
-    reusable fashion, but also found a wealth of resources to dive into and further my knowledge and ability to work with everything
-    React has to offer. I certainly would not have grown without electing to use TypeScript over JavaScript for this project, nor would
-    I have been directed down a far more grand path of wisdom, knowledge, and practice so soon in my career. The difficulties of learning
-    to use TypeScript have been an absolute blessing.
+    I learned a surprising amount from completing this version of their website. Essentially, I gained
+    a greater understanding of Shopify Liquid and how to use it more effectively. Moreover, I picked up
+    some neat Photoshop techniques and tricks along the way. Lastly, I learned a lot about the business side
+    of e-commerce, and was able to put my economics degree to good use while assisting the team in 
+    planning and executing the most cost-effective solutions.
   `
 
-  const alt1 = `The landing page of The Republic 310. The banner is of two female surfers walking along
-    an empty beach, holding surfboards.
-  `
+  const alt1 = `The landing page of The Republic 310.`
 
   const alt2 = "blank"
 
@@ -114,7 +90,7 @@ const Republic_310 = () => {
   const otherB = {
     link: "/Republic_310",
     title: "The Republic 310",
-    alt: "Peaceful image with black stones and bamboo in the background",
+    alt: "Logo of The Republic 310",
     name: "painting-mindful",
   }
 
