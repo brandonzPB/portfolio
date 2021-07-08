@@ -37,7 +37,7 @@ const Creatures_of_Habit = () => {
   })
 
   const thumbnail = images[images.length - 1]
-  const screenshots = images[0]
+  const screenshots = images.slice(0, images.length - 1)
 
   const details = `
     The project that started it all. 
@@ -98,7 +98,7 @@ const Creatures_of_Habit = () => {
     alt: `The landing page of The Republic 310. The banner is of two female surfers walking along
       an empty beach, holding surfboards
     `,
-    name: "republic310-1",
+    name: "republic310-0",
   }
 
   const otherB = {

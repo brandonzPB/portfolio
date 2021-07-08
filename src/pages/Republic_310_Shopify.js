@@ -53,7 +53,7 @@ const Republic_310 = () => {
     .reverse()
 
   const thumbnail = images[images.length - 1]
-  const screenshot = images.slice(0, images.length - 1)
+  const screenshots = images.slice(0, images.length - 1)
 
   const details = `
     This is Shopify site I made for a startup company I worked

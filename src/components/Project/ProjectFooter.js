@@ -19,7 +19,7 @@ const ProjectFooter = ({ otherA, otherB }) => {
               "painting-creatures"
               "painting-mindful"
               "painting-battleship"
-              "republic310-1"
+              "republic310-0"
               "republic310-2"
             ]
           }
@@ -40,7 +40,6 @@ const ProjectFooter = ({ otherA, otherB }) => {
   `)
 
   const images = data.allFile.edges.reduce((array, img) => {
-    console.log("img", img)
     if (img.node.name === otherA.name) {
       array.push({
         fluid: img.node.childImageSharp.fluid,

@@ -38,7 +38,7 @@ const Battleship = () => {
   })
 
   const thumbnail = images[images.length - 1]
-  const screenshots = images[0]
+  const screenshots = images.slice(0, images.length - 1)
 
   const details = `This is the first front-end project I ever made for the sole purpose of
     putting my skills and knowledge into practice. I included it in my portfolio to show the progress I've made
