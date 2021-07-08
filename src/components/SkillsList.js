@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
-import { GiTriforce } from 'react-icons/gi';
+import { GiTriforce } from "react-icons/gi"
 
 const SkillsList = () => {
   return (
@@ -51,7 +51,7 @@ const SkillsList = () => {
           <span className="list-text">Jest Unit Testing</span>
         </li>
       </ul>
-        
+
       <ul>
         <li>
           <GiTriforce className="icon" />
@@ -109,12 +109,12 @@ const SkillsList = () => {
           <GiTriforce className="list-type" />
           <span className="list-text">React Native</span>
         </li>
-        <li style={{ display: 'none' }}>
+        <li>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
-          <span className="list-text">MongoDB</span>
+          <span className="list-text">A11y (accessibility)</span>
         </li>
-        <li style={{ display: 'none' }}>
+        <li style={{ display: "none" }}>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
           <span className="list-text">Adobe Photoshop</span>
@@ -124,7 +124,7 @@ const SkillsList = () => {
   )
 }
 
-export default SkillsList;
+export default SkillsList
 
 const SkillsListContainer = styled.div`
   margin: 2rem auto;
@@ -154,10 +154,12 @@ const SkillsListContainer = styled.div`
     list-style-type: none;
     margin: 0.5rem auto;
     text-align: left;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: #828282;
 
-    .list-type { display: none; }
+    .list-type {
+      display: none;
+    }
 
     @media screen and (max-width: 500px) {
       .list-type {
@@ -170,7 +172,8 @@ const SkillsListContainer = styled.div`
     }
   }
 
-  .list-text {}
+  .list-text {
+  }
 
   .icon {
     font-size: 0.75rem;
