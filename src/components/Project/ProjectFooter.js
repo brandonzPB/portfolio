@@ -1,24 +1,30 @@
-import React from 'react'
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from "react"
+import styled from "styled-components"
+import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
-import 'fontsource-playfair-display/600.css';
-import 'fontsource-open-sans';
-import 'fontsource-roboto';
+import "fontsource-playfair-display/600.css"
+import "fontsource-open-sans"
+import "fontsource-roboto"
 
 const ProjectFooter = ({ otherA, otherB }) => {
   const data = useStaticQuery(graphql`
     query AllImagesQuery {
-      allFile(filter: {
-        ext: {
-          regex: "/(jpg)|(png)|(jpeg)/"
-        },
-        name: {
-          in: ["painting-creatures", "painting-mindful", "painting-battleship", "republic310-1"]
+      allFile(
+        filter: {
+          ext: { regex: "/(jpg)|(png)|(jpeg)/" }
+          name: {
+            in: [
+              "painting-creatures"
+              "painting-mindful"
+              "painting-battleship"
+              "republic310-1"
+              "republic310-2"
+            ]
+          }
         }
-      }) {
+      ) {
         edges {
           node {
             name
@@ -30,34 +36,30 @@ const ProjectFooter = ({ otherA, otherB }) => {
           }
         }
       }
-    }  
-  `);
+    }
+  `)
 
   const images = data.allFile.edges.reduce((array, img) => {
-    console.log('img', img);
+    console.log("img", img)
     if (img.node.name === otherA.name) {
-
       array.push({
         fluid: img.node.childImageSharp.fluid,
         src: img.node.childImageSharp.fluid.src,
         link: otherA.link,
         title: otherA.title,
-        alt: otherA.alt
-      });
-
+        alt: otherA.alt,
+      })
     } else if (img.node.name === otherB.name) {
-
       array.push({
         fluid: img.node.childImageSharp.fluid,
         src: img.node.childImageSharp.fluid.src,
         link: otherB.link,
         title: otherB.title,
-        alt: otherB.alt
-      });
-
+        alt: otherB.alt,
+      })
     }
-    return array;
-  }, []);
+    return array
+  }, [])
 
   return (
     <FooterContainer>
@@ -68,13 +70,13 @@ const ProjectFooter = ({ otherA, otherB }) => {
       <FooterContent>
         <ProjectContainer>
           <ProjectAnchor to={images[0].link}>
-            <ProjectThumbnail 
+            <ProjectThumbnail
               fluid={images[0].fluid}
-              src={images[0].src} 
-              key={1} 
+              src={images[0].src}
+              key={1}
               alt={images[0].alt}
-              className="thumbnail">
-            </ProjectThumbnail>
+              className="thumbnail"
+            ></ProjectThumbnail>
           </ProjectAnchor>
 
           <ProjectTitle>{images[0].title}</ProjectTitle>
@@ -83,13 +85,13 @@ const ProjectFooter = ({ otherA, otherB }) => {
 
         <ProjectContainer>
           <ProjectAnchor to={images[1].link}>
-            <ProjectThumbnail 
+            <ProjectThumbnail
               fluid={images[1].fluid}
-              src={images[1].src} 
-              key={2} 
+              src={images[1].src}
+              key={2}
               alt={images[1].alt}
-              className="thumbnail">
-            </ProjectThumbnail>
+              className="thumbnail"
+            ></ProjectThumbnail>
           </ProjectAnchor>
 
           <ProjectTitle>{images[1].title}</ProjectTitle>
@@ -113,7 +115,7 @@ const FooterContainer = styled.div`
 `
 
 const FooterHeadline = styled.div`
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
   color: #36434d;
   margin: 2rem auto;
   display: block;
@@ -135,7 +137,7 @@ const ProjectContainer = styled.div`
   display: block;
   text-align: center;
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #828282;
 
   @media screen and (max-width: 500px) {
@@ -145,15 +147,15 @@ const ProjectContainer = styled.div`
   }
 `
 
-const ProjectAnchor = styled(Link)`
-`
+const ProjectAnchor = styled(Link)``
 
 const ProjectThumbnail = styled(Img)`
   width: 25rem;
   height: 20rem;
   margin: 0 auto;
   border-radius: 5px;
-  box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3);
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25),
+    0 30px 60px -30px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
   transition-timing-function: ease-in-out;
 
@@ -177,7 +179,7 @@ const ProjectLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    color: #48CEF7;
+    color: #48cef7;
     border-bottom: 2px solid #48cef7;
   }
 `

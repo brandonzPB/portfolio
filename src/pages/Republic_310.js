@@ -14,7 +14,13 @@ const Republic_310 = () => {
         filter: {
           ext: { regex: "/(jpg)|(png)|(jpeg)/" }
           name: {
-            in: ["republic-0", "republic310-0", "republic-2", "republic-3"]
+            in: [
+              "republic-0"
+              "republic-1"
+              "republic-2"
+              "republic-3"
+              "republic310-0"
+            ]
           }
         }
       ) {
@@ -32,9 +38,10 @@ const Republic_310 = () => {
     }
   `)
 
-  const images = data.allFile.edges
+  let images = data.allFile.edges
     .map(img => {
       return {
+        name: img.node.name,
         fluid: img.node.childImageSharp.fluid,
         src: img.node.childImageSharp.fluid.src,
       }
@@ -45,12 +52,14 @@ const Republic_310 = () => {
     })
     .reverse()
 
+  const thumbnail = images[images.length - 1]
+  const screenshots = images.slice(0, images.length - 1)
+
   const details = `
     This is website I made for a startup company.
-    A live version is yet unavailable because
-    we are still waiting for original stock photos, in
-    addition to other areas being finalized. (Once the website
-    is live, this page will be updated!)
+    They decided to switch to Shopify due to their budget, so 
+    this website is currently not active (anything you purchase will be void; 
+      no products will be sent to you if you use this site).
   `
 
   const stack = [
@@ -129,7 +138,8 @@ const Republic_310 = () => {
     purpose,
     tech,
     lessons,
-    data: images,
+    thumbnail,
+    screenshots,
     alt1,
     alt2,
     icon: "republic",

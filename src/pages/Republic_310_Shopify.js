@@ -13,7 +13,16 @@ const Republic_310 = () => {
       allFile(
         filter: {
           ext: { regex: "/(jpg)|(png)|(jpeg)/" }
-          name: { in: ["republic-0", "republic310-0"] }
+          name: {
+            in: [
+              "republic-shopify-0"
+              "republic-shopify-1"
+              "republic-shopify-2"
+              "republic-shopify-3"
+              "republic-shopify-4"
+              "republic310-2"
+            ]
+          }
         }
       ) {
         edges {
@@ -43,9 +52,15 @@ const Republic_310 = () => {
     })
     .reverse()
 
+  const thumbnail = images[images.length - 1]
+  const screenshot = images.slice(0, images.length - 1)
+
   const details = `
     This is Shopify site I made for a startup company I worked
-    with for a few months.
+    with for a few months. The site is not yet live because
+    we are still waiting for business-related tasks to be completed.
+    A live version of the site will be linked as soon as everything is 
+    ready!
   `
 
   const stack = ["Shopify Liquid", "Adobe Photoshop"]
@@ -103,7 +118,8 @@ const Republic_310 = () => {
     purpose,
     tech,
     lessons,
-    data: images,
+    thumbnail,
+    screenshots,
     alt1,
     alt2,
     icon: "republic",
