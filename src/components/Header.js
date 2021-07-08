@@ -6,6 +6,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import "fontsource-playfair-display/600.css"
 import "fontsource-open-sans"
 
+import uclaSrc from "../assets/images/ucla_econ.png"
+
 const Header = ({ modalState }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -54,22 +56,26 @@ const Header = ({ modalState }) => {
   return (
     <HeaderContainer>
       <HeaderContent>
-        <TextContainer>
-          <div id="desktop">
-            <h3>Oh hello, I'm Brandon.</h3>
-            <h3>
-              Software <span className="gold-text">Engineer</span>
-            </h3>
-            <h3>and Life-Long Learner</h3>
-          </div>
-          <div id="mobile">
-            <h3>Oh hello, I'm Brandon.</h3>
-            <h3>
-              Software <span className="gold-text">Engineer</span>
-            </h3>
-            <h3>and Life-Long Learner</h3>
-          </div>
-        </TextContainer>
+        <HeaderTopContainer>
+          <TextContainer>
+            <div id="desktop">
+              <h3>Oh hello, I'm Brandon.</h3>
+              <h3>
+                Software <span className="gold-text">Engineer</span>
+              </h3>
+              <h3>and Life-Long Learner</h3>
+            </div>
+            <div id="mobile">
+              <h3>Oh hello, I'm Brandon.</h3>
+              <h3>
+                Software <span className="gold-text">Engineer</span>
+              </h3>
+              <h3>and Life-Long Learner</h3>
+            </div>
+          </TextContainer>
+
+          <UCLAImg src={uclaSrc} />
+        </HeaderTopContainer>
 
         <ImageContainer
           style={{ display: display.status ? "block" : "none" }}
@@ -118,6 +124,26 @@ const HeaderContainer = styled.div`
 
   @media screen and (max-width: 500px) {
     width: 80%;
+  }
+`
+
+const HeaderTopContainer = styled.div`
+  @media only screen and (min-width: 920px) {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+`
+
+const UCLAImg = styled.img`
+  width: 40%;
+  margin: 0 auto;
+
+  @media only screen and (min-width: 920px) {
+    width: 20%;
   }
 `
 
