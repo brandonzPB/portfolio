@@ -72,6 +72,20 @@ const ProjectList = ({ modalState }) => {
       >
         <ProjectPreview
           details={`
+            I made this project for an e-commerce 
+            startup who wanted their own full-stack website.
+          `}
+          img={{
+            fluid: paintings[3].node.childImageSharp.fluid,
+            src: paintings[3].node.childImageSharp.fluid.src,
+            alt: "The logo of The Republic 310",
+          }}
+          link={"/Republic_310"}
+          title={"The Republic 310"}
+        />
+
+        <ProjectPreview
+          details={`
             I made this web app to help users quantify 
             areas of their life that are intrinsically 
             qualitative (e.g., mental health).
@@ -84,20 +98,6 @@ const ProjectList = ({ modalState }) => {
           }}
           link={"/Creatures_of_Habit"}
           title={"Creatures of Habit"}
-        />
-
-        <ProjectPreview
-          details={`
-            I made this project for an e-commerce 
-            startup who wanted their own full-stack website.
-          `}
-          img={{
-            fluid: paintings[3].node.childImageSharp.fluid,
-            src: paintings[3].node.childImageSharp.fluid.src,
-            alt: "The logo of The Republic 310",
-          }}
-          link={"/Republic_310"}
-          title={"The Republic 310"}
         />
 
         <ProjectPreview
