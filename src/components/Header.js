@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import "fontsource-playfair-display/600.css"
 import "fontsource-open-sans"
 
-import uclaSrc from "../assets/images/ucla_econ_code.png"
+import UCLA from "./UCLA"
 
 const Header = ({ modalState }) => {
   const data = useStaticQuery(graphql`
@@ -74,7 +74,7 @@ const Header = ({ modalState }) => {
             </div>
           </TextContainer>
 
-          <UCLAImg src={uclaSrc} />
+          <UCLA />
         </HeaderTopContainer>
 
         <ImageContainer
@@ -135,26 +135,6 @@ const HeaderTopContainer = styled.div`
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-  }
-`
-
-const UCLAImg = styled.img`
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  width: 80%;
-  margin: 0 auto;
-  animation: fadein 2s;
-
-  @media only screen and (min-width: 920px) {
-    width: 25%;
-    margin-right: 4rem;
   }
 `
 
