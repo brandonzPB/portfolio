@@ -139,8 +139,18 @@ const HeaderTopContainer = styled.div`
 `
 
 const UCLAImg = styled.img`
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   width: 40%;
   margin: 0 auto;
+  animation: fadein 2s;
 
   @media only screen and (min-width: 920px) {
     width: 20%;
