@@ -24,4 +24,8 @@ const ScreenshotImg = styled(Img)`
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25),
     0 30px 60px -30px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
+
+  @media only screen and (max-width: 720px) {
+    width: 100%;
+  }
 `
