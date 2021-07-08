@@ -48,7 +48,7 @@ const Republic_310 = () => {
     with for a few months.
   `
 
-  const stack = ["Shopify Liquid"]
+  const stack = ["Shopify Liquid", "Adobe Photoshop"]
 
   const link = "https://republic310.com"
 
@@ -64,7 +64,7 @@ const Republic_310 = () => {
   `
 
   const tech = `
-    This project is quite simple as I only used Shopify Liquid to build and design a custom theme. 
+    This project is quite simple as I only used Shopify to build and design a custom theme. 
   `
 
   const lessons = `
@@ -91,7 +91,7 @@ const Republic_310 = () => {
     link: "/Republic_310",
     title: "The Republic 310",
     alt: "Logo of The Republic 310",
-    name: "painting-mindful",
+    name: "republic310-0",
   }
 
   const projectProps = {
