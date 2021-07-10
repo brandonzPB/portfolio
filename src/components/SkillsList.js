@@ -114,10 +114,10 @@ const SkillsList = () => {
           <GiTriforce className="list-type" />
           <span className="list-text">A11y (accessibility)</span>
         </li>
-        <li style={{ display: "none" }}>
+        <li>
           <GiTriforce className="icon" />
           <GiTriforce className="list-type" />
-          <span className="list-text">Adobe Photoshop</span>
+          <span className="list-text">Shopify</span>
         </li>
       </ul>
     </SkillsListContainer>
