@@ -56,11 +56,8 @@ const Republic_310 = () => {
   const screenshots = images.slice(0, images.length - 1)
 
   const details = `
-    This is Shopify site I made for a startup company I worked
-    with for a few months. The site is not yet live because
-    we are still waiting for business-related tasks to be completed.
-    A live version of the site will be linked as soon as everything is 
-    ready!
+    This is the Shopify site I made for a startup company I worked
+    with for a few months.
   `
 
   const stack = ["Shopify Liquid", "Adobe Photoshop"]
