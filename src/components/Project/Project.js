@@ -213,6 +213,7 @@ const LinkContainer = styled.div`
     color: #0070b7;
     transition: text-decoration 0.3s ease 0;
     text-decoration: none;
+    line-height: 3rem;
   }
 
   #project-link,
@@ -233,7 +234,6 @@ const LinkContainer = styled.div`
   a:hover {
     color: #48cef7;
     text-decoration: underline;
-    line-height: 3rem;
   }
 `
 
