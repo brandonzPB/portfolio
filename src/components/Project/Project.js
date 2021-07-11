@@ -93,7 +93,8 @@ const Project = ({ projectProps, modalState }) => {
             target="_blank"
             rel="noreferrer"
             style={{
-              display: projectProps.link === "#" ? "none" : "inline-block",
+              display:
+                projectProps.sourceCode === "#" ? "none" : "inline-block",
             }}
           >
             <span id="source-code">Source Code</span>
