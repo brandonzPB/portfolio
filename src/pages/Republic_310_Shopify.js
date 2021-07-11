@@ -44,13 +44,14 @@ const Republic_310 = () => {
   const images = data.allFile.edges
     .map(img => {
       return {
+        name: img.node.name,
         fluid: img.node.childImageSharp.fluid,
         src: img.node.childImageSharp.fluid.src,
       }
     })
     .sort((a, b) => {
       if (a.name > b.name) return -1
-      else return 1
+      return 1
     })
     .reverse()
 
@@ -59,7 +60,7 @@ const Republic_310 = () => {
 
   const details = `
     This is the Shopify site I made for a startup company I worked
-    with for a few months.
+    with.
   `
 
   const stack = ["Shopify Liquid", "Adobe Photoshop"]
