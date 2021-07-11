@@ -20,6 +20,8 @@ const Republic_310 = () => {
               "republic-shopify-2"
               "republic-shopify-3"
               "republic-shopify-4"
+              "republic-shopify-5"
+              "republic-shopify-6"
               "republic310-2"
             ]
           }

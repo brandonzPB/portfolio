@@ -211,7 +211,7 @@ const LinkContainer = styled.div`
   a:link,
   a:visited {
     color: #0070b7;
-    transition: border-bottom 0.3s ease 0;
+    transition: text-decoration 0.3s ease 0;
     text-decoration: none;
   }
 
@@ -232,7 +232,8 @@ const LinkContainer = styled.div`
 
   a:hover {
     color: #48cef7;
-    border-bottom: 2px solid #48cef7;
+    text-decoration: underline;
+    line-height: 3rem;
   }
 `
 
