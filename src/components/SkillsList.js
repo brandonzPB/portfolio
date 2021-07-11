@@ -3,123 +3,22 @@ import styled from "styled-components"
 
 import { GiTriforce } from "react-icons/gi"
 
+import { skills } from "../data/skills"
+
 const SkillsList = () => {
+  const SkillsComponents = skills.map(skill => {
+    return (
+      <li>
+        <GiTriforce className="icon" />
+        <GiTriforce className="list-type" />
+        <span className="list-text">{skill}</span>
+      </li>
+    )
+  })
+
   return (
     <SkillsListContainer>
-      <ul>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">React (TypeScript and JavaScript)</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">Redux and React Context API</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">Sass</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">Gatsby Styled Components</span>
-        </li>
-      </ul>
-
-      <ul>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">HTML5</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">SEO</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">UX/UI Design</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">Jest Unit Testing</span>
-        </li>
-      </ul>
-
-      <ul>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">GraphQL and Type-GraphQL</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">SQL and MySQL</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">PostgreSQL</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">NoSQL</span>
-        </li>
-      </ul>
-
-      <ul>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">NodeJS and Express</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">TypeORM</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">MongoDB</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">Adobe Photoshop</span>
-        </li>
-      </ul>
-
-      <ul>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">Python</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">React Native</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">A11y (accessibility)</span>
-        </li>
-        <li>
-          <GiTriforce className="icon" />
-          <GiTriforce className="list-type" />
-          <span className="list-text">Shopify</span>
-        </li>
-      </ul>
+      <ul className="skills-list">{SkillsComponents}</ul>
     </SkillsListContainer>
   )
 }
@@ -128,8 +27,6 @@ export default SkillsList
 
 const SkillsListContainer = styled.div`
   margin: 2rem auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   width: 100%;
 
   @media screen and (max-width: 500px) {
@@ -138,9 +35,11 @@ const SkillsListContainer = styled.div`
 
   ul {
     margin: 0 auto;
-    width: 100%;
     text-align: left;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 12rem;
 
     @media screen and (max-width: 500px) {
       height: auto;
@@ -152,7 +51,7 @@ const SkillsListContainer = styled.div`
 
   li {
     list-style-type: none;
-    margin: 0.5rem auto;
+    margin: 0.5rem 0;
     text-align: left;
     font-family: "Open Sans", sans-serif;
     color: #828282;
