@@ -35,9 +35,7 @@ const ProjectList = ({ modalState }) => {
     }
   `)
 
-  console.log("data", data)
-
-  const paintings = [...data.allFile.edges].sort((a, b) => {
+  const thumbnails = [...data.allFile.edges].sort((a, b) => {
     if (a.node.name < b.node.name) return -1
     if (a.node.name > b.node.name) return 1
   })
@@ -62,6 +60,13 @@ const ProjectList = ({ modalState }) => {
     }
   }, [modalState, setDisplay, projectRef])
 
+  // visit widget: []
+  // republic 310: [3]
+  // republic 310 (shopify): [4]
+  // creatures: [1]
+  // mindful: [2]
+  // battleship: [0]
+
   return (
     <ProjectListContainer>
       <h1>Projects I've Made</h1>
@@ -69,81 +74,7 @@ const ProjectList = ({ modalState }) => {
       <List
         style={{ display: display.status ? "block" : "none" }}
         ref={projectRef}
-      >
-        <ProjectPreview
-          details={`
-            I made this project for an e-commerce 
-            startup who wanted their own full-stack website.
-          `}
-          img={{
-            fluid: paintings[3].node.childImageSharp.fluid,
-            src: paintings[3].node.childImageSharp.fluid.src,
-            alt: "The logo of The Republic 310",
-          }}
-          link={"/Republic_310"}
-          title={"The Republic 310"}
-        />
-
-        <ProjectPreview
-          details={`
-            I made this web app to help users quantify 
-            areas of their life that are intrinsically 
-            qualitative (e.g., mental health).
-          `}
-          img={{
-            fluid: paintings[1].node.childImageSharp.fluid,
-            src: paintings[1].node.childImageSharp.fluid.src,
-            alt:
-              "Painting of a lake, a grassy plain, and a pretty blue sky with some clouds",
-          }}
-          link={"/Creatures_of_Habit"}
-          title={"Creatures of Habit"}
-        />
-
-        <ProjectPreview
-          details={`
-            The Shopify version of the website I made for 
-            The Republic 310 (this is their current site).
-          `}
-          img={{
-            fluid: paintings[4].node.childImageSharp.fluid,
-            src: paintings[4].node.childImageSharp.fluid.src,
-            alt: "An alternate logo of The Republic 310",
-          }}
-          link={"/Republic_310_Shopify"}
-          title={"The Republic 310 (Shopify version)"}
-        />
-
-        <ProjectPreview
-          details={`
-            I made this project for the purpose of helping 
-            users to become more mindful in their daily life.
-          `}
-          img={{
-            fluid: paintings[2].node.childImageSharp.fluid,
-            src: paintings[2].node.childImageSharp.fluid.src,
-            alt:
-              "A painting of a really relaxing setting: heated rocks and bamboo",
-          }}
-          link={"/Mindful"}
-          title={"mindful.io"}
-        />
-
-        <ProjectPreview
-          details={`
-            This was the first project I made solely for the 
-            purpose of putting my skills into practice.
-          `}
-          img={{
-            fluid: paintings[0].node.childImageSharp.fluid,
-            src: paintings[0].node.childImageSharp.fluid.src,
-            alt:
-              "A painting of a really relaxing setting: heated rocks and bamboo",
-          }}
-          link={"/Battleship"}
-          title={"Battleship"}
-        />
-      </List>
+      ></List>
     </ProjectListContainer>
   )
 }

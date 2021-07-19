@@ -1,9 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import React from "react"
+import styled from "styled-components"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 
-const ProjectPreview = ({ details, img, link, title, }) => {
+const ProjectPreview = ({ details, img, link, title }) => {
   return (
     <ProjectContainer>
       <ProjectImage__Container>
@@ -11,16 +11,15 @@ const ProjectPreview = ({ details, img, link, title, }) => {
           <ProjectThumbnail
             alt={img.alt}
             className="thumbnail"
-            fluid={img.fluid} 
+            fluid={img.fluid}
             src={img.src}
-          >
-          </ProjectThumbnail>
+          ></ProjectThumbnail>
         </ProjectAnchor>
       </ProjectImage__Container>
 
       <ProjectDetails__Container>
         <ProjectTitle>{title}</ProjectTitle>
-        
+
         <ProjectDetails>{details}</ProjectDetails>
 
         <ProjectLink to={link}>View Project</ProjectLink>
@@ -29,7 +28,7 @@ const ProjectPreview = ({ details, img, link, title, }) => {
   )
 }
 
-export default ProjectPreview;
+export default ProjectPreview
 
 const ProjectContainer = styled.div`
   display: inline-block;
@@ -37,14 +36,15 @@ const ProjectContainer = styled.div`
   margin: 2rem auto 5rem auto;
   height: auto;
   width: 48%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
+  background: none;
 
   @media screen and (max-width: 950px) {
     width: 100%;
     height: 100%;
     display: block;
   }
-`;
+`
 
 const ProjectImage__Container = styled.div`
   display: flex;
@@ -53,18 +53,21 @@ const ProjectImage__Container = styled.div`
   justify-content: center;
   flex: 1;
   height: 18rem;
-`;
+  background: none;
+`
 
-const ProjectAnchor = styled(Link)``;
+const ProjectAnchor = styled(Link)``
 
 const ProjectThumbnail = styled(Img)`
   width: 18rem;
   height: auto;
   margin: 1rem auto;
   border-radius: 5px;
-  box-shadow: 0 50px 100px -20px rgba(50,50,93,.25),0 30px 60px -30px rgba(0,0,0,.3);
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25),
+    0 30px 60px -30px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
   transition-timing-function: ease-in-out;
+  background: none;
 
   &:hover {
     transform: scale(1.1);
@@ -74,7 +77,7 @@ const ProjectThumbnail = styled(Img)`
     height: auto;
     display: block;
   }
-`;
+`
 
 const ProjectDetails__Container = styled.div`
   display: flex;
@@ -82,13 +85,13 @@ const ProjectDetails__Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
+`
 
 const ProjectTitle = styled.h3`
   margin: 2rem 0 0 0;
   font-size: 1.5rem;
   color: #36434d;
-`;
+`
 
 const ProjectDetails = styled.p`
   line-height: 1.25rem;
@@ -96,24 +99,25 @@ const ProjectDetails = styled.p`
   width: 90%;
   text-align: center;
   color: #828282;
-`;
+`
 
 const ProjectLink = styled(Link)`
   color: #0070b7;
   transition: border-bottom 0.3s ease 0s;
   text-decoration: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 
-  &:visited, &:link {
+  &:visited,
+  &:link {
     color: #0070b7;
   }
 
   &:hover {
-    color: #48CEF7;
-    border-bottom: 2px solid #48cef7; 
+    color: #48cef7;
+    border-bottom: 2px solid #48cef7;
   }
 
   @media screen and (max-width: 500px) {
     font-size: 1.25rem;
   }
-`;
+`
