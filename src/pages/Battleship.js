@@ -92,8 +92,6 @@ const Battleship = () => {
     lessons,
     thumbnail,
     screenshots,
-    alt1,
-    alt2,
     icon: "battleship",
   }
 

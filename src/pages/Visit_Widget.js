@@ -9,12 +9,13 @@ import Project from "../components/Project/Project"
 import ProjectFooter from "../components/Project/ProjectFooter"
 
 const Visit_Widget = () => {
-  const images = data.allFile.edges.map(img => {
-    return {
-      fluid: img.node.childImageSharp.fluid,
-      src: img.node.childImageSharp.fluid.src,
-    }
-  })
+  let images
+  // const images = data.allFile.edges.map(img => {
+  //   return {
+  //     fluid: img.node.childImageSharp.fluid,
+  //     src: img.node.childImageSharp.fluid.src,
+  //   }
+  // })
 
   const thumbnail = images[images.length - 1]
   thumbnail.alt = ""
@@ -75,8 +76,6 @@ const Visit_Widget = () => {
     lessons,
     thumbnail,
     screenshots,
-    alt1,
-    alt2,
     icon: "visitwidget",
   }
 
