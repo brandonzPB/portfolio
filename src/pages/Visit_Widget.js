@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
 import NavLayout from "../components/Nav/NavLayout"
@@ -7,28 +8,7 @@ import SEO from "../components/seo"
 import Project from "../components/Project/Project"
 import ProjectFooter from "../components/Project/ProjectFooter"
 
-const Battleship = () => {
-  const data = useStaticQuery(graphql`
-    query OtherProjectTiles {
-      allFile(
-        filter: {
-          ext: { regex: "/(jpg)|(png)|(jpeg)/" }
-          name: { in: ["battleship-0", "battleship-1"] }
-        }
-      ) {
-        edges {
-          node {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
+const Visit_Widget = () => {
   const images = data.allFile.edges.map(img => {
     return {
       fluid: img.node.childImageSharp.fluid,
@@ -37,6 +17,8 @@ const Battleship = () => {
   })
 
   const thumbnail = images[images.length - 1]
+  thumbnail.alt = ""
+
   const screenshots = images.slice(0, images.length - 1)
 
   const details = `This is the first front-end project I ever made for the sole purpose of
@@ -67,22 +49,23 @@ const Battleship = () => {
     that placed the differently-sized ships in random positions.`
 
   const otherA = {
-    link: "/Creatures_of_Habit",
-    title: "Creatures of Habit",
-    alt:
-      "Serene painting of a light blue sky, a grassy field, and the ocean in between",
-    name: "painting-creatures",
+    link: "/Republic_310",
+    title: "The Republic 310",
+    alt: `The landing page of The Republic 310. The banner is of two female surfers walking along
+      an empty beach, holding surfboards
+    `,
+    name: "republic310-0",
   }
 
   const otherB = {
-    link: "/Mindful",
-    title: "mindful.io",
-    alt: "Peaceful image with black stones and bamboo in the background",
-    name: "painting-mindful",
+    link: "/Republic_310_Shopify",
+    title: "The Republic 310 (Shopify)",
+    alt: "An alternate logo of The Republic 310",
+    name: "republic310-2",
   }
 
   const projectProps = {
-    title: "Battleship",
+    title: "Visit Widget",
     details,
     stack,
     link,
@@ -94,13 +77,13 @@ const Battleship = () => {
     screenshots,
     alt1,
     alt2,
-    icon: "battleship",
+    icon: "visitwidget",
   }
 
   return (
     <NavLayout>
       <ProjectLayout>
-        <SEO title="Battleship | BZWEB" />
+        <SEO title="Visit Widget | BZWEB" />
         <Project projectProps={projectProps} />
         <ProjectFooter otherA={otherA} otherB={otherB} />
       </ProjectLayout>
@@ -108,4 +91,4 @@ const Battleship = () => {
   )
 }
 
-export default Battleship
+export default Visit_Widget

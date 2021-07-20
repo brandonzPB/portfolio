@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
 import ProjectPreview from "./ProjectPreview"
+import { projects } from "../../data/projects"
 
 const ProjectList = ({ modalState }) => {
   const data = useStaticQuery(graphql`
