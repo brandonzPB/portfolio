@@ -22,32 +22,23 @@ const Visit_Widget = () => {
 
   const screenshots = images.slice(0, images.length - 1)
 
-  const details = `This is the first front-end project I ever made for the sole purpose of
-    putting my skills and knowledge into practice. I included it in my portfolio to show the progress I've made
-    since my first month of programming.`
+  const details = ``
 
   const stack = [
-    "React (JavaScript)",
-    "React Context API",
-    "HTML5",
-    "CSS",
+    "React Native (JavaScript)",
+    "Jest Unit Testing",
     "vanilla JavaScript",
   ]
 
-  const link = "https://brandonzpb.github.io/battleship"
+  const link = "https://visitwidget.com/"
 
-  const sourceCode = "https://github.com/brandonzpb/battleship"
+  const sourceCode = "#"
 
-  const purpose = `I made this app so that I could develop my newly-acquired skills. I realized that the best way to 
-    improve as a programmer would be to create a game, and I thought creating a clone of Battleship would be a good start.`
+  const purpose = ``
 
-  const tech = `This app uses React, HTML, CSS, and vanilla JavaScript, because it is what I was learning at the time. 
-    I used this technologies to create this project to see if I enjoyed building with them. As it turns out: I did!`
+  const tech = ``
 
-  const lessons = `Although this project is incredibly simple and lacks originality in its overall concept, I gained a wealth
-    of knowledge from building it. The biggest problem was designing the gameboard and figuring out how to setup the ships for each player.
-    In the end, I determined that the user's experience would be best if I setup the ships for them. As a result, I created an algorithm
-    that placed the differently-sized ships in random positions.`
+  const lessons = ``
 
   const otherA = {
     link: "/Republic_310",
