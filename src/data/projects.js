@@ -1,6 +1,6 @@
 export const projects = [
   {
-    alt: "",
+    alt: "The Logo of Visit Widget",
     details: ``,
     img: {},
     link: "/Visit_Widget",

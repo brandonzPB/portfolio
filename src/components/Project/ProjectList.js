@@ -70,7 +70,7 @@ const ProjectList = ({ modalState }) => {
 
   return (
     <ProjectListContainer>
-      <h1>Projects I've Made</h1>
+      <h1>Projects I've Worked On</h1>
 
       <List
         style={{ display: display.status ? "block" : "none" }}
