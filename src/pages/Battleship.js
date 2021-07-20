@@ -66,6 +66,11 @@ const Battleship = () => {
     In the end, I determined that the user's experience would be best if I setup the ships for them. As a result, I created an algorithm
     that placed the differently-sized ships in random positions.`
 
+  const alt1 = "A painting of a submarine underwater"
+  const alt2 = `A screenshot of the game Battleship. Two tile displays on either side, one for the player's ships and one to mark
+    where cannonballs were shot. 
+    Player one is named "Captain Morgan" and has yet to make a move.`
+
   const otherA = {
     link: "/Creatures_of_Habit",
     title: "Creatures of Habit",
@@ -92,6 +97,8 @@ const Battleship = () => {
     lessons,
     thumbnail,
     screenshots,
+    alt1,
+    alt2,
     icon: "battleship",
   }
 
