@@ -9,16 +9,37 @@ import Project from "../components/Project/Project"
 import ProjectFooter from "../components/Project/ProjectFooter"
 
 const Visit_Widget = () => {
-  let images
-  // const images = data.allFile.edges.map(img => {
-  //   return {
-  //     fluid: img.node.childImageSharp.fluid,
-  //     src: img.node.childImageSharp.fluid.src,
-  //   }
-  // })
+  const data = useStaticQuery(graphql`
+    query myVWMedia {
+      allFile(
+        filter: {
+          ext: { regex: "/(jpeg)|(jpg)|(png)/" }
+          name: { in: ["visitwidget-0", "visitwidget-1"] }
+        }
+      ) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const images = data.allFile.edges.map(img => {
+    return {
+      fluid: img.node.childImageSharp.fluid,
+      src: img.node.childImageSharp.fluid.src,
+    }
+  })
 
   const thumbnail = images[images.length - 1]
-  thumbnail.alt = ""
+  thumbnail.alt = "The logo of Visit Widget"
 
   const screenshots = images.slice(0, images.length - 1)
 

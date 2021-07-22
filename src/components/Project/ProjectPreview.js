@@ -3,26 +3,26 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-const ProjectPreview = ({ details, img, link, title }) => {
+const ProjectPreview = ({ node, project }) => {
   return (
     <ProjectContainer>
       <ProjectImage__Container>
-        <ProjectAnchor to={link}>
+        <ProjectAnchor to={project.link}>
           <ProjectThumbnail
-            alt={img.alt}
+            alt={project.alt}
             className="thumbnail"
-            fluid={img.fluid}
-            src={img.src}
+            fluid={project.img.fluid}
+            src={project.img.src}
           ></ProjectThumbnail>
         </ProjectAnchor>
       </ProjectImage__Container>
 
       <ProjectDetails__Container>
-        <ProjectTitle>{title}</ProjectTitle>
+        <ProjectTitle>{project.title}</ProjectTitle>
 
-        <ProjectDetails>{details}</ProjectDetails>
+        <ProjectDetails>{project.details}</ProjectDetails>
 
-        <ProjectLink to={link}>View Project</ProjectLink>
+        <ProjectLink to={project.link}>View Project</ProjectLink>
       </ProjectDetails__Container>
     </ProjectContainer>
   )

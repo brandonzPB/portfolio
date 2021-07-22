@@ -18,6 +18,7 @@ const ProjectList = ({ modalState }) => {
               "painting-battleship"
               "republic310-2"
               "republic310-0"
+              "visitwidget-0"
             ]
           }
         }
@@ -61,12 +62,13 @@ const ProjectList = ({ modalState }) => {
     }
   }, [modalState, setDisplay, projectRef])
 
-  // visit widget: []
-  // republic 310: [3]
-  // republic 310 (shopify): [4]
-  // creatures: [1]
-  // mindful: [2]
-  // battleship: [0]
+  const ProjectComponents = projects.map((project, idx) => {
+    const node = thumbnails.filter(img => img.name === project.img.name)
+
+    console.log("node", node)
+
+    return <ProjectPreview key={idx} node={node} project={project} />
+  })
 
   return (
     <ProjectListContainer>
@@ -75,7 +77,9 @@ const ProjectList = ({ modalState }) => {
       <List
         style={{ display: display.status ? "block" : "none" }}
         ref={projectRef}
-      ></List>
+      >
+        {ProjectComponents}
+      </List>
     </ProjectListContainer>
   )
 }

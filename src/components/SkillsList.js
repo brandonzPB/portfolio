@@ -6,9 +6,9 @@ import { GiTriforce } from "react-icons/gi"
 import { skills } from "../data/skills"
 
 const SkillsList = () => {
-  const SkillsComponents = skills.map(skill => {
+  const SkillsComponents = skills.map((skill, idx) => {
     return (
-      <li>
+      <li key={idx}>
         <GiTriforce className="icon" />
         <GiTriforce className="list-type" />
         <span className="list-text">{skill}</span>
