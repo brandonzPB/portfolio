@@ -63,9 +63,7 @@ const ProjectList = ({ modalState }) => {
   }, [modalState, setDisplay, projectRef])
 
   const ProjectComponents = projects.map((project, idx) => {
-    const node = thumbnails.filter(img => img.name === project.img.name)
-
-    console.log("node", node)
+    const node = thumbnails.filter(img => img.node.name === project.img.name)
 
     return <ProjectPreview key={idx} node={node} project={project} />
   })

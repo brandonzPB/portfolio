@@ -45,7 +45,7 @@ export const projects = [
     details: `I made this project for the purpose of helping 
       users to become more mindful in their daily life.`,
     img: {
-      name: "paintings-mindful",
+      name: "painting-mindful",
     },
     link: "/Mindful",
     title: "mindful.io",
@@ -55,7 +55,7 @@ export const projects = [
     details: `This was the first project I made solely for the 
       purpose of putting my skills into practice.`,
     img: {
-      name: "paintings-battleship",
+      name: "painting-battleship",
     },
     link: "/Battleship",
     title: "Battleship",
