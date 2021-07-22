@@ -1,7 +1,10 @@
 export const projects = [
   {
     alt: "The Logo of Visit Widget",
-    details: ``,
+    details: `The mobile app of a startup company I am currently working with.
+      I am offering consulting services to Visit Widget, in addition to improving 
+      upon their code base with React Native and Jest unit testing. (Disclaimer: I do not
+      own this app.)`,
     img: {
       name: "visitwidget-0",
     },

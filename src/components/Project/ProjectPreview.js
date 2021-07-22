@@ -11,8 +11,8 @@ const ProjectPreview = ({ node, project }) => {
           <ProjectThumbnail
             alt={project.alt}
             className="thumbnail"
-            fluid={project.img.fluid}
-            src={project.img.src}
+            fluid={node[0].node.childImageSharp.fluid}
+            src={node[0].node.childImageSharp.fluid.src}
           ></ProjectThumbnail>
         </ProjectAnchor>
       </ProjectImage__Container>
