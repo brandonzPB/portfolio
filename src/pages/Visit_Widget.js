@@ -38,10 +38,10 @@ const Visit_Widget = () => {
     }
   })
 
-  const thumbnail = images[images.length - 1]
+  const thumbnail = images[0]
   thumbnail.alt = "The logo of Visit Widget"
 
-  const screenshots = images.slice(0, images.length - 1)
+  const screenshots = images.slice(1)
 
   const details = `The mobile app of a startup company I am currently working with.
     I am offering consulting services to Visit Widget, in addition to improving 
