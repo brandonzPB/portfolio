@@ -59,14 +59,14 @@ const Republic_310 = () => {
     })
     .reverse()
 
-  console.log("images", images)
-
   const thumbnail = images[images.length - 1]
   const screenshots = images.slice(0, images.length - 1)
 
   const details = `
-    This is the Shopify site I made for a startup company I worked
-    with.
+    This is the Shopify site I made for a company I worked
+    with. A startup that specializes in hemp-based products 
+    came to me in need of a website and graphic design, and 
+    this project is the result of that. 
   `
 
   const stack = [
