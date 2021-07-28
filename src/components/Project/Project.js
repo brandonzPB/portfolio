@@ -6,11 +6,8 @@ import "fontsource-playfair-display/600.css"
 import "fontsource-open-sans"
 import "fontsource-roboto"
 
-import { CgPokemon } from "react-icons/cg"
-import { FaPeace } from "react-icons/fa"
-import { GiBattleship, GiPalmTree } from "react-icons/gi"
-
 import Screenshot from "./Screenshot"
+import TechStackIcon from "./TechStackIcon"
 
 const Project = ({ projectProps, modalState }) => {
   const { tech } = projectProps
@@ -18,32 +15,7 @@ const Project = ({ projectProps, modalState }) => {
   const stackComponents = projectProps.stack.map((tech, index) => {
     return (
       <li key={index}>
-        <CgPokemon
-          className="list-o"
-          style={{
-            display:
-              projectProps.icon === "creatures" ? "inline-block" : "none",
-          }}
-        />
-        <FaPeace
-          className="list-o"
-          style={{
-            display: projectProps.icon === "mindful" ? "inline-block" : "none",
-          }}
-        />
-        <GiBattleship
-          className="list-o"
-          style={{
-            display:
-              projectProps.icon === "battleship" ? "inline-block" : "none",
-          }}
-        />
-        <GiPalmTree
-          className="list-o"
-          style={{
-            display: projectProps.icon === "republic" ? "inline-block" : "none",
-          }}
-        />
+        <TechStackIcon icon={projectProps.icon} />
         {tech}
       </li>
     )
