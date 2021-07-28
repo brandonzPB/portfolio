@@ -25,7 +25,7 @@ const Republic_310 = () => {
               "republic-shopify-7"
               "republic-shopify-8"
               "republic-shopify-9"
-              "republic-shopify-10"
+              "republic-shopify-A"
               "republic310-2"
             ]
           }
@@ -59,6 +59,8 @@ const Republic_310 = () => {
     })
     .reverse()
 
+  console.log("images", images)
+
   const thumbnail = images[images.length - 1]
   const screenshots = images.slice(0, images.length - 1)
 
@@ -67,7 +69,12 @@ const Republic_310 = () => {
     with.
   `
 
-  const stack = ["Shopify Liquid", "Adobe Photoshop"]
+  const stack = [
+    "Shopify Liquid",
+    "vanilla JavaScript",
+    "CSS",
+    "Adobe Photoshop",
+  ]
 
   const link = "https://republic310.com"
 
@@ -83,7 +90,8 @@ const Republic_310 = () => {
   `
 
   const tech = `
-    This project is quite simple as I only used Shopify to build and design a custom theme. 
+    This project is quite simple as I only used Shopify Liquid, CSS, and a bit of vanilla JavaScript to 
+    build and design a custom theme. 
   `
 
   const lessons = `

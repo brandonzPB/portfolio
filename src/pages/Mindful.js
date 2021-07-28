@@ -40,11 +40,12 @@ const Mindful = () => {
   const screenshots = images.slice(0, images.length - 1)
 
   const details = `
-    I wanted the utility of this project to as simple as possible, since I wanted as many people as possible to benefit from it. 
+    I wanted this project to be as simple as possible, since I wanted as many people as possible to benefit from it.
+    I made this web app for a particular professor at UCLA who wanted a project for his students to use.
     Mindful.io provides links to guided meditation apps and videos, information on mindfulness and meditation, including benefits, 
     techniques, and exercises. I also wrote a custom list of questions to answer after the user is done meditating, 
     for the purpose of applying that calmer state and increased mindfulness to their personal life. This app is currently used by 
-    my friends, family, and classmates (and myself). 
+    my friends, family, and other students.
   `
 
   const stack = [
@@ -59,8 +60,9 @@ const Mindful = () => {
   const sourceCode = "https://github.com/brandonzpb/mindful.io"
 
   const purpose = `
-    I made this project for the purpose of helping others develop the healthy habit of meditating and being more mindful. It's 
-    my life's purpose to create elegant, enjoyable, and useful experiences with code, and I wanted this project to show that. 
+    I made this project for the purpose of helping others develop the healthy habit of meditating and being more mindful. A professor
+    at UCLA wanted a project that would help improve the public's knowledge of mindfulness. They asked for me to build something
+    that would help accomplish that, so I created this web app for them to use.
   `
 
   const tech = `
